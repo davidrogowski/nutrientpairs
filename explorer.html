@@ -61,7 +61,11 @@ nav {
   letter-spacing: 0.03em; transition: background 0.2s;
 }
 .nav-cta:hover { background: var(--sage-light); }
-@media (max-width: 900px) { .nav-links { display: none; } }
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
 
 /* PAGE HEADER */
 .page-header { padding: 3.5rem 2rem 2rem; max-width: 900px; margin: 0 auto; }
@@ -213,6 +217,48 @@ nav {
   .timing-card:last-child { border-bottom: none; }
   .explore-grid { grid-template-columns: 1fr 1fr; }
 }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  transition: all 0.2s;
+}
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 2rem 1rem;
+  z-index: 99;
+}
+.nav-mobile.open { display: block; }
+.nav-mobile ul { list-style: none; }
+.nav-mobile ul li a {
+  display: block;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.nav-mobile ul li:last-child a { border-bottom: none; }
+.nav-mobile ul li a:hover { color: var(--sage); }
 </style>
 </head>
 <body>
@@ -226,7 +272,18 @@ nav {
     <li><a href="about.html">About</a></li>
   </ul>
   <a href="index.html#email" class="nav-cta">Free Guide →</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="deep-dives.html">Deep Dives</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
 
 <div class="page-header">
   <h1 class="page-title">Supplement Interaction Explorer</h1>
@@ -289,6 +346,9 @@ nav {
 </div>
 
 <script>
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
 const PAIRS = [
   {
     id: 1,

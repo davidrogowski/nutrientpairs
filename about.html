@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — NutrientPairs</title>
+  <meta name="description" content="Why NutrientPairs exists, how we research nutrient pairs, and our methodology for recommending synergistic supplements.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nutrientpairs.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About — NutrientPairs">
+  <meta property="og:description" content="Why NutrientPairs exists, how we research nutrient pairs, and our methodology.">
+  <meta property="og:url" content="https://nutrientpairs.com/about.html">
+  <meta property="og:site_name" content="NutrientPairs">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About — NutrientPairs">
+  <meta name="twitter:description" content="Why NutrientPairs exists, how we research nutrient pairs, and our methodology.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a18;
+  --paper: #f5f3ee;
+  --cream: #ede9e0;
+  --sage: #4a6741;
+  --sage-light: #6a8f60;
+  --sage-pale: #e8ede6;
+  --rust: #b85c38;
+  --muted: #7a7870;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; font-weight: 500; color: var(--muted);
+  text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem; font-weight: 500; background: var(--sage); color: var(--white);
+  padding: 0.5rem 1.2rem; border-radius: 2px; text-decoration: none;
+  letter-spacing: 0.03em; transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+
+/* PAGE HERO */
+.page-hero {
+  background: var(--white);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.page-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.page-hero-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* CONTENT SECTIONS */
+.content-section {
+  padding: 5rem 2rem;
+}
+.content-section.alt { background: var(--white); }
+.content-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.body-text {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* NOTICE BOX */
+.notice-box {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  background: var(--sage-pale);
+  border-left: 3px solid var(--sage);
+  border-radius: 0 4px 4px 0;
+  text-align: left;
+}
+.notice-box p {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.notice-box strong { font-weight: 500; }
+
+/* FAQ */
+.faq-section {
+  padding: 5rem 2rem;
+  background: var(--white);
+}
+.faq-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-item:first-of-type { border-top: 1px solid var(--border); }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.faq-question:hover { color: var(--sage); }
+.faq-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--sage);
+  font-weight: 300;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  display: none;
+  padding-bottom: 1.25rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.faq-answer p { margin-bottom: 0.75rem; }
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-item.open .faq-answer { display: block; }
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+.affiliate-notice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Nutrient<span>Pairs</span></a>
+  <ul class="nav-links">
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="deep-dives.html">Deep Dives</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul>
+  <a href="index.html#email" class="nav-cta">Free Guide →</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">About</div>
+  <h1 class="page-hero-title">Why NutrientPairs exists.</h1>
+  <p class="page-hero-sub">The supplement industry sells single ingredients. Science says that's not the whole story.</p>
+</div>
+
+<!-- MISSION -->
+<section class="content-section alt">
+  <div class="content-inner">
+    <div class="section-label">Our mission</div>
+    <h2 class="section-title">Most supplements work better together.</h2>
+    <p class="body-text">Most nutrients have cofactors, absorption enhancers, or complementary mechanisms that make them dramatically more effective when taken with the right partner. The supplement industry has largely ignored this. Products are sold as single ingredients. Labels don't explain interactions. And consumers are left guessing.</p>
+    <p class="body-text">NutrientPairs maps those relationships. Every pair in our library is backed by published research. We explain the mechanism in plain English, tell you who it's actually for, and show you the best way to take them.</p>
+    <p class="body-text">We're not a supplement brand. We don't make products. We do participate in affiliate programs — when you click a product link and buy, we may earn a small commission at no cost to you. That never influences what we recommend.</p>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-label">Methodology</div>
+    <h2 class="section-title">How we research each pair.</h2>
+    <p class="body-text">Every pair in the library meets a minimum bar: there must be published human research (not just animal or in-vitro studies) demonstrating a meaningful interaction between the two nutrients. We rate evidence strength on each pair so you know how robust the science is.</p>
+    <p class="body-text">We evaluate the mechanism, the population it applies to, the optimal dose and form, timing considerations, and any known inhibitors or contraindications. We then translate that into plain English — no jargon, no vague claims.</p>
+    <p class="body-text">We update pairs when new research emerges and retire pairs if the evidence base weakens. The library is a living document, not a one-time list.</p>
+  </div>
+</section>
+
+<!-- NOT MEDICAL ADVICE -->
+<section class="content-section alt">
+  <div class="notice-box">
+    <p><strong>Not medical advice.</strong> NutrientPairs is an educational resource. The information on this site is intended to help you understand the science of nutrient interactions — it is not a substitute for professional medical advice, diagnosis, or treatment. Always consult your healthcare provider before starting any supplement regimen, especially if you take prescription medications or have an existing medical condition. Individual needs vary and what works for one person may not be appropriate for another.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common questions.</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Are the pairs on NutrientPairs actually backed by research?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Every pair in the library requires published human research demonstrating a meaningful synergistic interaction. We don't include pairs based solely on theoretical mechanisms, animal studies, or anecdote. Each deep dive links to or cites the relevant studies so you can read the evidence yourself.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I take all the pairs you list at the same time?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Not necessarily. Some nutrients compete for the same absorption pathways — for example, iron and calcium shouldn't be taken together. Our timing guidance in each pair entry and in the Explorer tool specifically addresses this. We recommend starting with one or two pairs most relevant to your situation rather than stacking everything at once.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Why do you include affiliate links? Does that bias your recommendations?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We participate in the Amazon Associates program and a small number of other affiliate programs. When you click a product link and make a purchase, we may earn a small commission at no cost to you. This is how we keep the site free and without paywalls.</p>
+        <p>Our recommendations are based on form quality, bioavailability, dose accuracy, and third-party testing — not on commission rates. We link to products we would genuinely recommend regardless of whether an affiliate program exists.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What does "evidence strength" mean when you rate pairs?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We rate evidence strength on a simple scale based on the quality and quantity of human research available. A high-strength rating means multiple randomized controlled trials in humans have demonstrated the interaction. A moderate rating means the evidence is promising but limited in scale or scope. A lower rating means the mechanism is well understood but direct human trial data is thin — these pairs are still included because the theoretical basis is strong, but we're transparent about what we know and don't know.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        I already take a multivitamin. Do I still need to think about pairs?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Often yes. Most multivitamins include nutrients at levels too low to be therapeutically meaningful, and they frequently combine nutrients that compete with each other for absorption — like iron and calcium in the same pill. Understanding which pairs work together (and which don't) is useful regardless of whether you take a multi, a stack of individual supplements, or something in between.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How often is the library updated?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We review the library on an ongoing basis and update individual pairs when new research is published. We also add new pairs as the evidence base grows. If you notice a pair we've missed or a study that changes our guidance on an existing pair, you can contact us — we genuinely want the library to be as accurate and complete as possible.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is NutrientPairs suitable for people on prescription medications?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>NutrientPairs is an educational resource and is not a substitute for medical advice. Some supplements interact with prescription medications in significant ways — for example, St. John's Wort affects the metabolism of many drugs, and high-dose Vitamin K can interfere with warfarin. If you take any prescription medications, please consult your doctor or pharmacist before adding supplements to your routine.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research. We explain which nutrients work better together, why the biology works, and how to find the best products for each combination.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="all-pairs.html">All Pairs</a></li>
+        <li><a href="explorer.html">Explorer</a></li>
+        <li><a href="deep-dives.html">Deep Dives</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Audiences</div>
+      <ul class="footer-links">
+        <li><a href="#">Runners</a></li>
+        <li><a href="#">Screen Workers</a></li>
+        <li><a href="#">Women 35+</a></li>
+        <li><a href="#">Over 40</a></li>
+        <li><a href="#">Vegans</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="about.html">Our methodology</a></li>
+        <li><a href="about.html#faq">FAQ</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="affiliate-notice">
+    <strong style="color:rgba(255,255,255,0.4);">Affiliate disclosure:</strong> NutrientPairs participates in the Amazon Associates program and other affiliate programs. When you click links to products and make a purchase, we may earn a small commission at no additional cost to you. This never influences our research or recommendations. We only link to products we would genuinely recommend based on form, dose, and third-party testing quality.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 NutrientPairs. All rights reserved.</span>
+    <span>Not medical advice. Always consult your healthcare provider.</span>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

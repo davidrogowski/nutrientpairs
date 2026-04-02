@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Dives — NutrientPairs</title>
+  <meta name="description" content="In-depth research breakdowns on the most important nutrient pairs. Understand the biology, the evidence, and exactly how to take them.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nutrientpairs.com/deep-dives.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deep Dives — NutrientPairs">
+  <meta property="og:description" content="In-depth research breakdowns on the most important nutrient pairs.">
+  <meta property="og:url" content="https://nutrientpairs.com/deep-dives.html">
+  <meta property="og:site_name" content="NutrientPairs">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Deep Dives — NutrientPairs">
+  <meta name="twitter:description" content="In-depth research breakdowns on the most important nutrient pairs.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a18;
+  --paper: #f5f3ee;
+  --cream: #ede9e0;
+  --sage: #4a6741;
+  --sage-light: #6a8f60;
+  --sage-pale: #e8ede6;
+  --rust: #b85c38;
+  --muted: #7a7870;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--sage);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+
+/* PAGE HEADER */
+.page-header {
+  background: var(--white);
+  padding: 4rem 2rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+.page-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+}
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.page-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* GRID */
+.dives-section {
+  padding: 4rem 2rem 6rem;
+}
+.dives-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.dives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* DIVE CARD */
+.dive-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.dive-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.dive-card.placeholder {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.dive-card-top {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.dive-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.6rem;
+}
+.dive-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+.dive-ingredients {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.dive-card-body {
+  padding: 1rem 1.5rem;
+  flex: 1;
+}
+.dive-audience {
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  color: var(--sage);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.dive-summary {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.65;
+}
+.dive-card-footer {
+  padding: 0.75rem 1.5rem;
+  background: var(--paper);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dive-read-time {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.dive-arrow {
+  font-size: 0.8rem;
+  color: var(--sage);
+  font-weight: 500;
+}
+.coming-soon-badge {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+}
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+.affiliate-notice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .dives-grid { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .dives-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Nutrient<span>Pairs</span></a>
+  <ul class="nav-links">
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="deep-dives.html" class="active">Deep Dives</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+  <a href="index.html#email" class="nav-cta">Free Guide →</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-label">Deep Dives</div>
+    <h1 class="page-title">The science, explained.</h1>
+    <p class="page-sub">In-depth breakdowns of the most important nutrient pairs. The mechanism, the evidence, what to take, and what to avoid.</p>
+  </div>
+</div>
+
+<section class="dives-section">
+  <div class="dives-inner">
+    <div class="dives-grid">
+
+      <!-- LIVE: Distance Runner Combo -->
+      <a class="dive-card" href="deep-dive-distance-runners.html">
+        <div class="dive-card-top">
+          <div class="dive-tag">Distance Runners</div>
+          <div class="dive-name">The Distance Runner Combo</div>
+          <div class="dive-ingredients">Iron Bisglycinate + Vitamin C</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Distance runners, female athletes, plant-based runners</div>
+          <p class="dive-summary">Foot-strike hemolysis depletes iron with every mile. Vitamin C triples non-heme iron absorption. Almost no runners know this combination, and almost none take it.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="dive-read-time">8 min read</span>
+          <span class="dive-arrow">Read →</span>
+        </div>
+      </a>
+
+      <!-- PLACEHOLDER: Joint & Glow Stack -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Women 35+</div>
+          <div class="dive-name">The Joint & Glow Stack</div>
+          <div class="dive-ingredients">Collagen Peptides + Vitamin C</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Women 35+ (skin, joints, hair)</div>
+          <p class="dive-summary">Vitamin C is required for collagen synthesis. Without it, collagen peptides can't be properly incorporated. Millions take collagen alone.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Blood Sugar Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Metabolic Health</div>
+          <div class="dive-name">The Blood Sugar Duo</div>
+          <div class="dive-ingredients">Berberine + Chromium</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Prediabetics, low-carb dieters</div>
+          <p class="dive-summary">Chromium enhances insulin sensitivity and amplifies berberine's glucose regulation, making them significantly more potent together than either alone.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Screen Worker Eye Stack -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Eye Health</div>
+          <div class="dive-name">The Screen Worker Eye Stack</div>
+          <div class="dive-ingredients">Lutein + Zeaxanthin</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Remote workers, gamers, desk workers</div>
+          <p class="dive-summary">Both carotenoids concentrate in the macula synergistically to filter blue light. 50M+ screen workers are completely ignored by existing products.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Cortisol Crash Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Stress & Recovery</div>
+          <div class="dive-name">The Cortisol Crash Duo</div>
+          <div class="dive-ingredients">Ashwagandha + Magnesium</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Overworked professionals, chronic stress</div>
+          <p class="dive-summary">Ashwagandha lowers cortisol from the top down; magnesium supports the nervous system from the bottom up. Different mechanisms, same outcome.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Bone Trinity -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Bone Health</div>
+          <div class="dive-name">The Bone Trinity</div>
+          <div class="dive-ingredients">D3 + K2 + Magnesium</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Women 40+, vegans, low-sun climates</div>
+          <p class="dive-summary">D3 without K2 sends calcium to the wrong places. Magnesium activates D3 itself. All three are required for the system to work.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Deep Sleep Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Sleep</div>
+          <div class="dive-name">The Deep Sleep Duo</div>
+          <div class="dive-ingredients">Glycine + Magnesium</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Poor sleepers, night owls, shift workers</div>
+          <p class="dive-summary">Glycine lowers core body temperature to signal sleep onset. Magnesium activates GABA receptors to quiet neural activity. Together they address sleep from two angles.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: PCOS Fertility Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Fertility</div>
+          <div class="dive-name">The PCOS Fertility Duo</div>
+          <div class="dive-ingredients">Myo-Inositol + Methylfolate</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Women with PCOS, trying to conceive</div>
+          <p class="dive-summary">Clinical trials showed the combination synergistically improved oocyte quality and implantation rates. Neither achieved these outcomes alone.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Turmeric -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Inflammation</div>
+          <div class="dive-name">The Turmeric That Actually Works</div>
+          <div class="dive-ingredients">Turmeric + Black Pepper (Piperine)</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Anyone taking turmeric or curcumin</div>
+          <p class="dive-summary">Curcumin bioavailability without piperine is less than 1%. Piperine increases it by 2000%. Most turmeric supplements are sold without it.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research. We explain which nutrients work better together, why the biology works, and how to find the best products for each combination.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="all-pairs.html">All Pairs</a></li>
+        <li><a href="explorer.html">Explorer</a></li>
+        <li><a href="deep-dives.html">Deep Dives</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Audiences</div>
+      <ul class="footer-links">
+        <li><a href="#">Runners</a></li>
+        <li><a href="#">Screen Workers</a></li>
+        <li><a href="#">Women 35+</a></li>
+        <li><a href="#">Over 40</a></li>
+        <li><a href="#">Vegans</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="index.html#about">Our methodology</a></li>
+        <li><a href="#">Research sources</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="affiliate-notice">
+    <strong style="color:rgba(255,255,255,0.4);">Affiliate disclosure:</strong> NutrientPairs participates in the Amazon Associates program and other affiliate programs. When you click links to products and make a purchase, we may earn a small commission at no additional cost to you. This never influences our research or recommendations.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 NutrientPairs. All rights reserved.</span>
+    <span>Not medical advice. Always consult your healthcare provider.</span>
+  </div>
+</footer>
+
+</body>
+</html>

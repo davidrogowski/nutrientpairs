@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All 46 Pairs: NutrientPairs Complete Reference</title>
+  <meta name="description" content="The complete library of 46 research-backed synergistic supplement pairs. Search by name, ingredient, or condition.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nutrientpairs.com/all-pairs.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="All 46 Pairs: NutrientPairs Complete Reference">
+  <meta property="og:description" content="The complete library of 46 research-backed synergistic supplement pairs. Search by name, ingredient, or condition.">
+  <meta property="og:url" content="https://nutrientpairs.com/all-pairs.html">
+  <meta property="og:site_name" content="NutrientPairs">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="All 46 Pairs: NutrientPairs Complete Reference">
+  <meta name="twitter:description" content="The complete library of 46 research-backed synergistic supplement pairs. Search by name, ingredient, or condition.">
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a18;
+  --paper: #f5f3ee;
+  --cream: #ede9e0;
+  --sage: #4a6741;
+  --sage-light: #6a8f60;
+  --sage-pale: #e8ede6;
+  --rust: #b85c38;
+  --muted: #7a7870;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--sage);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.hero-left {
+  padding: 6rem 4rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--sage);
+}
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--sage);
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 460px;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--sage);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--sage-light); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+.hero-stat-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.hero-stat-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.3rem;
+}
+
+.hero-right {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+.hero-card-stack {
+  position: relative;
+  width: 340px;
+  height: 440px;
+}
+.hero-card {
+  position: absolute;
+  width: 300px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+.hero-card:nth-child(1) { top: 0; left: 0; transform: rotate(-3deg); z-index: 1; }
+.hero-card:nth-child(2) { top: 60px; left: 20px; transform: rotate(1deg); z-index: 2; }
+.hero-card:nth-child(3) { top: 120px; left: 35px; z-index: 3; }
+.card-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--sage-pale);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.card-tag.rust { color: var(--rust); background: #f9ece7; }
+.card-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.card-combo {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-bottom: 0.75rem;
+}
+.card-why {
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.55;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+/* ── INSIGHT STRIP ── */
+.insight-strip {
+  background: var(--sage);
+  color: var(--white);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.insight-strip strong { font-weight: 700; }
+.insight-sep { opacity: 0.4; }
+
+/* ── SECTION COMMON ── */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--sage);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.how-item { position: relative; }
+.how-num {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.how-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.how-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── FEATURED PAIRS ── */
+.pairs-section { background: var(--cream); }
+
+
+
+.pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pair-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.pair-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.pair-card-top {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+
+
+
+.pair-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+.pair-ingredients {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.pair-card-body { padding: 1rem 1.5rem 1.25rem; }
+.pair-audience {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  font-family: var(--mono);
+}
+.pair-why {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.pair-card-footer {
+  padding: 0.75rem 1.5rem;
+  background: var(--paper);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+.pair-arrow {
+  font-size: 0.8rem;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* ── FEATURED ARTICLE ── */
+.article-section { background: var(--white); }
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.article-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.article-title {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.article-lead {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+.article-body h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.5rem 0 0.5rem;
+}
+.article-body p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+.callout {
+  background: var(--sage-pale);
+  border-left: 3px solid var(--sage);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 2px 2px 0;
+}
+.callout p {
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+.product-rec {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.rec-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.5rem;
+}
+.rec-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.rec-dose {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-bottom: 1rem;
+}
+.rec-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+.rec-link:hover { opacity: 0.7; }
+.article-sidebar { position: sticky; top: 80px; }
+.sidebar-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.sidebar-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s;
+}
+.sidebar-item:last-child { border-bottom: none; }
+.sidebar-item:hover { opacity: 0.7; }
+.sidebar-item-name {
+  font-size: 0.82rem;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.toc { list-style: none; }
+.toc li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.toc li:last-child { border-bottom: none; }
+.toc a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  font-weight: 300;
+}
+.toc a:hover { color: var(--sage); }
+
+/* ── EMAIL CAPTURE ── */
+.email-section {
+  background: var(--ink);
+  color: var(--white);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.email-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  margin-bottom: 1rem;
+}
+.email-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.email-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.email-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.email-input {
+  flex: 1;
+  padding: 0.9rem 1.25rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: var(--sans);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-input::placeholder { color: rgba(255,255,255,0.35); }
+.email-input:focus { border-color: rgba(255,255,255,0.4); }
+.email-btn {
+  padding: 0.9rem 1.5rem;
+  background: var(--sage);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.email-btn:hover { background: var(--sage-light); }
+.email-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 1rem;
+}
+
+/* ── ALL PAIRS TABLE ── */
+.table-section { background: var(--paper); }
+.pairs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 0.88rem;
+}
+.pairs-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  background: var(--cream);
+}
+.pairs-table td {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.pairs-table tr:hover td { background: var(--cream); }
+.pairs-table tr:last-child td { border-bottom: none; }
+.t-name { font-weight: 500; color: var(--ink); font-family: var(--serif); }
+.t-combo { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.t-why { font-size: 0.82rem; color: var(--muted); font-weight: 300; }
+.t-audience { font-size: 0.78rem; color: var(--muted); }
+
+
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+.affiliate-notice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * {
+  animation: fadeUp 0.6s ease both;
+}
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+.hero-card:nth-child(1) { animation: fadeUp 0.6s ease 0.3s both; }
+.hero-card:nth-child(2) { animation: fadeUp 0.6s ease 0.45s both; }
+.hero-card:nth-child(3) { animation: fadeUp 0.6s ease 0.6s both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 4rem 2rem; min-height: 80vh; }
+  .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .pairs-grid { grid-template-columns: 1fr 1fr; }
+  .article-layout { grid-template-columns: 1fr; }
+  .article-sidebar { position: static; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .pairs-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .email-form { flex-direction: column; }
+  .hero-stat-row { gap: 1.5rem; flex-wrap: wrap; }
+}
+</style>
+<style>
+.ref-search-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ref-search {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.7rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.ref-search:focus { border-color: var(--sage); }
+.ref-search::placeholder { color: var(--muted); }
+.ref-filter-btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--mono);
+  white-space: nowrap;
+}
+.ref-filter-btn:hover, .ref-filter-btn.active {
+  background: var(--sage);
+  color: var(--white);
+  border-color: var(--sage);
+}
+.ref-count {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  padding: 0.55rem 0;
+}
+.table-scroll-wrap {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.table-scroll-inner {
+  overflow-y: auto;
+  max-height: 620px;
+}
+.pairs-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; table-layout: fixed; }
+.pairs-table thead { position: sticky; top: 0; z-index: 5; }
+.pairs-table th {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  background: var(--cream);
+}
+.pairs-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  line-height: 1.45;
+  overflow: hidden;
+}
+.pairs-table tr:last-child td { border-bottom: none; }
+.pairs-table tr { transition: background 0.1s; }
+.pairs-table tr:hover td { background: var(--sage-pale); }
+.pairs-table tr.hidden { display: none; }
+.t-name {
+  font-weight: 500;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 0.93rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.t-combo { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-top: 1px; white-space: nowrap; }
+.t-why { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+.t-audience { font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+.no-results {
+  padding: 3rem 1rem;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--muted);
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Nutrient<span>Pairs</span></a>
+  <ul class="nav-links">
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="index.html#article">Deep Dives</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+  <a href="index.html#email" class="nav-cta">Free Guide →</a>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;padding:3.5rem 2rem 5rem;">
+
+  <div style="margin-bottom:2.5rem;">
+    <div class="section-label">Complete reference</div>
+    <h1 class="section-title">All 46 pairs at a glance.</h1>
+    <p class="section-sub">Every researched synergistic supplement pair. Search by name, ingredient, or condition.</p>
+  </div>
+
+  <div class="ref-search-bar">
+    <input class="ref-search" id="searchInput" type="text" placeholder="Search by name, ingredient, or condition…" oninput="filterTable()">
+    <span class="ref-count" id="rowCount">Showing 46 pairs</span>
+  </div>
+
+  <div class="table-scroll-wrap">
+    <div class="table-scroll-inner">
+    <table class="pairs-table" id="refTable">
+      <thead>
+        <tr>
+          <th style="width:280px;">Pair name</th>
+          <th style="width:210px;">Target audience</th>
+          <th>Why it works</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr>
+          <td><div class="t-name">The All-Day Energy Stack</div><div class="t-combo">CoQ10 + PQQ</div></td>
+          <td class="t-audience">Adults 45+ with fatigue, biohackers</td>
+          <td class="t-why">CoQ10 optimizes existing mitochondria; PQQ is the only nutrient shown to grow NEW mitochondria</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Over-40 Muscle Stack</div><div class="t-combo">Creatine + HMB</div></td>
+          <td class="t-audience">Adults 40-65 experiencing muscle loss</td>
+          <td class="t-why">Creatine builds muscle; HMB prevents muscle breakdown. Together they tackle sarcopenia from both sides</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Blood Sugar Duo</div><div class="t-combo">Berberine + Chromium</div></td>
+          <td class="t-audience">Prediabetics, low-carb &amp; carnivore dieters</td>
+          <td class="t-why">Chromium enhances insulin sensitivity and amplifies berberine's glucose regulation, making them more potent together</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Brain Stack</div><div class="t-combo">Magnesium L-Threonate + Lion's Mane</div></td>
+          <td class="t-audience">Cognitive aging, ADHD adults, nootropic users</td>
+          <td class="t-why">Mg-Threonate crosses blood-brain barrier; Lion's Mane stimulates NGF. Two pathways to neuroplasticity</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Heart Palpitation Duo</div><div class="t-combo">Taurine + Magnesium</div></td>
+          <td class="t-audience">People with palpitations, anxiety, heart health focus</td>
+          <td class="t-why">Taurine and magnesium both regulate heart electrical function and work synergistically for cardiac rhythm</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Gene Variant Energy Duo</div><div class="t-combo">B12 + Folate (MTHFR-specific)</div></td>
+          <td class="t-audience">People with MTHFR gene mutation (~40% of population)</td>
+          <td class="t-why">MTHFR variants can't convert synthetic folic acid. Only methylated forms work, and no brand owns this niche</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The No-Sun Mood Duo</div><div class="t-combo">Omega-3 + Vitamin D3</div></td>
+          <td class="t-audience">People in northern climates, remote workers, night shift workers</td>
+          <td class="t-why">Omega-3 fats significantly enhance Vitamin D absorption; both depleted in sun-deprived populations</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Bloat &amp; Digestion Stack</div><div class="t-combo">Prebiotic + Probiotic (Synbiotic)</div></td>
+          <td class="t-audience">IBS sufferers, antibiotic recovery, general gut health</td>
+          <td class="t-why">Prebiotics feed probiotics. Without them, probiotics pass through with minimal colonization benefit</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Sluggish Thyroid Triple</div><div class="t-combo">Iodine + Selenium + Iron (Thyroid)</div></td>
+          <td class="t-audience">Women with Hashimoto's or hypothyroid symptoms</td>
+          <td class="t-why">Iron activates thyroid peroxidase; selenium converts T4→T3; iodine is the raw material. All three are required</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Numb Feet &amp; Fatigue Duo</div><div class="t-combo">Magnesium + Vitamin B1 (Thiamine)</div></td>
+          <td class="t-audience">Diabetics, heavy alcohol consumers, people with neuropathy</td>
+          <td class="t-why">Magnesium is required for thiamine activation; deficiency in one makes the other ineffective</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Winter Blues Duo</div><div class="t-combo">Vitamin D3 + Omega-3 for Mood</div></td>
+          <td class="t-audience">People with seasonal depression, low mood in winter</td>
+          <td class="t-why">Both independently support serotonin pathways; together they address mood from complementary angles</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The High-Dose Zinc Fix</div><div class="t-combo">Zinc + Copper (Balanced)</div></td>
+          <td class="t-audience">People supplementing high-dose zinc</td>
+          <td class="t-why">High zinc depletes copper. This combo prevents deficiency while delivering zinc's immune benefits</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The NAD+ Protector Stack</div><div class="t-combo">NAD+ + TMG (Trimethylglycine)</div></td>
+          <td class="t-audience">People on NAD+ supplements, aging adults</td>
+          <td class="t-why">NAD+ precursors consume methyl groups; TMG replenishes them, preventing methylation depletion</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Joint &amp; Glow Stack</div><div class="t-combo">Collagen + Vitamin C</div></td>
+          <td class="t-audience">Women 35+ concerned with skin, joints, hair</td>
+          <td class="t-why">Vitamin C is essential for collagen synthesis. Without it, collagen peptides can't be properly incorporated</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Heart &amp; Fatigue Stack</div><div class="t-combo">L-Carnitine + CoQ10</div></td>
+          <td class="t-audience">Adults 50+ with fatigue, cardiac health focus</td>
+          <td class="t-why">Carnitine shuttles fatty acids into mitochondria; CoQ10 converts them to energy there. Without carnitine doing the transport, CoQ10 has less fuel to work with</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Screen Worker Eye Stack</div><div class="t-combo">Lutein + Zeaxanthin</div></td>
+          <td class="t-audience">Remote workers, gamers, desk workers, adults 40+</td>
+          <td class="t-why">Both carotenoids concentrate in the macula synergistically to filter blue light and protect against oxidative damage, and are more protective together than separately</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Cortisol Crash Duo</div><div class="t-combo">Ashwagandha + Magnesium</div></td>
+          <td class="t-audience">Overworked professionals, people with chronic stress</td>
+          <td class="t-why">Ashwagandha lowers cortisol from the top down; magnesium supports the nervous system stress response from the bottom up. Different mechanisms, same outcome</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Allergy Relief Triple</div><div class="t-combo">Quercetin + Vitamin C + Zinc</div></td>
+          <td class="t-audience">Chronic allergy sufferers, immune-compromised adults</td>
+          <td class="t-why">All three support immune function through completely different mechanisms simultaneously. No one has bundled and branded this triple for the allergy community specifically</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Menopause Bone Stack</div><div class="t-combo">Calcium + D3 + K2 for Perimenopause</div></td>
+          <td class="t-audience">Perimenopausal women 40-55</td>
+          <td class="t-why">All three work together for bone density; this specific audience is underserved despite high need</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The PMS Relief Duo</div><div class="t-combo">Magnesium + B6 for PMS/PMDD</div></td>
+          <td class="t-audience">Women with PMS or PMDD</td>
+          <td class="t-why">Clinical trial showed Mg + B6 synergistically reduced premenstrual anxiety vs either alone</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Distance Runner Combo</div><div class="t-combo">Iron + Vitamin C for Runners</div></td>
+          <td class="t-audience">Female endurance athletes</td>
+          <td class="t-why">Runners have high iron turnover; C dramatically boosts non-heme iron absorption post-training</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Cell Protection Duo</div><div class="t-combo">Vitamin E + Selenium</div></td>
+          <td class="t-audience">Men concerned about prostate health</td>
+          <td class="t-why">Both are antioxidants that work synergistically; combined supplementation outperforms either alone</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Skin &amp; Immunity Duo</div><div class="t-combo">Zinc + Vitamin A</div></td>
+          <td class="t-audience">Acne sufferers, immune-focused adults</td>
+          <td class="t-why">Zinc is required to synthesize the protein that transports Vitamin A around the body</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Immune Firewall Duo</div><div class="t-combo">Vitamin C + Vitamin E</div></td>
+          <td class="t-audience">Smokers, high oxidative stress individuals</td>
+          <td class="t-why">C regenerates oxidized Vitamin E, restoring its antioxidant power. They recycle each other</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Hayfever Duo</div><div class="t-combo">Quercetin + Bromelain</div></td>
+          <td class="t-audience">Seasonal allergy sufferers, post-surgery recovery</td>
+          <td class="t-why">Bromelain increases quercetin absorption by up to 80%; together they provide anti-inflammatory and antihistamine effects neither delivers alone</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Allergy &amp; Immunity Duo</div><div class="t-combo">Quercetin + Vitamin C</div></td>
+          <td class="t-audience">People with chronic inflammation, frequent illness</td>
+          <td class="t-why">Vitamin C regenerates oxidized quercetin, letting it keep working as an antioxidant for extended periods. They recharge each other</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Race Day Duo</div><div class="t-combo">Beta-Alanine + Creatine</div></td>
+          <td class="t-audience">Endurance athletes, CrossFit, competitive sports</td>
+          <td class="t-why">Beta-alanine buffers lactic acid (anaerobic fatigue); creatine boosts immediate power output. They cover completely different energy systems</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Heart Age Trio</div><div class="t-combo">Vitamin B6 + B12 + Folate</div></td>
+          <td class="t-audience">Adults with heart disease risk, cognitive decline concern</td>
+          <td class="t-why">All three work together to metabolize homocysteine; elevated homocysteine is linked to heart disease and dementia. Sold as a B-complex but never branded around this specific story</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Vitamin D Activator Duo</div><div class="t-combo">Vitamin D + Magnesium</div></td>
+          <td class="t-audience">General wellness seekers</td>
+          <td class="t-why">Magnesium activates Vitamin D; without it D3 stays inactive in the body</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">Iron Boost Duo</div><div class="t-combo">Iron + Vitamin C</div></td>
+          <td class="t-audience">Women, vegetarians</td>
+          <td class="t-why">Vitamin C converts ferric iron to absorbable ferrous form, increasing absorption up to 6x</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Bone Duo</div><div class="t-combo">Vitamin D3 + K2</div></td>
+          <td class="t-audience">General bone health seekers</td>
+          <td class="t-why">D3 absorbs calcium; K2 directs it to bones instead of arteries</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Bone Trinity</div><div class="t-combo">D3 + K2 + Magnesium</div></td>
+          <td class="t-audience">Adults 40+, general health</td>
+          <td class="t-why">All three work together for bone density, calcium metabolism &amp; D3 activation</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">Thyroid Support Duo</div><div class="t-combo">Zinc + Selenium (Thyroid)</div></td>
+          <td class="t-audience">People with thyroid concerns</td>
+          <td class="t-why">Both minerals are essential cofactors for thyroid hormone synthesis and conversion</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Stress &amp; Sleep Duo</div><div class="t-combo">Magnesium + B6</div></td>
+          <td class="t-audience">Stress &amp; sleep seekers</td>
+          <td class="t-why">B6 enhances magnesium absorption and amplifies its calming effects on the nervous system</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Joint Pain Relief Duo</div><div class="t-combo">Omega-3 + Curcumin</div></td>
+          <td class="t-audience">Joint pain, active adults</td>
+          <td class="t-why">Omega-3 fats dramatically increase curcumin bioavailability; both reduce inflammatory markers</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Anti-Aging Cell Stack</div><div class="t-combo">NMN + Resveratrol</div></td>
+          <td class="t-audience">Biohackers, adults 40+</td>
+          <td class="t-why">NMN raises NAD+; resveratrol activates sirtuins that NAD+ powers. Synergistic longevity pathway</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Bone Builder</div><div class="t-combo">Calcium + Vitamin D</div></td>
+          <td class="t-audience">Women 50+, osteoporosis risk</td>
+          <td class="t-why">Vitamin D is required for calcium absorption in the gut. Without it, calcium passes through</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Vegan Energy Duo</div><div class="t-combo">B12 + Folate (B9)</div></td>
+          <td class="t-audience">Vegans, pregnant women</td>
+          <td class="t-why">Folate depends on B12 to be absorbed and metabolized; together they support cell division</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Turmeric That Actually Works</div><div class="t-combo">Turmeric + Black Pepper (Piperine)</div></td>
+          <td class="t-audience">Joint pain, inflammatory conditions</td>
+          <td class="t-why">Piperine increases curcumin bioavailability by 2,000%. Widely known and sold, but community-specific positioning (arthritis, post-workout) still has room</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Night Shift Duo</div><div class="t-combo">L-Theanine + Magnesium</div></td>
+          <td class="t-audience">Stressed professionals, coffee drinkers, poor sleepers</td>
+          <td class="t-why">Mg-L-Theanine boosts slow-brain waves, increases GABA receptors, and improves sleep latency even after caffeine. They potentiate each other's calming effect through distinct pathways.</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Quiet Mind Stack</div><div class="t-combo">GABA + L-Theanine</div></td>
+          <td class="t-audience">Insomnia sufferers, anxious adults, evening wind-down</td>
+          <td class="t-why">RCT showed GABA + L-Theanine improved sleep quality and duration more than either alone. GABA is the direct inhibitory neurotransmitter; L-Theanine amplifies GABA receptor activity.</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Deep Sleep Duo</div><div class="t-combo">Glycine + Magnesium</div></td>
+          <td class="t-audience">Adults with poor sleep quality, night wakings, restless sleep</td>
+          <td class="t-why">Glycine lowers core body temperature to trigger sleep onset; magnesium activates GABA receptors to reduce neuronal excitability. Completely different mechanisms, both clinically shown to improve sleep depth.</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Serotonin Synthesis Duo</div><div class="t-combo">5-HTP + Vitamin B6</div></td>
+          <td class="t-audience">Adults with low mood, poor sleep, appetite control issues</td>
+          <td class="t-why">5-HTP enters the brain as a direct serotonin precursor, but conversion requires B6 (as P5P) as a mandatory enzyme cofactor. Without B6, 5-HTP conversion to serotonin is incomplete. The cofactor dependency is unambiguous.</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Glutathione Restoration Duo</div><div class="t-combo">NAC + Glycine</div></td>
+          <td class="t-audience">Adults 40+, liver health, longevity focus, high oxidative stress</td>
+          <td class="t-why">Glutathione is a tripeptide requiring cysteine (from NAC) AND glycine. NAC alone is rate-limited by glycine availability. NIH trials showed GlyNAC increased glutathione by 164%, reduced oxidative damage 72%, improved muscle strength 13.6%, and raised cognitive scores 18% in 16 weeks.</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The PCOS Fertility Duo</div><div class="t-combo">Myo-Inositol + Methylfolate</div></td>
+          <td class="t-audience">Women with PCOS, insulin resistance, trying to conceive</td>
+          <td class="t-why">Myo-inositol restores insulin sensitivity and FSH signaling to improve ovulation; methylfolate supports the methylation pathway required for egg quality and embryo development. Clinically shown to improve pregnancy rates in PCOS. Neither alone is sufficient.</td>
+        </tr>
+        <tr>
+          <td><div class="t-name">The Egg Quality Stack</div><div class="t-combo">Melatonin + Myo-Inositol</div></td>
+          <td class="t-audience">Women with PCOS undergoing IVF or trying to conceive naturally</td>
+          <td class="t-why">Clinical trials showed melatonin + myo-inositol synergistically improved oocyte and embryo quality, clinical pregnancy rates, and implantation rates, outcomes neither achieved alone. Melatonin reduces follicular oxidative stress; inositol improves insulin-FSH signaling.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="no-results" id="noResults">No pairs match that search.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="index.html#pairs">All Pairs</a></li>
+        <li><a href="explorer.html">Interaction Explorer</a></li>
+        <li><a href="index.html#article">Deep Dives</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="affiliate-notice">
+    <strong style="color:rgba(255,255,255,0.4);">Affiliate disclosure:</strong> NutrientPairs participates in affiliate programs. When you click links to products and make a purchase, we may earn a small commission at no additional cost to you.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 NutrientPairs. All rights reserved.</span>
+    <span>Not medical advice. Always consult your healthcare provider.</span>
+  </div>
+</footer>
+
+<script>
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const rows = document.querySelectorAll('#tableBody tr');
+  let visible = 0;
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    if (!q || text.includes(q)) {
+      row.classList.remove('hidden');
+      visible++;
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+  document.getElementById('rowCount').textContent = q
+    ? `Showing ${visible} of 46 pairs`
+    : 'Showing 46 pairs';
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

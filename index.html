@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutrientPairs: Supplements That Work Better Together</title>
+  <meta name="description" content="Science-backed supplement pairing research. Discover which nutrients enhance each other's absorption, why the biology works, and how to take them.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nutrientpairs.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NutrientPairs: Supplements That Work Better Together">
+  <meta property="og:description" content="Science-backed supplement pairing research. Discover which nutrients enhance each other's absorption, why the biology works, and how to take them.">
+  <meta property="og:url" content="https://nutrientpairs.com/">
+  <meta property="og:site_name" content="NutrientPairs">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NutrientPairs: Supplements That Work Better Together">
+  <meta name="twitter:description" content="Science-backed supplement pairing research. Discover which nutrients enhance each other's absorption, why the biology works, and how to take them.">
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a18;
+  --paper: #f5f3ee;
+  --cream: #ede9e0;
+  --sage: #4a6741;
+  --sage-light: #6a8f60;
+  --sage-pale: #e8ede6;
+  --rust: #b85c38;
+  --muted: #7a7870;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--sage);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.hero-left {
+  padding: 6rem 4rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--sage);
+}
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--sage);
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 460px;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--sage);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--sage-light); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+.hero-stat-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.hero-stat-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.3rem;
+}
+
+.hero-right {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+.hero-card-stack {
+  position: relative;
+  width: 340px;
+  height: 440px;
+}
+.hero-card {
+  position: absolute;
+  width: 300px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+.hero-card:nth-child(1) { top: 0; left: 0; transform: rotate(-3deg); z-index: 1; }
+.hero-card:nth-child(2) { top: 60px; left: 20px; transform: rotate(1deg); z-index: 2; }
+.hero-card:nth-child(3) { top: 120px; left: 35px; z-index: 3; }
+.card-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--sage-pale);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.card-tag.rust { color: var(--rust); background: #f9ece7; }
+.card-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.card-combo {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-bottom: 0.75rem;
+}
+.card-why {
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.55;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+/* ── INSIGHT STRIP ── */
+.insight-strip {
+  background: var(--sage);
+  color: var(--white);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.insight-strip strong { font-weight: 700; }
+.insight-sep { opacity: 0.4; }
+
+/* ── SECTION COMMON ── */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--sage);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.how-item { position: relative; }
+.how-num {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.how-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.how-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── FEATURED PAIRS ── */
+.pairs-section { background: var(--cream); }
+
+
+
+.pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pair-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.pair-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.pair-card-top {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+
+
+
+.pair-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+.pair-ingredients {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.pair-card-body { padding: 1rem 1.5rem 1.25rem; }
+.pair-audience {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  font-family: var(--mono);
+}
+.pair-why {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.pair-card-footer {
+  padding: 0.75rem 1.5rem;
+  background: var(--paper);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+.pair-arrow {
+  font-size: 0.8rem;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* ── FEATURED ARTICLE ── */
+.article-section { background: var(--white); }
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.article-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.article-title {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.article-lead {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+.article-body h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.5rem 0 0.5rem;
+}
+.article-body p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+.callout {
+  background: var(--sage-pale);
+  border-left: 3px solid var(--sage);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 2px 2px 0;
+}
+.callout p {
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+.product-rec {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.rec-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.5rem;
+}
+.rec-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.rec-dose {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-bottom: 1rem;
+}
+.rec-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+.rec-link:hover { opacity: 0.7; }
+.article-sidebar { position: sticky; top: 80px; }
+.sidebar-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.sidebar-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s;
+}
+.sidebar-item:last-child { border-bottom: none; }
+.sidebar-item:hover { opacity: 0.7; }
+.sidebar-item-name {
+  font-size: 0.82rem;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.toc { list-style: none; }
+.toc li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.toc li:last-child { border-bottom: none; }
+.toc a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  font-weight: 300;
+}
+.toc a:hover { color: var(--sage); }
+
+/* ── EMAIL CAPTURE ── */
+.email-section {
+  background: var(--ink);
+  color: var(--white);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.email-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  margin-bottom: 1rem;
+}
+.email-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.email-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.email-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.email-input {
+  flex: 1;
+  padding: 0.9rem 1.25rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: var(--sans);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-input::placeholder { color: rgba(255,255,255,0.35); }
+.email-input:focus { border-color: rgba(255,255,255,0.4); }
+.email-btn {
+  padding: 0.9rem 1.5rem;
+  background: var(--sage);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.email-btn:hover { background: var(--sage-light); }
+.email-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 1rem;
+}
+
+/* ── ALL PAIRS TABLE ── */
+.table-section { background: var(--paper); }
+.pairs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 0.88rem;
+}
+.pairs-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  background: var(--cream);
+}
+.pairs-table td {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.pairs-table tr:hover td { background: var(--cream); }
+.pairs-table tr:last-child td { border-bottom: none; }
+.t-name { font-weight: 500; color: var(--ink); font-family: var(--serif); }
+.t-combo { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.t-why { font-size: 0.82rem; color: var(--muted); font-weight: 300; }
+.t-audience { font-size: 0.78rem; color: var(--muted); }
+
+
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+.affiliate-notice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * {
+  animation: fadeUp 0.6s ease both;
+}
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+.hero-card:nth-child(1) { animation: fadeUp 0.6s ease 0.3s both; }
+.hero-card:nth-child(2) { animation: fadeUp 0.6s ease 0.45s both; }
+.hero-card:nth-child(3) { animation: fadeUp 0.6s ease 0.6s both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 4rem 2rem; min-height: 80vh; }
+  .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .pairs-grid { grid-template-columns: 1fr 1fr; }
+  .article-layout { grid-template-columns: 1fr; }
+  .article-sidebar { position: static; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .pairs-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .email-form { flex-direction: column; }
+  .hero-stat-row { gap: 1.5rem; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Nutrient<span>Pairs</span></a>
+  <ul class="nav-links">
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="#article">Deep Dives</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#email" class="nav-cta">Free Guide →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Science-backed supplement pairing</div>
+    <h1 class="hero-headline">Your supplements<br>work better<br><em>together.</em></h1>
+    <p class="hero-sub">Most people take vitamins in isolation. Science says that's wrong. We map the pairs that science proves are more powerful together, and explain exactly why.</p>
+    <div class="hero-actions">
+      <a href="#pairs" class="btn-primary">Browse All Pairs</a>
+      <a href="#article" class="btn-ghost">Read the science</a>
+    </div>
+    <div class="hero-stat-row">
+      <div>
+        <div class="hero-stat-num">46</div>
+        <div class="hero-stat-label">Researched pairs</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">18</div>
+        <div class="hero-stat-label">Science-backed pairs</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3×</div>
+        <div class="hero-stat-label">Avg absorption boost</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card-stack">
+      <div class="hero-card">
+        <span class="card-tag">Runners</span>
+        <div class="card-name">The Distance Runner Combo</div>
+        <div class="card-combo">Iron + Vitamin C</div>
+        <div class="card-why">Vitamin C increases non-heme iron absorption by up to 3×. Most runners are iron deficient. Nobody's connecting these dots.</div>
+      </div>
+      <div class="hero-card">
+        <span class="card-tag">Screen workers</span>
+        <div class="card-name">The Screen Worker Eye Stack</div>
+        <div class="card-combo">Lutein + Zeaxanthin</div>
+        <div class="card-why">Both carotenoids filter blue light synergistically. Every eye supplement markets to seniors. Nobody speaks to the 50M+ remote workers.</div>
+      </div>
+      <div class="hero-card">
+        <span class="card-tag rust">Most people</span>
+        <div class="card-name">The Vitamin D Activator Duo</div>
+        <div class="card-combo">Vitamin D3 + Magnesium</div>
+        <div class="card-why">Magnesium is required to activate Vitamin D. Without it, your D3 supplement does almost nothing. Almost nobody knows this.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHT STRIP -->
+<div class="insight-strip">
+  <div><strong>Did you know?</strong> Magnesium activates Vitamin D. Without it, D3 sits inactive in your body.</div>
+  <div class="insight-sep">|</div>
+  <div><strong>Iron fact:</strong> Vitamin C increases non-heme iron absorption by up to 6×.</div>
+  <div class="insight-sep">|</div>
+  <div><strong>Collagen truth:</strong> Without Vitamin C, your body can't synthesize collagen peptides.</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">The supplement industry sells<br>single ingredients. Science disagrees.</h2>
+    <p class="section-sub">Nutrients don't work in isolation. They activate each other, enhance absorption, and fill in each other's gaps. We map those relationships.</p>
+    <div class="how-grid">
+      <div class="how-item">
+        <div class="how-num">01</div>
+        <div class="how-title">We identify the pairs</div>
+        <div class="how-text">Our research team maps every well-documented synergistic nutrient relationship: absorption enhancers, cofactors, and compounds that work through complementary biological pathways.</div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">02</div>
+        <div class="how-title">We explain the science</div>
+        <div class="how-text">Every pair gets a deep-dive article explaining the mechanism in plain English. No jargon, no supplement marketing copy. Just the actual biochemistry translated for real people.</div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">03</div>
+        <div class="how-title">We find the best products</div>
+        <div class="how-text">We research and link to the highest quality, best-value supplements for each ingredient in every pair. No sponsored placements. Just honest picks based on form, dose, and third-party testing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PAIRS -->
+<section class="pairs-section" id="pairs">
+  <div class="section-inner">
+    <div class="section-label">The library</div>
+    <h2 class="section-title">46 researched pairs,<br>organized by who they're for.</h2>
+    <p class="section-sub">Every pair below is backed by clinical research. Every pair is backed by clinical research. Browse by what's relevant to you.</p>
+    <div class="pairs-grid" id="pairsGrid">
+
+      <!-- UNDERSERVED -->
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Distance Runner Combo</div>
+          <div class="pair-ingredients">Iron Bisglycinate + Vitamin C</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Distance runners</div>
+          <div class="pair-why">Runners lose iron through foot-strike hemolysis. Vitamin C triples non-heme iron absorption. No brand speaks to athletes about this.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Joint & Glow Stack</div>
+          <div class="pair-ingredients">Collagen Peptides + Vitamin C</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Women 35+ (skin, joints, hair)</div>
+          <div class="pair-why">Vitamin C is required for collagen synthesis. Without it, collagen peptides can't be properly incorporated. Millions take collagen alone.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Blood Sugar Duo</div>
+          <div class="pair-ingredients">Berberine + Chromium</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Prediabetics, low-carb dieters</div>
+          <div class="pair-why">Chromium enhances insulin sensitivity and amplifies berberine's glucose regulation, making them significantly more potent together than either alone.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Screen Worker Eye Stack</div>
+          <div class="pair-ingredients">Lutein + Zeaxanthin</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Remote workers, gamers, desk workers</div>
+          <div class="pair-why">Both carotenoids concentrate in the macula synergistically to filter blue light. All existing products target seniors. 50M+ screen workers are ignored.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Cortisol Crash Duo</div>
+          <div class="pair-ingredients">Ashwagandha + Magnesium</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Overworked professionals, chronic stress</div>
+          <div class="pair-why">Ashwagandha lowers cortisol from the top down; magnesium supports the nervous system from the bottom up. Different mechanisms, same outcome.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Bloat & Digestion Stack</div>
+          <div class="pair-ingredients">Prebiotic + Probiotic</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: IBS sufferers, antibiotic recovery</div>
+          <div class="pair-why">Prebiotics feed probiotics. Without them, probiotics pass through with minimal colonization benefit. Most people take probiotics alone.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The All-Day Energy Stack</div>
+          <div class="pair-ingredients">CoQ10 + PQQ</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Adults 45+ with fatigue, biohackers</div>
+          <div class="pair-why">CoQ10 optimizes existing mitochondria. PQQ is the only nutrient shown to grow new mitochondria. Together they work from two sides of the same problem.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Sluggish Thyroid Triple</div>
+          <div class="pair-ingredients">Iodine + Selenium + Iron</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Women with Hashimoto's or hypothyroid</div>
+          <div class="pair-why">Iron activates thyroid peroxidase; selenium converts T4→T3; iodine is the raw material. All three are required. Most thyroid supplements address only one.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Gene Variant Energy Duo</div>
+          <div class="pair-ingredients">Methylcobalamin B12 + Methylfolate</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: People with MTHFR gene variant (~40% of population)</div>
+          <div class="pair-why">MTHFR variants can't convert synthetic folic acid. Only methylated forms work. 40% of the population is affected and almost none know it.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <!-- OPPORTUNITY -->
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Menopause Bone Stack</div>
+          <div class="pair-ingredients">Calcium + D3 + K2</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Perimenopausal women 40–55</div>
+          <div class="pair-why">All three work together for bone density. D3 absorbs calcium; K2 directs it to bones instead of arteries. This specific audience has high need and few products built for them specifically.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The PMS Relief Duo</div>
+          <div class="pair-ingredients">Magnesium + Vitamin B6</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Women with PMS or PMDD</div>
+          <div class="pair-why">Clinical trial showed Mg + B6 synergistically reduced premenstrual anxiety symptoms versus either alone. Proven combination, underutilized positioning.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Hayfever Duo</div>
+          <div class="pair-ingredients">Quercetin + Bromelain</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Seasonal allergy sufferers</div>
+          <div class="pair-why">Bromelain increases quercetin absorption by up to 80%. Together they provide anti-inflammatory and antihistamine effects neither delivers alone.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <!-- SATURATED -->
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Vitamin D Activator Duo</div>
+          <div class="pair-ingredients">Vitamin D3 + Magnesium</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: General wellness</div>
+          <div class="pair-why">Magnesium is required to activate Vitamin D. Widely known combination with many established products. Competitive but high consumer awareness.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Turmeric That Actually Works</div>
+          <div class="pair-ingredients">Turmeric + Black Pepper (Piperine)</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Joint pain, inflammatory conditions</div>
+          <div class="pair-why">Piperine increases curcumin bioavailability by 2,000%. Widely known and widely sold. Competitive market but the science story is still undertold.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Bone Trinity</div>
+          <div class="pair-ingredients">D3 + K2 + Magnesium</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Bone health, osteoporosis prevention</div>
+          <div class="pair-why">All three required for optimal calcium metabolism. Heavily marketed combination with multiple established brands competing in this space.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Night Shift Duo</div>
+          <div class="pair-ingredients">L-Theanine + Magnesium</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Stressed professionals, coffee drinkers</div>
+          <div class="pair-why">Mg-L-Theanine boosts slow-brain waves and increases GABA receptors, improving sleep latency even after caffeine. Two distinct calming pathways working together.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Quiet Mind Stack</div>
+          <div class="pair-ingredients">GABA + L-Theanine</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Insomnia, evening wind-down, anxious adults</div>
+          <div class="pair-why">RCT showed GABA + L-Theanine improved sleep quality and duration more than either alone. GABA is the direct inhibitory neurotransmitter; L-Theanine amplifies its receptor activity.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Deep Sleep Duo</div>
+          <div class="pair-ingredients">Glycine + Magnesium</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Poor sleep quality, night wakings, restless sleep</div>
+          <div class="pair-why">Glycine lowers core body temperature to trigger sleep onset; magnesium activates GABA receptors to reduce neuronal excitability. Completely different mechanisms, both clinically shown to improve sleep depth.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Serotonin Synthesis Duo</div>
+          <div class="pair-ingredients">5-HTP + Vitamin B6</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Low mood, poor sleep, appetite control</div>
+          <div class="pair-why">5-HTP is a direct serotonin precursor, but conversion requires B6 (as P5P) as a mandatory enzyme cofactor. Without B6, 5-HTP conversion to serotonin is incomplete. Unambiguous cofactor dependency.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Glutathione Restoration Duo</div>
+          <div class="pair-ingredients">NAC + Glycine</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Adults 40+, liver health, longevity, high oxidative stress</div>
+          <div class="pair-why">Glutathione requires both cysteine (from NAC) and glycine. NAC alone is rate-limited by glycine availability. NIH trials: GlyNAC increased glutathione 164%, reduced oxidative damage 72% in 16 weeks.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The PCOS Fertility Duo</div>
+          <div class="pair-ingredients">Myo-Inositol + Methylfolate</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Women with PCOS, insulin resistance, trying to conceive</div>
+          <div class="pair-why">Myo-inositol restores insulin sensitivity and FSH signaling; methylfolate supports the methylation pathway for egg quality. Clinically shown to improve pregnancy rates in PCOS. Neither alone is sufficient.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+      <a class="pair-card" href="#">
+        <div class="pair-card-top">
+          <div class="pair-name">The Egg Quality Stack</div>
+          <div class="pair-ingredients">Melatonin + Myo-Inositol</div>
+        </div>
+        <div class="pair-card-body">
+          <div class="pair-audience">For: Women with PCOS undergoing IVF or trying to conceive</div>
+          <div class="pair-why">Clinical trials showed the combination synergistically improved oocyte quality, embryo quality, and implantation rates. Neither achieved these outcomes alone. Melatonin reduces follicular oxidative stress; inositol improves insulin-FSH signaling.</div>
+        </div>
+        <div class="pair-card-footer">
+          <span class="pair-arrow">Read more →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+<section class="article-section" id="article">
+  <div class="section-inner">
+    <div class="section-label">Featured deep dive</div>
+    <div class="article-layout">
+      <div class="article-content">
+        <div class="article-meta">Iron + Vitamin C · Distance Runners · 8 min read</div>
+        <h2 class="article-title">Why every distance runner needs Vitamin C with their iron, and almost none take it</h2>
+        <p class="article-lead">Iron deficiency is the most common nutritional deficiency in distance runners. The fix isn't more iron. It's understanding why the iron you're already taking isn't getting through.</p>
+        <div class="article-body">
+          <h3>The problem most runners don't know they have</h3>
+          <p>If your long runs feel harder than they should, if you're hitting the wall earlier than your training suggests you should, if you feel fine at rest but inexplicably exhausted under load. There's a good chance your ferritin is low.</p>
+          <p>Ferritin is your iron storage protein. When it drops, your muscles receive less oxygen, your energy production falters, and your perceived effort climbs. You can be non-anaemic with completely normal hemoglobin and still have ferritin low enough to tank your performance.</p>
+          <p>Distance runners are uniquely vulnerable. <strong>Foot-strike hemolysis</strong>, the destruction of red blood cells caused by the repetitive impact of running, depletes iron with every mile. Female runners compound this with monthly blood loss from menstruation. Plant-forward runners add a third layer: their iron sources are non-heme, the form the body absorbs at a fraction of the efficiency of heme iron from meat.</p>
+
+          <div class="callout">
+            <p><strong>The number that matters:</strong> Sports scientists recommend distance runners maintain ferritin above 50 ng/mL for optimal performance. Most lab reference ranges flag deficiency below 12 ng/mL. You can be at 20, feel exhausted, and your doctor will tell you your iron is "normal."</p>
+          </div>
+
+          <h3>Where Vitamin C enters, and why it changes everything</h3>
+          <p>Non-heme iron, the kind in plant foods, iron supplements, and fortified foods, absorbs at roughly 2–10% under normal conditions. That means if you take a 20mg iron supplement, your body might actually use 1–2mg of it.</p>
+          <p>Add Vitamin C at the same time, and that absorption rate jumps to 6–30%. The mechanism is straightforward: Vitamin C converts ferric iron (Fe³⁺) into ferrous iron (Fe²⁺), the only form your intestinal cells can absorb through standard transporters. It also chelates iron to keep it soluble in the alkaline environment of the small intestine, preventing it from forming insoluble compounds that pass through unabsorbed.</p>
+          <p>The practical result: <strong>taking your iron with 100mg of Vitamin C can triple what actually makes it into your bloodstream.</strong> You don't need more iron. You need to absorb the iron you're already taking.</p>
+
+          <h3>What to actually take</h3>
+          <p>Form matters enormously with iron. Ferrous sulfate, the form in most drugstore iron supplements, absorbs reasonably well but causes significant GI distress in many people. Carbonyl iron is gentler but absorbs slowly. <strong>Iron bisglycinate</strong> is the gold standard for runners: the iron molecule is chelated to two glycine amino acids, allowing it to bypass some of the absorption inhibitors that block other forms and causing dramatically less constipation and nausea.</p>
+
+          <div class="product-rec">
+            <div class="rec-label">Recommended for runners</div>
+            <div class="rec-title">Iron Bisglycinate 20mg + Vitamin C 100mg</div>
+            <div class="rec-dose">Every other day · 60 capsules = 120-day supply</div>
+            <p style="font-size:0.8rem;color:#7a7870;margin-bottom:0.75rem;font-weight:300;">Every-other-day dosing is now backed by research showing higher absorption than daily dosing. The body's hepcidin response resets overnight, allowing better uptake on alternating days.</p>
+            <a href="#" class="rec-link">View on Amazon →</a>
+          </div>
+
+          <h3>What to avoid when taking iron</h3>
+          <p>Coffee and tea contain tannins that <strong>block up to 60% of iron absorption</strong>. Take your iron at least an hour away from your morning coffee. Calcium competes with iron for the same absorption receptors. Don't take iron with dairy or a calcium supplement. Take it with food to reduce GI effects, but ideally a meal without these inhibitors.</p>
+          <p>Timing note: hepcidin, the hormone that regulates iron absorption, is least active in the morning. Take your iron first thing or before your morning run for best results.</p>
+        </div>
+      </div>
+
+      <div class="article-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Table of contents</div>
+          <ul class="toc">
+            <li><a href="#">The problem most runners don't know</a></li>
+            <li><a href="#">Where Vitamin C enters</a></li>
+            <li><a href="#">What to actually take</a></li>
+            <li><a href="#">What to avoid</a></li>
+            <li><a href="#">Getting your ferritin tested</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">More runner pairs</div>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">The Race Day Duo<br><small style="color:#7a7870;font-weight:300;">Beta-Alanine + Creatine</small></span>
+          </a>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">The No-Sun Mood Duo<br><small style="color:#7a7870;font-weight:300;">Omega-3 + Vitamin D3</small></span>
+          </a>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">The Cortisol Crash Duo<br><small style="color:#7a7870;font-weight:300;">Ashwagandha + Magnesium</small></span>
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Quick facts</div>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">Iron absorption without C</span>
+          </a>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">Iron absorption with C</span>
+          </a>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">Optimal ferritin for runners</span>
+          </a>
+          <a class="sidebar-item" href="#">
+            <span class="sidebar-item-name">Best iron form for athletes</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-section" id="email">
+  <div class="email-eyebrow">Free guide</div>
+  <h2 class="email-title">The 10 pairs most people<br>are getting wrong.</h2>
+  <p class="email-sub">We'll send you our most important nutrient pairings: the ones with the biggest gap between how widely known they are and how often people actually take them together.</p>
+  <form class="email-form" onsubmit="return false;">
+    <input type="email" class="email-input" placeholder="your@email.com">
+    <button type="submit" class="email-btn">Get the guide</button>
+  </form>
+  <p class="email-note">No spam. Unsubscribe any time. One email per week maximum.</p>
+</section>
+
+<!-- ALL PAIRS TEASER -->
+<section class="table-section" id="all-pairs">
+  <div class="section-inner">
+    <div class="section-label">Complete reference</div>
+    <h2 class="section-title">All 46 pairs at a glance.</h2>
+    <p class="section-sub">The full library of every researched synergistic pair, searchable by name, ingredient, or condition.</p>
+    <a href="all-pairs.html" class="btn-primary" style="display:inline-block;margin-top:0.5rem;">Browse all 46 pairs →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--white);padding:6rem 2rem;">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Why NutrientPairs exists.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2rem;">
+      <div>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.25rem;">The supplement industry sells single ingredients. Science says that's not the whole story. Most nutrients have cofactors, absorption enhancers, or complementary mechanisms that make them dramatically more effective when taken with the right partner.</p>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.25rem;">NutrientPairs maps those relationships. Every pair in our library is backed by published research. We explain the mechanism in plain English, tell you who it's actually for, and show you the best way to take them.</p>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.8;font-weight:300;">We're not a supplement brand. We don't make products. We do participate in affiliate programs. When you click a product link and buy, we may earn a small commission at no cost to you. That never influences what we recommend.</p>
+      </div>
+      <div>
+        <div style="background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:1.75rem;">
+          <div style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">The library at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;justify-content:space-between;padding-bottom:0.75rem;border-bottom:1px solid var(--border);">
+              <span style="font-size:0.88rem;color:var(--muted);">Researched pairs</span>
+              <span style="font-family:var(--serif);font-weight:700;font-size:1rem;">46</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-bottom:0.75rem;border-bottom:1px solid var(--border);">
+              <span style="font-size:0.88rem;color:var(--muted);">Supplements covered</span>
+              <span style="font-family:var(--serif);font-weight:700;font-size:1rem;">60+</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-bottom:0.75rem;border-bottom:1px solid var(--border);">
+              <span style="font-size:0.88rem;color:var(--muted);">Health categories</span>
+              <span style="font-family:var(--serif);font-weight:700;font-size:1rem;">12</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:0.88rem;color:var(--muted);">Evidence strength rated</span>
+              <span style="font-family:var(--serif);font-weight:700;font-size:1rem;">Every pair</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;padding:1rem 1.25rem;background:var(--sage-pale);border-left:3px solid var(--sage);border-radius:0 3px 3px 0;">
+          <p style="font-size:0.85rem;color:var(--ink);line-height:1.65;margin:0;"><strong>Not medical advice.</strong> NutrientPairs is an educational resource. Always consult your healthcare provider before starting any supplement regimen, especially if you take medications or have a medical condition.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research. We explain which nutrients work better together, why the biology works, and how to find the best products for each combination.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="#">All Pairs</a></li>
+        <li><a href="#">By Audience</a></li>
+        <li><a href="#">Deep Dives</a></li>
+        <li><a href="#">Cost Guide</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Audiences</div>
+      <ul class="footer-links">
+        <li><a href="#">Runners</a></li>
+        <li><a href="#">Screen Workers</a></li>
+        <li><a href="#">Women 35+</a></li>
+        <li><a href="#">Over 40</a></li>
+        <li><a href="#">Vegans</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="#">Our methodology</a></li>
+        <li><a href="#">Research sources</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="affiliate-notice">
+    <strong style="color:rgba(255,255,255,0.4);">Affiliate disclosure:</strong> NutrientPairs participates in the Amazon Associates program and other affiliate programs. When you click links to products and make a purchase, we may earn a small commission at no additional cost to you. This never influences our research or recommendations. We only link to products we would genuinely recommend based on form, dose, and third-party testing quality.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 NutrientPairs. All rights reserved.</span>
+    <span>Not medical advice. Always consult your healthcare provider.</span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.pair-card, .how-item, .sidebar-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

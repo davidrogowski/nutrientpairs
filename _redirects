@@ -1,0 +1,3 @@
+# Netlify redirects
+/pairs    /all-pairs.html   301
+/reference  /all-pairs.html   301

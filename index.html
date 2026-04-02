@@ -350,7 +350,8 @@ section { padding: 6rem 2rem; }
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
   flex: 0 0 300px;
   width: 300px;
 }
@@ -380,7 +381,7 @@ section { padding: 6rem 2rem; }
   color: var(--muted);
   letter-spacing: 0.02em;
 }
-.pair-card-body { padding: 1rem 1.5rem 1.25rem; }
+.pair-card-body { padding: 1rem 1.5rem 1.25rem; flex: 1; }
 .pair-audience {
   font-size: 0.78rem;
   font-weight: 500;
@@ -769,20 +770,6 @@ footer {
     <div class="hero-actions">
       <a href="#pairs" class="btn-primary">Browse All Pairs</a>
       <a href="deep-dives.html" class="btn-ghost">Read the science</a>
-    </div>
-    <div class="hero-stat-row">
-      <div>
-        <div class="hero-stat-num">46</div>
-        <div class="hero-stat-label">Researched pairs</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">18</div>
-        <div class="hero-stat-label">Science-backed pairs</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">3×</div>
-        <div class="hero-stat-label">Avg absorption boost</div>
-      </div>
     </div>
   </div>
   <div class="hero-right">
@@ -1184,9 +1171,9 @@ footer {
 <section class="table-section" id="all-pairs">
   <div class="section-inner">
     <div class="section-label">Complete reference</div>
-    <h2 class="section-title">All 46 pairs at a glance.</h2>
+    <h2 class="section-title">All pairs at a glance.</h2>
     <p class="section-sub">The full library of every researched synergistic pair, searchable by name, ingredient, or condition.</p>
-    <a href="all-pairs.html" class="btn-primary" style="display:inline-block;margin-top:0.5rem;">Browse all 46 pairs →</a>
+    <a href="all-pairs.html" class="btn-primary" style="display:inline-block;margin-top:0.5rem;">Browse all pairs →</a>
   </div>
 </section>
 

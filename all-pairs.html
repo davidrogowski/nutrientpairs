@@ -290,10 +290,10 @@ section { padding: 6rem 2rem; }
 .section-sub {
   font-size: 1rem;
   color: var(--muted);
-  max-width: 600px;
   line-height: 1.7;
   font-weight: 300;
   margin-bottom: 3rem;
+  white-space: nowrap;
 }
 
 /* ── HOW IT WORKS ── */
@@ -862,14 +862,12 @@ footer {
 <div style="max-width:1200px;margin:0 auto;padding:3.5rem 2rem 5rem;">
 
   <div style="margin-bottom:2.5rem;">
-    <div class="section-label">Complete reference</div>
-    <h1 class="section-title">All 46 pairs at a glance.</h1>
+    <h1 class="section-title">All pairs at a glance.</h1>
     <p class="section-sub">Every researched synergistic supplement pair. Search by name, ingredient, or condition.</p>
   </div>
 
   <div class="ref-search-bar">
     <input class="ref-search" id="searchInput" type="text" placeholder="Search by name, ingredient, or condition…" oninput="filterTable()">
-    <span class="ref-count" id="rowCount">Showing 46 pairs</span>
   </div>
 
   <div class="table-scroll-wrap">
@@ -1160,8 +1158,8 @@ function filterTable() {
     }
   });
   document.getElementById('rowCount').textContent = q
-    ? `Showing ${visible} of 46 pairs`
-    : 'Showing 46 pairs';
+    ? `Showing ${visible} pairs`
+    : 'Showing all pairs';
   document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
 }
 </script>

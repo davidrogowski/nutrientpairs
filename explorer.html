@@ -43,18 +43,29 @@ body { background: var(--paper); color: var(--ink); font-family: var(--sans); fo
 
 /* NAV */
 nav {
+  position: sticky; top: 0; z-index: 100;
   background: var(--paper); border-bottom: 1px solid var(--border);
   padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
 }
-.nav-logo { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+.nav-logo { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
 .nav-logo span { color: var(--sage); }
-.nav-back { font-size: 0.82rem; color: var(--muted); text-decoration: none; font-weight: 400; transition: color 0.2s; }
-.nav-back:hover { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; font-weight: 500; color: var(--muted);
+  text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem; font-weight: 500; background: var(--sage); color: var(--white);
+  padding: 0.5rem 1.2rem; border-radius: 2px; text-decoration: none;
+  letter-spacing: 0.03em; transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+@media (max-width: 900px) { .nav-links { display: none; } }
 
 /* PAGE HEADER */
 .page-header { padding: 3.5rem 2rem 2rem; max-width: 900px; margin: 0 auto; }
-.page-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem; }
-.page-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--sage); }
+.page-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
 .page-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.75rem; }
 .page-sub { font-size: 1rem; color: var(--muted); font-weight: 300; max-width: 560px; line-height: 1.65; }
 
@@ -211,14 +222,13 @@ nav {
   <ul class="nav-links">
     <li><a href="all-pairs.html">All Pairs</a></li>
     <li><a href="explorer.html">Explorer</a></li>
-    <li><a href="index.html#article">Deep Dives</a></li>
+    <li><a href="deep-dives.html">Deep Dives</a></li>
     <li><a href="index.html#about">About</a></li>
   </ul>
   <a href="index.html#email" class="nav-cta">Free Guide →</a>
 </nav>
 
 <div class="page-header">
-  <div class="page-eyebrow">Interactive tool</div>
   <h1 class="page-title">Supplement Interaction Explorer</h1>
   <p class="page-sub">Select any two supplements to see how they interact, whether they enhance each other, compete, or have no known relationship. Timing guidance included.</p>
 </div>

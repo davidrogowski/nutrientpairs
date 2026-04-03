@@ -957,13 +957,15 @@ footer {
 .t-ref {
   display: block;
   font-size: 0.74rem;
-  color: var(--muted);
-  text-decoration: none;
+  color: var(--sage);
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 103, 65, 0.3);
+  text-underline-offset: 2px;
   line-height: 1.45;
   margin-bottom: 0.5rem;
   padding-left: 1.1rem;
   position: relative;
-  transition: color 0.15s;
+  transition: color 0.15s, text-decoration-color 0.15s;
   font-weight: 300;
 }
 .t-ref::before {
@@ -978,7 +980,7 @@ footer {
   font-weight: 500;
   line-height: 1.65;
 }
-.t-ref:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+.t-ref:hover { color: var(--sage-light); text-decoration-color: var(--sage-light); }
 .t-ref:last-child { margin-bottom: 0; }
 </style>
 </head>
@@ -1027,7 +1029,7 @@ footer {
           <th style="width:240px;">Pair name</th>
           <th style="width:175px;">Target audience</th>
           <th>Why it works</th>
-          <th style="width:220px;">Research</th>
+          <th style="width:300px;">Research</th>
         </tr>
       </thead>
       <tbody id="tableBody">

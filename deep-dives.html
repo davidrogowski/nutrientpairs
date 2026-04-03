@@ -276,17 +276,6 @@ footer {
   line-height: 1.6;
 }
 
-@media (max-width: 900px) {
-  .dives-grid { grid-template-columns: 1fr 1fr; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-}
-@media (max-width: 600px) {
-  .dives-grid { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; }
-}
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -329,6 +318,26 @@ footer {
 }
 .nav-mobile ul li:last-child a { border-bottom: none; }
 .nav-mobile ul li a:hover { color: var(--sage); }
+
+@media (max-width: 900px) {
+  .dives-grid { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .dives-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .page-header { padding: 2.5rem 1.25rem 2rem; }
+  .page-title { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .page-sub { font-size: 0.9rem; }
+  .dives-section { padding: 2.5rem 1.25rem 3rem; }
+  .dive-card-top { padding: 1rem 1rem 0.75rem; }
+  .dive-card-body { padding: 0.75rem 1rem; }
+  .dive-card-footer { padding: 0.6rem 1rem; }
+  footer { padding: 2.5rem 1.25rem; }
+}
 </style>
 </head>
 <body>

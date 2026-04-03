@@ -330,17 +330,6 @@ footer {
   line-height: 1.6;
 }
 
-@media (max-width: 900px) {
-  .article-layout { grid-template-columns: 1fr; }
-  .article-sidebar { position: static; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-}
-@media (max-width: 600px) {
-  .footer-inner { grid-template-columns: 1fr; }
-}
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -383,6 +372,28 @@ footer {
 }
 .nav-mobile ul li:last-child a { border-bottom: none; }
 .nav-mobile ul li a:hover { color: var(--sage); }
+
+@media (max-width: 900px) {
+  .article-layout { grid-template-columns: 1fr; }
+  .article-sidebar { position: static; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .page-header { padding: 2rem 1.25rem 0; }
+  .page-title { font-size: clamp(1.3rem, 5vw, 2rem); }
+  .article-lead { font-size: 0.95rem; padding-bottom: 1.75rem; }
+  .article-section { padding: 2rem 1.25rem 3rem; }
+  .sidebar-card { padding: 1.25rem 1rem; margin-bottom: 1rem; }
+  .article-body h3 { margin: 1.5rem 0 0.5rem; }
+  .product-rec { padding: 1rem 1.25rem; }
+  .back-link { margin-bottom: 1.25rem; }
+  footer { padding: 2.5rem 1.25rem; }
+  .breadcrumb { padding: 1rem 1.25rem 0; }
+}
 </style>
 </head>
 <body>

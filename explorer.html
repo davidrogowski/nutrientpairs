@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Supplement Interaction Explorer: NutrientPairs</title>
-  <meta name="description" content="Select any two supplements to instantly see how they interact, the science behind it, and the best way to take them together.">
+<title>Find Your Stack — NutrientPairs</title>
+  <meta name="description" content="Answer 8 quick questions and get a personalized supplement stack based on your age, lifestyle, and health goals.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nutrientpairs.com/explorer.html">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Supplement Interaction Explorer: NutrientPairs">
-  <meta property="og:description" content="Select any two supplements to instantly see how they interact, the science behind it, and the best way to take them together.">
+  <meta property="og:title" content="Find Your Stack — NutrientPairs">
+  <meta property="og:description" content="Answer 8 quick questions and get a personalized supplement stack based on your age, lifestyle, and health goals.">
   <meta property="og:url" content="https://nutrientpairs.com/explorer.html">
   <meta property="og:site_name" content="NutrientPairs">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Supplement Interaction Explorer: NutrientPairs">
-  <meta name="twitter:description" content="Select any two supplements to instantly see how they interact, the science behind it, and the best way to take them together.">
+  <meta name="twitter:title" content="Find Your Stack — NutrientPairs">
+  <meta name="twitter:description" content="Answer 8 quick questions and get a personalized supplement stack based on your age, lifestyle, and health goals.">
   <!-- Favicon placeholder -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -270,6 +270,116 @@ nav {
   footer { padding: 2.5rem 1.25rem; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
 }
+
+/* ── QUIZ STYLES ── */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+.quiz-shell { min-height: calc(100vh - 60px); display: flex; flex-direction: column; }
+.intro-screen { flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 1.5rem; }
+.intro-card { max-width: 600px; width: 100%; text-align: center; }
+.intro-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.25rem; }
+.intro-headline { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem; }
+.intro-headline em { font-style: italic; color: var(--sage); }
+.intro-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.7; font-weight: 300; max-width: 480px; margin: 0 auto 2.5rem; }
+.intro-stats { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.intro-stat { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--cream); border: 1px solid var(--border); border-radius: 20px; padding: 0.35rem 0.9rem; }
+.intro-stat span { color: var(--sage); font-weight: 500; }
+.btn-start { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--sage); color: var(--white); padding: 1rem 2.5rem; border-radius: 3px; border: none; font-family: var(--sans); font-size: 1rem; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+.btn-start:hover { background: var(--sage-light); transform: translateY(-1px); }
+.intro-note { margin-top: 1.25rem; font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+.quiz-screen { flex: 1; display: flex; flex-direction: column; }
+.quiz-top { background: var(--white); border-bottom: 1px solid var(--border); padding: 0.85rem 2rem; display: flex; align-items: center; gap: 1.25rem; }
+.progress-track { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.4s ease; }
+.progress-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.quiz-stage { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 3rem 1.5rem 1.5rem; overflow-y: auto; }
+.question-card { max-width: 640px; width: 100%; animation: qFadeUp 0.3s ease both; }
+@keyframes qFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.q-step-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+.q-text { font-family: var(--serif); font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 0.6rem; }
+.q-note { font-size: 0.88rem; color: var(--muted); font-weight: 300; margin-bottom: 2rem; line-height: 1.55; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.option-card { display: flex; align-items: flex-start; gap: 0.85rem; padding: 1rem 1.1rem; background: var(--white); border: 1.5px solid var(--border); border-radius: 5px; cursor: pointer; transition: border-color 0.15s, background 0.15s; text-align: left; font-family: var(--sans); -webkit-user-select: none; user-select: none; }
+.option-card:hover { border-color: var(--sage); background: var(--sage-pale); }
+.option-card.selected { border-color: var(--sage); background: var(--sage-pale); }
+.option-card.selected .opt-check { background: var(--sage); border-color: var(--sage); }
+.option-card.selected .opt-check::after { opacity: 1; }
+.opt-check { flex-shrink: 0; width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid var(--border); background: var(--paper); margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; position: relative; }
+.opt-check::after { content: ''; display: block; width: 5px; height: 9px; border-right: 2px solid var(--white); border-bottom: 2px solid var(--white); transform: rotate(42deg) translateY(-1px); opacity: 0; transition: opacity 0.1s; }
+.opt-radio { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--border); background: var(--paper); margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+.option-card.selected .opt-radio { border-color: var(--sage); }
+.option-card.selected .opt-radio::after { opacity: 1; }
+.opt-radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); opacity: 0; transition: opacity 0.1s; }
+.opt-content { flex: 1; }
+.opt-label { font-size: 0.92rem; font-weight: 500; color: var(--ink); line-height: 1.4; display: block; }
+.opt-sublabel { font-size: 0.78rem; color: var(--muted); font-weight: 300; margin-top: 0.2rem; line-height: 1.4; }
+.opt-exclusive .opt-label { color: var(--muted); }
+.quiz-nav { background: var(--white); border-top: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.btn-back { background: none; border: none; font-family: var(--sans); font-size: 0.88rem; font-weight: 500; color: var(--muted); cursor: pointer; padding: 0.5rem 0; transition: color 0.15s; letter-spacing: 0.02em; }
+.btn-back:hover { color: var(--ink); }
+.btn-back:disabled { opacity: 0.3; cursor: default; }
+.btn-next { background: var(--sage); color: var(--white); border: none; border-radius: 3px; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; padding: 0.75rem 2rem; cursor: pointer; letter-spacing: 0.02em; transition: background 0.15s, transform 0.1s, opacity 0.15s; }
+.btn-next:hover:not(:disabled) { background: var(--sage-light); }
+.btn-next:active { transform: scale(0.98); }
+.btn-next:disabled { opacity: 0.35; cursor: default; }
+.results-screen { flex: 1; padding: 3rem 2rem 4rem; animation: qFadeUp 0.4s ease both; }
+.results-inner { max-width: 860px; margin: 0 auto; }
+.results-header { margin-bottom: 2.5rem; }
+.results-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+.results-headline { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; }
+.results-sub { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.65; max-width: 560px; }
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
+.rec-card { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+.rec-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+.rec-card-top { background: var(--sage); padding: 1.25rem 1.5rem; }
+.rec-card-top.safety { background: #8b4513; }
+.rec-name { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 0.5rem; }
+.rec-supps { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.rec-supp-pill { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.12); border-radius: 2px; padding: 0.15rem 0.5rem; }
+.rec-card-body { padding: 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+.rec-why-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.35rem; }
+.rec-why-label.safety { color: #8b4513; }
+.rec-why-text { font-size: 0.85rem; color: var(--ink); line-height: 1.6; font-weight: 400; }
+.rec-strength { display: flex; align-items: center; gap: 0.5rem; }
+.rec-dots { display: flex; gap: 3px; }
+.rec-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+.rec-dot.on { background: var(--sage); }
+.rec-strength-label { font-size: 0.72rem; color: var(--muted); font-family: var(--mono); }
+.rec-card-footer { padding: 0.9rem 1.5rem; border-top: 1px solid var(--border); background: var(--paper); }
+.rec-link { font-size: 0.8rem; font-weight: 500; color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; transition: opacity 0.15s; }
+.rec-link:hover { opacity: 0.7; }
+.results-baseline { background: var(--sage-pale); border: 1px solid rgba(74,103,65,0.25); border-radius: 5px; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+.baseline-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+.baseline-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+.baseline-text { font-size: 0.83rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+.results-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.btn-results-primary { background: var(--sage); color: var(--white); padding: 0.85rem 1.75rem; border-radius: 3px; text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.02em; transition: background 0.2s; border: none; cursor: pointer; font-family: var(--sans); }
+.btn-results-primary:hover { background: var(--sage-light); }
+.btn-results-ghost { background: transparent; color: var(--muted); padding: 0.85rem 1.75rem; border-radius: 3px; border: 1px solid var(--border); text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.02em; transition: border-color 0.2s, color 0.2s; cursor: pointer; font-family: var(--sans); }
+.btn-results-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.results-disclaimer { font-size: 0.75rem; color: var(--muted); line-height: 1.65; font-weight: 300; padding: 1rem 1.25rem; background: var(--cream); border: 1px solid var(--border); border-radius: 4px; }
+footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 3rem 2rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+@media (max-width: 640px) {
+  .options-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .quiz-stage { padding: 2rem 1.25rem 1rem; }
+  .quiz-nav { padding: 0.85rem 1.25rem; }
+  .quiz-top { padding: 0.75rem 1.25rem; }
+  .results-screen { padding: 2rem 1.25rem 3rem; }
+  .intro-screen { padding: 2rem 1.25rem; }
+  .results-actions { flex-direction: column; }
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  footer { padding: 2.5rem 1.25rem; }
+}
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -278,12 +388,12 @@ nav {
   <a href="index.html" class="nav-logo">Nutrient<span>Pairs</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
+    <li><a href="explorer.html" class="active">Explorer</a></li>
     <li><a href="all-pairs.html">All Pairs</a></li>
-    <li><a href="explorer.html">Explorer</a></li>
     <li><a href="deep-dives.html">Deep Dives</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a href="quiz.html" class="nav-cta">Free Guide →</a>
+  <a href="#" class="nav-cta" onclick="return false;">Free Guide →</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -291,12 +401,16 @@ nav {
 <div class="nav-mobile" id="navMobile">
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="all-pairs.html">All Pairs</a></li>
     <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="all-pairs.html">All Pairs</a></li>
     <li><a href="deep-dives.html">Deep Dives</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     OLD SUPPLEMENT INTERACTION EXPLORER — commented out, kept for reference
+     ════════════════════════════════════════════════════════════════
 
 <div class="page-header">
   <h1 class="page-title">Supplement Interaction Explorer</h1>
@@ -305,39 +419,30 @@ nav {
 
 <div class="explorer-wrap">
 
-  <!-- SELECTOR -->
   <div class="selector-panel">
     <div class="selector-row">
       <div class="selector-col">
         <label for="supp1">First supplement</label>
-        <select id="supp1">
-          <option value="">Choose a supplement…</option>
-        </select>
+        <select id="supp1"><option value="">Choose a supplement…</option></select>
       </div>
       <div class="plus-sign">+</div>
       <div class="selector-col">
         <label for="supp2">Second supplement</label>
-        <select id="supp2">
-          <option value="">Choose a supplement…</option>
-        </select>
+        <select id="supp2"><option value="">Choose a supplement…</option></select>
       </div>
       <div class="plus-sign optional">+</div>
       <div class="selector-col optional">
         <label for="supp3">Third supplement <span style="opacity:0.5;">(optional)</span></label>
-        <select id="supp3">
-          <option value="">Optional…</option>
-        </select>
+        <select id="supp3"><option value="">Optional…</option></select>
       </div>
     </div>
     <button class="check-btn" onclick="checkInteraction()">Check interaction →</button>
-
     <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
       <div class="quick-label">Popular combinations to try</div>
       <div class="chips" id="quickChips"></div>
     </div>
   </div>
 
-  <!-- RESULT -->
   <div class="result-panel" id="resultPanel">
     <div class="empty-state">
       <div class="empty-icon">⊕</div>
@@ -346,7 +451,6 @@ nav {
     </div>
   </div>
 
-  <!-- EXPLORE MORE -->
   <div class="explore-more" id="exploreMore" style="display:none;">
     <div class="explore-title">Explore more known pairs</div>
     <div class="explore-grid" id="exploreGrid"></div>
@@ -358,7 +462,54 @@ nav {
 
 </div>
 
-<script>
+═══════════════════════════════════════════════════════════════ -->
+
+<!-- QUIZ SHELL -->
+<div class="quiz-shell" id="quizShell"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research. Discover which nutrients enhance each other, why the biology works, and how to take them.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Pages</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explorer.html">Explorer</a></li>
+        <li><a href="all-pairs.html">All Pairs</a></li>
+        <li><a href="deep-dives.html">Deep Dives</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Deep Dives</div>
+      <ul class="footer-links">
+        <li><a href="deep-dive-distance-runners.html">Distance Runners</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Tools</div>
+      <ul class="footer-links">
+        <li><a href="explorer.html">Stack Builder</a></li>
+        <li><a href="all-pairs.html">All Pairs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 NutrientPairs. For educational purposes only.</span>
+    <span>Not medical advice.</span>
+  </div>
+</footer>
+
+<script type="text/plain" id="old-explorer-js">
+/* ═══════════════════════════════════════════════════════════════
+   OLD SUPPLEMENT INTERACTION EXPLORER JAVASCRIPT
+   Preserved here — to restore, move this block into a regular <script> tag
+   and remove the commented-out HTML above.
+   ═══════════════════════════════════════════════════════════════ */
+
 function toggleMenu() {
   document.getElementById('navMobile').classList.toggle('open');
 }
@@ -1122,6 +1273,183 @@ function loadPair(a, b) {
 populateDropdowns();
 attachChangeListeners();
 buildChips();
+</script>
+<!-- END OLD EXPLORER JS -->
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
+
+/* ─── PAIRS DATA ─── */
+const PAIRS = [
+  { id:1, name:"The Distance Runner Combo", supps:["Iron","Vitamin C"], audience:"Distance runners, female athletes, vegans", why:"Vitamin C converts ferric iron (Fe³⁺) into ferrous iron (Fe²⁺), the only form your intestinal cells can absorb efficiently. Non-heme iron absorption increases up to 3× when taken with 100mg Vitamin C.", mechanism:"Absorption enhancement: Vitamin C reduces Fe³⁺ to Fe²⁺ and prevents formation of insoluble iron compounds.", strength:5, timing1:{label:"Iron",when:"Morning or pre-run",note:"Hepcidin is lowest in the morning; iron absorbs best then."}, timing2:{label:"Vitamin C",when:"At the same time as iron",note:"Must be taken together for the absorption benefit to work."}, meal:"With a light meal. Avoid calcium-rich foods, coffee, or tea at the same sitting.", avoid:"Don't take iron with calcium supplements, dairy, coffee, or tea. Separate by at least 2 hours.", frequency:"Every other day. Research shows alternating days improves absorption vs daily dosing." },
+  { id:2, name:"The Vitamin D Activator Duo", supps:["Vitamin D","Magnesium"], audience:"Anyone taking Vitamin D supplements (which is most people)", why:"Magnesium is a required cofactor for the enzymes that convert Vitamin D into its active hormonal form. Without adequate magnesium, Vitamin D stays inactive. Up to 50% of people are magnesium deficient.", mechanism:"Cofactor dependency: magnesium activates the 25-hydroxylase and 1α-hydroxylase enzymes responsible for Vitamin D activation.", strength:5, timing1:{label:"Vitamin D3",when:"With a fatty meal",note:"D3 is fat-soluble and absorbs significantly better with dietary fat."}, timing2:{label:"Magnesium",when:"With D3 or evening",note:"Magnesium glycinate taken in the evening also supports sleep."}, meal:"Vitamin D with your fattiest meal. Magnesium can be taken any time with food.", avoid:"Avoid taking calcium and magnesium at exactly the same time in high doses. Spread 2+ hours apart.", frequency:"Daily for both." },
+  { id:3, name:"The Joint & Glow Stack", supps:["Collagen","Vitamin C"], audience:"Women 35+ concerned with skin, joints, hair and nails", why:"Vitamin C is a required cofactor for the enzymes that stabilize and cross-link collagen fibers. Taking collagen without Vitamin C is like trying to build a wall without mortar.", mechanism:"Enzyme cofactor: Vitamin C enables hydroxylation of proline and lysine residues essential for collagen triple helix stability.", strength:5, timing1:{label:"Collagen peptides",when:"30–60 min before exercise or morning",note:"Pre-exercise timing is supported by research for joint collagen synthesis."}, timing2:{label:"Vitamin C",when:"At the same time as collagen",note:"Take together for maximum synthesis benefit."}, meal:"Can be taken on an empty stomach or with food. Morning smoothie works well for both.", avoid:"High-dose Vitamin C (2g+) can cause GI discomfort. 100–200mg is sufficient for collagen synthesis.", frequency:"Daily." },
+  { id:4, name:"The Blood Sugar Duo", supps:["Berberine","Chromium"], audience:"Prediabetics, low-carb dieters, people managing blood sugar", why:"Berberine activates AMPK to improve glucose uptake. Chromium enhances the activity of insulin receptors and GLUT4. They work through complementary pathways, making each more effective.", mechanism:"Complementary pathways: berberine targets AMPK; chromium potentiates insulin receptor signaling and glucose transport.", strength:4, timing1:{label:"Berberine",when:"Before meals, 15–30 min before eating",note:"Berberine works best when taken before starch or sugar-heavy meals."}, timing2:{label:"Chromium",when:"With berberine before meals",note:"Take together for synergistic blood sugar effect."}, meal:"Always with or just before food. Berberine can cause GI discomfort on an empty stomach.", avoid:"Consult your doctor if you take diabetes medication. Berberine can lower blood sugar significantly.", frequency:"2–3 times daily before main meals." },
+  { id:5, name:"The Brain Stack", supps:["Magnesium L-Threonate","Lion's Mane"], audience:"Cognitive aging, adults with ADHD, nootropic users", why:"Magnesium L-Threonate is the only form of magnesium shown to increase brain magnesium levels. Lion's Mane stimulates Nerve Growth Factor (NGF). Together they target neuroplasticity through two distinct pathways.", mechanism:"Dual neuroplasticity: Mg-Threonate increases synaptic magnesium; Lion's Mane stimulates NGF synthesis via hericenones and erinacines.", strength:4, timing1:{label:"Magnesium L-Threonate",when:"Evening, 1–2 hours before bed",note:"Supports sleep quality alongside cognitive benefits."}, timing2:{label:"Lion's Mane",when:"Morning with food",note:"Some find Lion's Mane mildly energizing; morning is better."}, meal:"Magnesium L-Threonate with a small evening snack. Lion's Mane with breakfast.", avoid:"Lion's Mane may interact with blood-thinning medications. Start with lower doses if GI-sensitive.", frequency:"Daily. Cognitive benefits from Lion's Mane typically appear after 4–8 weeks." },
+  { id:6, name:"The Cortisol Crash Duo", supps:["Ashwagandha","Magnesium"], audience:"Overworked professionals, people with chronic stress or burnout", why:"Ashwagandha reduces cortisol from the top down, acting on the HPA axis. Magnesium works from the bottom up — it's required for hundreds of enzymatic reactions and is rapidly depleted by stress.", mechanism:"Dual-axis stress modulation: ashwagandha suppresses HPA axis overactivation; magnesium restores nervous system mineral balance depleted by cortisol.", strength:4, timing1:{label:"Ashwagandha",when:"Morning or evening with food",note:"KSM-66 is typically taken morning; Sensoril works better in the evening."}, timing2:{label:"Magnesium glycinate",when:"Evening, 1–2 hours before bed",note:"Magnesium glycinate is ideal for stress and sleep support."}, meal:"Both with food to maximize absorption and minimize GI effects.", avoid:"Ashwagandha may interact with thyroid medications. Not recommended during pregnancy.", frequency:"Daily. Ashwagandha benefits accumulate over 4–8 weeks." },
+  { id:7, name:"The Bloat & Digestion Stack", supps:["Prebiotics","Probiotics"], audience:"IBS sufferers, people recovering from antibiotics, general gut health", why:"Probiotics introduce beneficial bacteria. Prebiotics are the fibers that feed those bacteria. Without prebiotics, probiotic bacteria struggle to colonize. Combined synbiotic supplementation significantly outperforms probiotics alone.", mechanism:"Symbiotic feeding: prebiotic fibers (inulin, FOS, GOS) feed Lactobacillus and Bifidobacterium strains, increasing their survival and colonization rate.", strength:5, timing1:{label:"Probiotics",when:"Morning with or after a meal",note:"Food buffers stomach acid, improving probiotic survival through digestion."}, timing2:{label:"Prebiotics",when:"With probiotics or spread through the day",note:"Prebiotic fiber throughout the day builds the environment for probiotics to thrive."}, meal:"Probiotics with food. Prebiotics can be with any meal.", avoid:"Introduce prebiotics gradually. Starting with high doses causes bloating. Those with SIBO should consult a doctor before taking prebiotics.", frequency:"Daily probiotics. Prebiotics daily or built into diet through onions, garlic, oats, bananas." },
+  { id:8, name:"The All-Day Energy Stack", supps:["CoQ10","PQQ"], audience:"Adults 45+ experiencing fatigue, biohackers, people on statins", why:"CoQ10 keeps existing mitochondria running efficiently. PQQ is the only nutrient clinically shown to stimulate mitochondrial biogenesis — the growth of new mitochondria. CoQ10 optimizes what you have; PQQ builds more.", mechanism:"Mitochondrial optimization and biogenesis: CoQ10 restores electron transport efficiency; PQQ activates PGC-1α and CREB pathways that signal mitochondrial growth.", strength:4, timing1:{label:"CoQ10 (Ubiquinol)",when:"Morning with a fatty meal",note:"Ubiquinol is fat-soluble and requires dietary fat for absorption."}, timing2:{label:"PQQ",when:"Morning with CoQ10",note:"Some find PQQ mildly stimulating; morning works best."}, meal:"Both with breakfast or your fattiest morning meal.", avoid:"CoQ10 may have mild blood-pressure lowering effects. If taking statins, this combination is particularly important.", frequency:"Daily. CoQ10 depletes with age and statin use. Consistency matters." },
+  { id:9, name:"The Hayfever Duo", supps:["Quercetin","Bromelain"], audience:"Seasonal allergy sufferers, people with inflammation or post-injury recovery", why:"Quercetin is a natural antihistamine that stabilizes mast cells. Bromelain increases quercetin absorption by up to 80% and independently provides anti-inflammatory effects. Together they deliver dramatically more effective allergy relief.", mechanism:"Absorption enhancement plus complementary anti-inflammatory action: bromelain's proteolytic activity improves quercetin transport; both independently inhibit pro-inflammatory pathways.", strength:5, timing1:{label:"Quercetin",when:"20 minutes before meals",note:"Taking on a relatively empty stomach improves absorption."}, timing2:{label:"Bromelain",when:"At the same time as quercetin",note:"Must be taken together. Bromelain enhances quercetin absorption in real time."}, meal:"20–30 minutes before food for best absorption.", avoid:"Bromelain has mild blood-thinning effects. Use caution with blood thinners or before surgery.", frequency:"As needed during allergy season, or 3× daily for acute inflammation." },
+  { id:10, name:"The PMS Relief Duo", supps:["Magnesium","Vitamin B6"], audience:"Women with PMS or PMDD", why:"A randomized controlled trial found magnesium + B6 together reduced premenstrual anxiety symptoms significantly more than either alone. B6 is required for dopamine and serotonin synthesis.", mechanism:"Synergistic neurotransmitter support: magnesium reduces neuronal excitability; B6 (as P5P) is a cofactor for serotonin and dopamine synthesis.", strength:5, timing1:{label:"Magnesium glycinate",when:"Evening, 300–400mg",note:"Glycinate form is best tolerated and supports sleep alongside PMS relief."}, timing2:{label:"Vitamin B6 (as P5P)",when:"Morning or with magnesium in evening",note:"Pyridoxal-5-phosphate (P5P) is the active form, avoiding the conversion step."}, meal:"Both with food. Magnesium with dinner works well.", avoid:"High-dose B6 (>100mg/day long-term) can cause peripheral neuropathy. Stay at 25–50mg of P5P.", frequency:"Daily throughout the month for best results, not just around the cycle." },
+  { id:11, name:"The Menopause Bone Stack", supps:["Calcium","Vitamin D","Vitamin K2"], audience:"Perimenopausal and postmenopausal women concerned about bone density", why:"Vitamin D increases calcium absorption. But calcium alone can calcify in arteries rather than bones. Vitamin K2 activates proteins that direct calcium into bone and prevent it from depositing in soft tissue.", mechanism:"Calcium traffic control: D3 increases gut calcium absorption; K2 activates Matrix Gla Protein to prevent arterial calcification and osteocalcin to increase bone binding.", strength:5, timing1:{label:"Calcium",when:"With meals, split into doses",note:"The body can only absorb about 500mg calcium at once. Split into 2 doses."}, timing2:{label:"Vitamin D3 + K2",when:"With your fattiest meal",note:"Both are fat-soluble, requiring dietary fat. Take together."}, meal:"All three with food containing fat. Calcium separate from iron supplements.", avoid:"Never take calcium and iron within 2 hours; they compete for the same absorption receptors. K2 can interact with blood thinners like warfarin.", frequency:"Daily. Long-term consistency matters more than any single dose." },
+  { id:12, name:"The Sluggish Thyroid Triple", supps:["Iodine","Selenium","Iron"], audience:"Women with Hashimoto's or hypothyroid symptoms", why:"All three nutrients are required for thyroid hormone production. Iodine is the raw material for T3/T4. Iron activates the enzyme that incorporates iodine. Selenium converts inactive T4 into active T3.", mechanism:"Sequential enzyme cascade: iron activates TPO for iodine incorporation; selenium converts T4→T3; iodine is the hormonal building block.", strength:4, timing1:{label:"Iodine",when:"Morning with food",note:"Small amounts from kelp or iodine supplements. Don't exceed 150–200mcg unless directed."}, timing2:{label:"Selenium",when:"Morning with iodine",note:"200mcg selenomethionine is the research-backed dose for thyroid support."}, meal:"All with food. Iron must be taken at least 4 hours from thyroid medication.", avoid:"CRITICAL: If taking levothyroxine, iron must be taken at least 4 hours apart. Excess iodine can worsen Hashimoto's. Work with a doctor.", frequency:"Daily. Benefits accumulate over weeks to months." },
+  { id:13, name:"The Gene Variant Energy Duo", supps:["Methylcobalamin B12","Methylfolate"], audience:"People with MTHFR gene variant (roughly 40% of the population)", why:"People with MTHFR gene variants have reduced enzyme activity, meaning standard folic acid and cyanocobalamin B12 don't convert properly. Methylfolate and methylcobalamin bypass the broken enzyme entirely.", mechanism:"MTHFR bypass: methylcobalamin and methylfolate directly enter the methylation cycle without requiring MTHFR enzyme conversion, supporting homocysteine clearance, energy, and mood.", strength:5, timing1:{label:"Methylcobalamin B12",when:"Morning, sublingual or capsule",note:"Sublingual absorption bypasses gut absorption issues common in B12 deficiency."}, timing2:{label:"Methylfolate (5-MTHF)",when:"With B12 in the morning",note:"These two work as a pair; take together."}, meal:"Can be taken on an empty stomach or with breakfast.", avoid:"Start methylfolate at a low dose (100–400mcg). Some experience overmethylation symptoms with high doses. Avoid folic acid if you have confirmed MTHFR variants.", frequency:"Daily." },
+  { id:14, name:"The Numb Feet & Fatigue Duo", supps:["Magnesium","Vitamin B1"], audience:"Diabetics, people with peripheral neuropathy, heavy drinkers", why:"Magnesium is required to phosphorylate thiamine (B1) into its active form. Without adequate magnesium, supplemental thiamine cannot be properly activated. Critical for diabetics and people with peripheral neuropathy.", mechanism:"Activation dependency: magnesium is the cofactor for thiamine kinase, which converts thiamine → thiamine pyrophosphate, the active form required for nerve function.", strength:4, timing1:{label:"Magnesium",when:"With meals, any time of day",note:"Magnesium glycinate or malate forms are best tolerated."}, timing2:{label:"Vitamin B1 (Thiamine)",when:"With magnesium and food",note:"Benfotiamine (fat-soluble form) is better absorbed for neuropathy."}, meal:"Both with food. Benfotiamine absorbs better with a meal containing fat.", avoid:"Alcohol severely depletes both magnesium and thiamine. Minimize alcohol if supplementing for neuropathy.", frequency:"Daily. Nerve regeneration is slow. Allow 2–3 months before evaluating effects." },
+  { id:15, name:"The Heart Palpitation Duo", supps:["Taurine","Magnesium"], audience:"People experiencing heart palpitations, anxiety, or focusing on cardiovascular health", why:"Both taurine and magnesium regulate the electrical activity of the heart. Magnesium acts as a natural calcium channel blocker. Taurine modulates intracellular calcium and potassium in cardiac muscle.", mechanism:"Ion channel modulation: magnesium blocks excess calcium influx in cardiac cells; taurine modulates intracellular calcium and potassium balance, stabilizing action potentials.", strength:4, timing1:{label:"Magnesium glycinate",when:"Evening, 300–400mg",note:"Evening timing also supports sleep quality."}, timing2:{label:"Taurine",when:"Evening with magnesium",note:"1–3g taurine is the research-backed range for cardiac support."}, meal:"Both with food. Evening dosing aligns with the body's natural cardiac rhythm.", avoid:"If you experience frequent palpitations, see a doctor to rule out arrhythmia before relying on supplementation.", frequency:"Daily." },
+  { id:16, name:"The NAD+ Protector Stack", supps:["NAD+","TMG"], audience:"People taking NMN or NR, adults focused on longevity and aging", why:"NAD+ precursors increase cellular NAD+ levels, but NAD+ synthesis consumes methyl groups. TMG donates methyl groups to replenish what NAD+ precursors use, preventing methylation depletion.", mechanism:"Methyl group replenishment: NAD+ synthesis consumes SAM methyl groups; TMG donates methyl groups via the BHMT pathway to maintain methylation balance.", strength:4, timing1:{label:"NMN or NR (NAD+ precursor)",when:"Morning on empty stomach",note:"Some evidence suggests morning dosing aligns with circadian NAD+ rhythms."}, timing2:{label:"TMG",when:"With NMN/NR in morning",note:"Take together so methyl donors are available as NAD+ synthesis proceeds."}, meal:"NMN on an empty stomach. TMG with a small amount of food if GI-sensitive.", avoid:"People with MTHFR variants or those taking methylfolate should monitor for overmethylation when adding TMG.", frequency:"Daily. Consistency over months is the goal." },
+  { id:17, name:"The Heart & Fatigue Stack", supps:["L-Carnitine","CoQ10"], audience:"Adults 50+ with fatigue, people with cardiac conditions, statin users", why:"L-Carnitine carries long-chain fatty acids into the mitochondria. CoQ10 converts that fuel to ATP. Without carnitine, CoQ10 has less substrate to work with. These are the fuel delivery system and the engine itself.", mechanism:"Mitochondrial fuel chain: carnitine shuttles fatty acyl-CoA into the mitochondrial matrix; CoQ10 (ubiquinol) accepts electrons from this fuel in Complex I/II of the electron transport chain.", strength:4, timing1:{label:"L-Carnitine L-Tartrate",when:"Morning with food or pre-exercise",note:"LCAR form is best for energy and exercise performance."}, timing2:{label:"CoQ10 (Ubiquinol)",when:"With L-Carnitine, at your fattiest meal",note:"Ubiquinol requires fat for absorption."}, meal:"Both with a meal containing fat. Breakfast with eggs or avocado works well.", avoid:"Carnitine is derived from animal sources; vegans should use acetyl-L-carnitine. Consult doctor if on blood thinners.", frequency:"Daily. Benefits for fatigue typically appear after 4–8 weeks." },
+  { id:18, name:"The Screen Worker Eye Stack", supps:["Lutein","Zeaxanthin"], audience:"Remote workers, gamers, anyone spending 6+ hours per day at screens", why:"Lutein and zeaxanthin are the only two carotenoids that selectively concentrate in the macula. They function as internal blue light filters. Research shows they're more protective together than either alone.", mechanism:"Synergistic macular pigment: together they increase Macular Pigment Optical Density (MPOD) more efficiently than either alone, providing broader spectrum blue light filtering.", strength:4, timing1:{label:"Lutein (20mg)",when:"With a meal containing fat",note:"Both are fat-soluble and require dietary fat for absorption."}, timing2:{label:"Zeaxanthin (4mg)",when:"With lutein, same meal",note:"Always take together. The 5:1 ratio mirrors human eye concentrations."}, meal:"With any fat-containing meal. Avocado, eggs, or nuts at the same meal significantly boosts absorption.", avoid:"Avoid high-dose beta-carotene supplements alongside this stack as it may compete with lutein absorption.", frequency:"Daily. MPOD increases gradually over 3–6 months of consistent supplementation." },
+  { id:19, name:"The High-Dose Zinc Fix", supps:["Zinc","Copper"], audience:"Anyone taking zinc doses above 15mg per day", why:"High zinc intake dramatically reduces copper absorption via shared absorption transporters. Chronic high-dose zinc without copper supplementation causes copper deficiency, leading to anemia and neurological issues.", mechanism:"Competitive absorption: zinc upregulates metallothionein, which binds copper and prevents its absorption. The ratio matters: >8:1 zinc:copper increases deficiency risk.", strength:5, timing1:{label:"Zinc",when:"Away from meals or with a small snack",note:"Zinc on an empty stomach can cause nausea; a small snack helps."}, timing2:{label:"Copper",when:"Separated from zinc by 2+ hours",note:"Taking at different times reduces competitive absorption."}, meal:"Zinc with a light snack. Copper ideally at a different meal time.", avoid:"Never take zinc and copper at exactly the same time. Typical ratio: 15mg zinc : 1–2mg copper.", frequency:"Daily if taking zinc regularly." },
+  { id:20, name:"The Race Day Duo", supps:["Beta-Alanine","Creatine"], audience:"Endurance athletes, CrossFit participants, competitive sports", why:"Beta-alanine increases muscle carnosine levels, buffering lactic acid and extending endurance. Creatine replenishes ATP during explosive efforts. They target completely different energy systems.", mechanism:"Complementary energy systems: beta-alanine targets anaerobic capacity via carnosine buffering; creatine targets the ATP-PCr system that powers explosive efforts.", strength:4, timing1:{label:"Beta-Alanine",when:"Pre-workout or any time — consistency matters",note:"Beta-alanine works via carnosine accumulation over 4+ weeks."}, timing2:{label:"Creatine monohydrate",when:"Post-workout or with food, daily",note:"Daily consistency is what matters most."}, meal:"Both can be taken with or without food. Carbohydrate-containing meals may improve creatine uptake.", avoid:"Beta-alanine causes harmless tingling (paresthesia) in many people. Start with 1–2g. Those with kidney conditions should consult a doctor before creatine.", frequency:"Daily. Both work through accumulation, not acute effects." },
+  { id:21, name:"The Heart Age Trio", supps:["Vitamin B6","Methylcobalamin B12","Methylfolate"], audience:"Adults concerned about heart disease risk, cognitive decline, or elevated homocysteine", why:"Elevated homocysteine is a significant risk factor for cardiovascular disease and cognitive decline. B6, B12, and folate all work together in the methylation cycle to convert homocysteine into benign compounds.", mechanism:"Homocysteine clearance: folate and B12 remethylate homocysteine to methionine; B6 trans-sulfurates excess homocysteine to cysteine. All three are required.", strength:5, timing1:{label:"Methylcobalamin B12",when:"Morning",note:"Sublingual absorption is superior for B12."}, timing2:{label:"Methylfolate + P5P (B6)",when:"Morning with B12",note:"All three together in the morning is the simplest approach."}, meal:"Can be taken on an empty stomach or with breakfast.", avoid:"Use methylated forms. High-dose B6 (>100mg/day long-term) can cause peripheral neuropathy. Stay at 25–50mg P5P.", frequency:"Daily." },
+  { id:22, name:"The Allergy Relief Triple", supps:["Quercetin","Vitamin C","Zinc"], audience:"Chronic allergy sufferers, people with frequent illness, immune-compromised adults", why:"All three support immune function through completely different mechanisms. Quercetin stabilizes mast cells. Vitamin C recycles quercetin after it's oxidized. Zinc is required for development of immune cells including T-cells.", mechanism:"Triple immune modulation: quercetin blocks mast cell degranulation; vitamin C regenerates quercetin; zinc maintains immune cell development and antiviral defense.", strength:4, timing1:{label:"Quercetin + Bromelain",when:"Before meals",note:"Bromelain enhances quercetin absorption. Take on a relatively empty stomach."}, timing2:{label:"Vitamin C + Zinc",when:"With a meal",note:"Zinc is better tolerated with food."}, meal:"Quercetin on an empty stomach. Zinc always with food to avoid nausea.", avoid:"Zinc above 40mg/day long-term depletes copper. Add copper if taking high zinc doses.", frequency:"Daily during allergy season." },
+  { id:23, name:"The Winter Blues Duo", supps:["Vitamin D3","Omega-3"], audience:"People with seasonal depression, low mood in winter, those in northern climates", why:"Both Vitamin D and omega-3s independently support serotonin synthesis through complementary pathways. Omega-3 fatty acids also significantly enhance Vitamin D absorption.", mechanism:"Dual serotonin support: DHA and EPA support serotonin receptor function; Vitamin D regulates serotonin synthesis via TPH2; omega-3 fat enhances D3 absorption.", strength:4, timing1:{label:"Vitamin D3",when:"Morning with omega-3",note:"Always take with fat. Omega-3 provides that fat while also being therapeutic."}, timing2:{label:"Omega-3 (EPA/DHA)",when:"Morning with D3",note:"The fat in omega-3 capsules directly aids D3 absorption."}, meal:"Both with breakfast.", avoid:"Omega-3 at high doses (>3g EPA/DHA) has mild blood-thinning effects. Vitamin D toxicity is possible at very high doses (>10,000 IU/day).", frequency:"Daily. Especially important November through March for people in northern latitudes." },
+  { id:24, name:"The Over-40 Muscle Stack", supps:["Creatine","HMB"], audience:"Adults 40–65 experiencing muscle loss (sarcopenia)", why:"Creatine increases phosphocreatine stores in muscle, supporting ATP production for strength. HMB specifically inhibits muscle protein breakdown, which accelerates with age. Creatine builds; HMB prevents breakdown.", mechanism:"Dual muscle protein balance: creatine increases muscle protein synthesis via mTOR; HMB inhibits the ubiquitin-proteasome pathway that degrades muscle protein.", strength:4, timing1:{label:"Creatine monohydrate",when:"Any time consistently; post-workout slightly optimal",note:"3–5g daily. Loading phase is not necessary."}, timing2:{label:"HMB (calcium form)",when:"Split into 3 doses across the day",note:"1g × 3 times daily maintains steadier blood levels."}, meal:"Creatine with carbohydrate-containing meals. HMB with any meal.", avoid:"Those with kidney conditions should consult a doctor before creatine. Allow 8–12 weeks for meaningful results.", frequency:"Daily. Consistency is essential." },
+  { id:25, name:"The Cell Protection Duo", supps:["Vitamin E","Selenium"], audience:"Men concerned about prostate health, smokers, high oxidative stress", why:"Vitamin E protects cell membranes from lipid peroxidation. Selenium regenerates Vitamin E after it has been oxidized, restoring its antioxidant function. Without selenium, Vitamin E is used up and not recycled.", mechanism:"Antioxidant recycling: selenoprotein GPx reduces lipid hydroperoxides and regenerates Vitamin E from its oxidized form, creating a sustainable antioxidant cycle.", strength:4, timing1:{label:"Vitamin E (mixed tocopherols)",when:"With a fatty meal",note:"Fat-soluble. Use mixed tocopherols, not just alpha-tocopherol."}, timing2:{label:"Selenium (selenomethionine)",when:"With Vitamin E",note:"200mcg selenomethionine is the research-backed dose."}, meal:"Both with a fat-containing meal.", avoid:"Do NOT use high-dose Vitamin E alone (above 400 IU) for prostate cancer prevention. Selenium toxicity occurs above 400mcg/day — do not exceed 200mcg.", frequency:"Daily." },
+  { id:26, name:"The Night Shift Duo", supps:["L-Theanine","Magnesium"], audience:"Stressed professionals, coffee drinkers, people with caffeine-disrupted sleep", why:"L-Theanine promotes alpha brain waves and reduces anxiety. Magnesium activates GABA receptors and is depleted by chronic stress. Together they address sleep disruption through two complementary pathways.", mechanism:"Dual GABAergic potentiation: L-Theanine stimulates GABA production and alpha-wave activity; magnesium acts as a natural NMDA antagonist and GABA agonist.", strength:4, timing1:{label:"L-Theanine (200mg)",when:"60 minutes before bed",note:"Also works well taken with coffee during the day to smooth caffeine's anxious edge."}, timing2:{label:"Magnesium glycinate (300–400mg)",when:"30–60 minutes before bed",note:"Glycinate form is best tolerated and has the most evidence for sleep."}, meal:"Both can be taken without food. A light evening snack is fine.", avoid:"Magnesium can lower blood pressure. Monitor if you take antihypertensives. High L-Theanine doses (600mg+) can cause headaches.", frequency:"Daily. Most noticeable after 1–2 weeks." },
+  { id:27, name:"The Quiet Mind Stack", supps:["GABA","L-Theanine"], audience:"Insomnia sufferers, anxious adults, people struggling with evening wind-down", why:"A randomized controlled trial found GABA + L-Theanine improved sleep quality and duration significantly more than either alone. GABA directly reduces neuronal excitability; L-Theanine amplifies GABA receptor sensitivity.", mechanism:"Synergistic GABAergic enhancement: GABA directly activates GABAA receptors; L-Theanine upregulates GABA receptor expression and increases endogenous GABA synthesis.", strength:4, timing1:{label:"GABA (100–200mg)",when:"30–60 minutes before bed",note:"Lower doses are often more effective. High doses can cause paradoxical stimulation."}, timing2:{label:"L-Theanine (200mg)",when:"With GABA before bed",note:"Take together for synergistic effect."}, meal:"Both on an empty stomach or with a very light snack.", avoid:"Do not combine with benzodiazepines, alcohol, or other sedatives. PharmaGABA (fermented form) may be more effective than synthetic.", frequency:"As needed for poor sleep nights, or daily for chronic insomnia." },
+  { id:28, name:"The Deep Sleep Duo", supps:["Glycine","Magnesium"], audience:"People with poor sleep quality, frequent night wakings, or restless sleep", why:"Glycine uniquely lowers core body temperature, a critical trigger for sleep onset and slow-wave sleep. Magnesium activates GABA receptors and suppresses the stress hormone system. Clinical trials show the two are synergistic.", mechanism:"Thermoregulation and GABAergic sedation: glycine dilates peripheral blood vessels to lower core body temperature; magnesium activates GABA-A receptors and inhibits NMDA excitability.", strength:4, timing1:{label:"Glycine (3g)",when:"30 minutes before bed",note:"3g is the clinically validated dose. Can be powder mixed in water."}, timing2:{label:"Magnesium glycinate (300–400mg)",when:"30–60 minutes before bed",note:"Glycinate form delivers both magnesium and additional glycine."}, meal:"Glycine on an empty stomach or with water. Magnesium with a small snack if GI-sensitive.", avoid:"Very high glycine doses can cause GI discomfort. 3g is the sweet spot. Avoid magnesium oxide; use glycinate or malate forms.", frequency:"Daily. Glycine improvements typically appear within 2–3 nights. Magnesium over 1–2 weeks." },
+  { id:29, name:"The Serotonin Synthesis Duo", supps:["5-HTP","Vitamin B6"], audience:"Adults with low mood, poor sleep, carbohydrate cravings, or appetite control issues", why:"5-HTP is the direct precursor to serotonin. The enzyme that converts it requires Vitamin B6 (as P5P) as its cofactor. Without adequate B6, 5-HTP conversion stalls and peripheral serotonin is produced instead of brain serotonin, potentially causing nausea.", mechanism:"Mandatory cofactor conversion: aromatic L-amino acid decarboxylase converts 5-HTP to serotonin using P5P as an irreplaceable coenzyme.", strength:5, timing1:{label:"5-HTP (50–100mg)",when:"Evening, 30–60 min before bed",note:"For sleep and mood. Start at 50mg and increase gradually."}, timing2:{label:"Vitamin B6 as P5P (10–25mg)",when:"With 5-HTP",note:"Use P5P (pyridoxal-5-phosphate), the active form."}, meal:"Take on an empty stomach or with a small carbohydrate snack; protein competes with 5-HTP for brain uptake.", avoid:"NEVER combine with SSRIs, SNRIs, or MAOIs due to risk of serotonin syndrome. Do not use if pregnant or breastfeeding.", frequency:"Daily or as needed. Not recommended for long-term use above 100mg 5-HTP without medical supervision." },
+  { id:30, name:"The Glutathione Restoration Duo", supps:["NAC","Glycine"], audience:"Adults 40+, liver health focus, longevity, high oxidative stress, drinkers", why:"Glutathione is made from cysteine, glycine, and glutamate. NAC provides cysteine (the rate-limiting step). Glycine is the second most limiting substrate and declines with age. NIH-funded trials showed the combination raised glutathione by 164% and reduced oxidative damage by 72%.", mechanism:"Dual precursor restoration: NAC provides L-cysteine; glycine is the final substrate for glutathione synthase. Both are required for the two-step glutathione synthesis pathway.", strength:5, timing1:{label:"NAC (600–1200mg)",when:"Morning with food",note:"Food reduces nausea. Capsule form avoids the sulfur smell."}, timing2:{label:"Glycine (1.5–3g)",when:"Morning with NAC, or evening for sleep benefit",note:"Glycine also improves sleep quality — evening dosing gives a dual benefit."}, meal:"NAC always with food. Glycine can be taken with or without food.", avoid:"NAC can thin blood — use caution before surgery or with blood thinners. Do not take with activated charcoal.", frequency:"Daily. Benefits in NIH trials appeared after 4–8 weeks." },
+  { id:31, name:"The PCOS Fertility Duo", supps:["Myo-Inositol","Methylfolate"], audience:"Women with PCOS, insulin resistance, or irregular cycles trying to conceive", why:"Myo-inositol restores FSH receptor sensitivity and ovarian follicle signaling, directly addressing PCOS hormonal disruption. Methylfolate supports DNA synthesis, egg quality, and early embryo development.", mechanism:"Dual pathway correction: myo-inositol modulates PI3K/AKT insulin signaling to restore FSH sensitivity; methylfolate directly enters the methylation cycle to support DNA synthesis.", strength:4, timing1:{label:"Myo-Inositol (2g)",when:"Morning and evening, split dose",note:"2g twice daily (4g total) is the research-backed dose."}, timing2:{label:"Methylfolate (400–800mcg)",when:"Morning with myo-inositol",note:"Use methylfolate (5-MTHF) not folic acid."}, meal:"Both can be taken with or without food.", avoid:"Do not exceed 4g myo-inositol daily without medical guidance. Start methylfolate at 400mcg to avoid overmethylation.", frequency:"Daily. Ovulation improvements typically appear after 3–6 months." },
+  { id:32, name:"The Egg Quality Stack", supps:["Melatonin","Myo-Inositol"], audience:"Women with PCOS undergoing IVF or trying to conceive naturally", why:"Multiple RCTs have shown melatonin and myo-inositol together synergistically improve oocyte quality, fertilization rates, and clinical pregnancy rates. Melatonin protects oocytes from oxidative stress; myo-inositol improves follicle development signaling.", mechanism:"Antioxidant and insulin signaling: melatonin scavenges reactive oxygen species in follicular fluid; myo-inositol restores FSH receptor sensitivity and PI3K pathway signaling.", strength:4, timing1:{label:"Melatonin (1–3mg)",when:"30–60 minutes before bed",note:"Lower doses (1mg) are often as effective as higher doses for fertility."}, timing2:{label:"Myo-Inositol (2g)",when:"Morning and evening, split dose",note:"Take morning dose separately from evening melatonin."}, meal:"Melatonin without food before bed. Myo-inositol with or without food.", avoid:"Melatonin may affect other hormone levels at high doses. Stay at 1–3mg. Do not combine with immunosuppressants without medical supervision.", frequency:"Daily. IVF protocol studies supplement for 6–12 weeks before egg retrieval." }
+];
+
+/* ─── QUESTIONS ─── */
+const QUESTIONS = [
+  { id:'age', type:'single', question:"How old are you?", note:"Age is one of the biggest factors in which nutrients your body actually needs.", options:[{value:'u30',label:"Under 30"},{value:'30_44',label:"30–44"},{value:'45_59',label:"45–59"},{value:'60plus',label:"60 or older"}] },
+  { id:'sex', type:'single', question:"What is your biological sex?", note:"Some nutrients are especially impactful based on hormonal biology. We ask only to personalize your recommendations.", options:[{value:'female',label:"Female"},{value:'male',label:"Male"},{value:'skip',label:"Prefer not to say"}] },
+  { id:'female_health', type:'multi', skipUnless:(a)=>a.sex==='female', question:"Which of these are relevant to you?", note:"Select all that apply. These unlock specific recommendations.", options:[{value:'pms',label:"PMS or PMDD",sub:"Mood, cramps, or anxiety before your period"},{value:'menopause',label:"Perimenopause or menopause",sub:"Bone density, hormonal shifts, hot flashes"},{value:'pcos',label:"PCOS or irregular cycles",sub:"Insulin resistance, hormonal imbalance"},{value:'ttc',label:"Trying to conceive",sub:"Egg quality, fertility support"},{value:'thyroid',label:"Thyroid issues (Hashimoto's)",sub:"Sluggish thyroid, autoimmune thyroid disease"},{value:'none_f',label:"None of these",exclusive:true}] },
+  { id:'daily_life', type:'multi', question:"Which of these describe your daily life?", note:"Select all that apply.", options:[{value:'screen',label:"I work at a screen 6+ hours/day",sub:"Remote work, coding, gaming, design"},{value:'stressed',label:"I feel stressed or overwhelmed often",sub:"Work pressure, burnout, chronic anxiety"},{value:'caffeine',label:"I rely on caffeine to get through the day",sub:"Multiple coffees, pre-workouts, energy drinks"},{value:'alcohol',label:"I drink alcohol regularly",sub:"More than a few drinks per week"},{value:'none_d',label:"None of these",exclusive:true}] },
+  { id:'exercise', type:'single', question:"How would you describe your exercise habits?", note:"", options:[{value:'none',label:"Little to no regular exercise"},{value:'light',label:"Light activity",sub:"Walks, yoga, stretching"},{value:'moderate',label:"Moderate training",sub:"Gym 2–3× per week"},{value:'endurance',label:"Endurance sports",sub:"Running, cycling, swimming, triathlon"},{value:'hiit',label:"High intensity",sub:"CrossFit, HIIT, competitive sports"}] },
+  { id:'sleep', type:'single', question:"How is your sleep?", note:"", options:[{value:'good',label:"I sleep well — no issues"},{value:'onset',label:"I have trouble falling asleep",sub:"Racing mind, can't wind down"},{value:'maintenance',label:"I wake up during the night",sub:"Light sleep, frequent waking"},{value:'both',label:"Both — trouble falling and staying asleep"}] },
+  { id:'energy_mind', type:'multi', question:"Which of these do you experience?", note:"Select all that apply.", options:[{value:'afternoon',label:"Afternoon energy crashes",sub:"Energy dip around 2–4pm"},{value:'fatigue',label:"Chronic fatigue or low energy",sub:"Tired most of the time regardless of sleep"},{value:'brain_fog',label:"Brain fog or poor concentration",sub:"Difficulty focusing, poor memory"},{value:'low_mood',label:"Low mood or seasonal blues",sub:"Especially in winter or darker months"},{value:'none_e',label:"None of these — my energy is good",exclusive:true}] },
+  { id:'health_goals', type:'multi', question:"Which health areas matter most to you right now?", note:"Select all that apply.", options:[{value:'blood_sugar',label:"Blood sugar & metabolic health"},{value:'gut',label:"Gut health & digestion"},{value:'allergy',label:"Allergies & immune resilience"},{value:'beauty',label:"Skin, hair & nails"},{value:'heart',label:"Heart health"},{value:'joints',label:"Joints & muscle recovery"},{value:'cognition',label:"Brain health & memory"},{value:'longevity',label:"Healthy aging & longevity"},{value:'bone',label:"Bone density"},{value:'none_g',label:"No specific focus right now",exclusive:true}] },
+  { id:'flags', type:'multi', question:"Last one — any of these apply to you?", note:"These help us personalize your stack safely. Select all that apply.", options:[{value:'statins',label:"I'm on statin medication"},{value:'zinc',label:"I take zinc supplements"},{value:'nad',label:"I take NMN or NR (NAD+ precursors)"},{value:'diabetes',label:"I have diabetes or pre-diabetes"},{value:'palpitations',label:"I experience heart palpitations"},{value:'neuropathy',label:"I have peripheral neuropathy (numbness, tingling)"},{value:'homocysteine',label:"I have elevated homocysteine"},{value:'smoke',label:"I smoke"},{value:'none_fl',label:"None of these",exclusive:true}] },
+];
+
+/* ─── STATE ─── */
+let state = { step:-1, answers:{} };
+
+function getVisibleQuestions() { return QUESTIONS.filter(q=>!q.skipUnless||q.skipUnless(state.answers)); }
+function currentQuestion() { return getVisibleQuestions()[state.step]; }
+function totalSteps() { return getVisibleQuestions().length; }
+
+/* ─── SCORING ─── */
+function score() {
+  const a=state.answers, age=a.age||'', sex=a.sex||'', fh=a.female_health||[], daily=a.daily_life||[], exercise=a.exercise||'', sleep=a.sleep||'', energy=a.energy_mind||[], goals=a.health_goals||[], flags=a.flags||[];
+  const map={};
+  function add(id,reason,weight=1){if(!map[id])map[id]={score:0,reason:'',isSafety:false};map[id].score+=weight;if(!map[id].reason&&reason)map[id].reason=reason;}
+  function safety(id,reason){if(!map[id])map[id]={score:0,reason:'',isSafety:false};map[id].score+=3;map[id].reason=reason;map[id].isSafety=true;}
+
+  add(2,"Magnesium is required to activate the Vitamin D your body makes or takes — without it, your D3 supplement stays inactive. Up to 50% of people are magnesium deficient. Even if this didn't appear in your top results, it's worth knowing about.",1);
+
+  if(['30_44','45_59','60plus'].includes(age)) add(3,"Collagen synthesis declines progressively from your 30s. Vitamin C is the mandatory cofactor — without it, collagen peptides can't be properly incorporated.",1);
+  if(['45_59','60plus'].includes(age)){add(8,"Mitochondrial function declines measurably from your mid-40s. CoQ10 restores efficiency in existing mitochondria; PQQ triggers growth of new ones.",1);add(17,"L-Carnitine and CoQ10 together address the mitochondrial fuel chain that drives fatigue in adults over 45.",1);add(30,"Glutathione — your body's master antioxidant — declines significantly with age. NIH-funded trials showed NAC + Glycine raised glutathione by 164% in older adults.",1);add(24,"Muscle protein breakdown accelerates in your 40s. Creatine builds; HMB prevents breakdown. Together they tackle sarcopenia from both sides.",1);}
+  if(age==='60plus'){add(16,"At 60+, cellular NAD+ levels have typically fallen 50% or more from peak. TMG prevents NAD+ precursors from depleting your methylation pool.",1);add(21,"Homocysteine rises with age and is a significant risk factor for both heart disease and cognitive decline. B6, B12, and methylfolate are all required for full clearance.",1);}
+
+  if(fh.includes('pms')) add(10,"A randomized controlled trial found magnesium + B6 together reduced premenstrual anxiety symptoms significantly more than either alone — addressing both the mineral deficiency and the neurotransmitter pathway.",2);
+  if(fh.includes('menopause')) add(11,"Vitamin D gets calcium in the door; K2 tells it where to go. Without K2, supplemental calcium can deposit in arteries rather than bones — a real risk during menopause.",2);
+  if(fh.includes('pcos')||fh.includes('ttc')){add(31,"Myo-inositol restores the FSH receptor sensitivity disrupted in PCOS; methylfolate supports egg quality and embryo DNA synthesis. Clinical studies show the combination improves ovulation rates.",2);add(32,"Multiple RCTs show melatonin + myo-inositol together synergistically improve oocyte quality and clinical pregnancy rates — neither achieves this as effectively alone.",1);}
+  if(fh.includes('thyroid')) add(12,"All three nutrients are required for thyroid hormone production. Missing any one creates a bottleneck the others can't compensate for.",2);
+  if(sex==='male'&&['45_59','60plus'].includes(age)) add(25,"Vitamin E protects cell membranes from oxidative damage; selenium regenerates Vitamin E after it's been used up. Particularly relevant for men in this age group.",1);
+
+  if(daily.includes('screen')) add(18,"Lutein and zeaxanthin are your eye's built-in blue light filter — the only two carotenoids that concentrate in the macula. 6+ hours of screen time daily accelerates macular pigment depletion.",3);
+  if(daily.includes('stressed')){add(6,"Chronic stress rapidly depletes magnesium and overstimulates the HPA axis. Ashwagandha suppresses cortisol from the top; magnesium restores the mineral balance that stress exhausts.",2);add(26,"Chronic stress depletes magnesium while keeping your nervous system in an activated state. L-Theanine + magnesium addresses both the symptom and the depletion.",1);}
+  if(daily.includes('caffeine')) add(26,"L-Theanine neutralizes caffeine's anxious edge and sleep disruption while preserving alertness. It's the reason green tea (which contains both) doesn't jangle your nerves like coffee.",2);
+  if(daily.includes('alcohol')){add(30,"Alcohol is hepatotoxic and directly depletes glutathione — your liver's primary antioxidant defense. NAC + Glycine is the most evidence-backed protocol for restoring it.",2);add(14,"Alcohol severely depletes both magnesium and thiamine (B1). Without magnesium, B1 can't be activated. Together they address both the deficiency and the activation bottleneck.",1);}
+
+  if(exercise==='endurance') add(1,"Iron deficiency is the single most common nutritional problem in distance runners — caused by impact hemolysis, sweat losses, and gut inflammation. Vitamin C triples non-heme iron absorption.",3);
+  if(exercise==='hiit') add(20,"Beta-alanine buffers lactic acid for sustained high-intensity output; creatine replenishes ATP for explosive efforts. They target completely different energy systems — covering your full performance spectrum.",2);
+  if(['moderate','endurance','hiit'].includes(exercise)&&['45_59','60plus'].includes(age)) add(24,"Staying active in your 40s and 50s is crucial, but muscle recovery slows. This stack addresses both the anabolic and anti-catabolic sides of muscle protein balance.",1);
+
+  if(sleep==='onset'){add(27,"A randomized controlled trial found GABA + L-Theanine improved sleep onset significantly more than either alone. GABA directly inhibits neuronal firing; L-Theanine amplifies GABA receptor sensitivity.",2);add(26,"L-Theanine promotes alpha-wave activity that helps your brain transition from alert to calm. Combined with magnesium, it's specifically studied for people who struggle to wind down.",1);}
+  if(sleep==='maintenance') add(28,"Glycine uniquely lowers core body temperature — a critical trigger for deep, restorative sleep. Clinical research shows it specifically reduces nighttime wakings and improves slow-wave sleep.",2);
+  if(sleep==='both'){add(27,"For both sleep onset and maintenance issues, the GABA + L-Theanine combination addresses the hyperactivated nervous system state that drives difficulty falling and staying asleep.",2);add(28,"Glycine addresses sleep maintenance through thermoregulation; magnesium reduces the cortisol surge that causes early morning waking.",1);}
+
+  if(energy.includes('fatigue')){add(8,"Chronic fatigue in adults often reflects mitochondrial decline. CoQ10 + PQQ is the most mechanistically complete approach: one optimizes existing mitochondria, the other stimulates growth of new ones.",2);add(2,null,1);add(17,"L-Carnitine and CoQ10 address fatigue through the mitochondrial fuel chain — carnitine delivers the fuel, CoQ10 converts it to ATP.",1);}
+  if(energy.includes('afternoon')){add(2,"Afternoon energy crashes are a common symptom of magnesium deficiency. And without magnesium, the Vitamin D that regulates energy metabolism stays inactive.",1);add(8,"Persistent afternoon dips often reflect mitochondrial inefficiency. CoQ10 + PQQ addresses this at the cellular level rather than masking it with caffeine.",1);}
+  if(energy.includes('brain_fog')){add(5,"Magnesium L-Threonate is the only form of magnesium shown to cross the blood-brain barrier and increase brain magnesium levels. Lion's Mane stimulates Nerve Growth Factor. Together they target neuroplasticity through two distinct pathways.",2);add(13,"Brain fog is a common symptom of B12 deficiency or MTHFR variants. The methylated forms bypass the conversion step that many people can't complete efficiently.",1);}
+  if(energy.includes('low_mood')){add(29,"5-HTP is the direct precursor to serotonin, but it requires Vitamin B6 as P5P to complete the conversion. Without B6, 5-HTP is converted peripherally rather than in the brain.",2);add(23,"Both Vitamin D and omega-3s independently support serotonin synthesis through complementary pathways — and deficiency in both is common in people with low mood, especially in winter.",1);}
+
+  if(goals.includes('blood_sugar')) add(4,"Berberine activates AMPK to reduce glucose production; chromium potentiates insulin receptor signaling. Two complementary mechanisms for blood sugar control that work better together.",2);
+  if(goals.includes('gut')) add(7,"Probiotic bacteria need prebiotic fiber to survive and colonize. Research shows combined synbiotic supplementation significantly outperforms probiotics alone for bloating, regularity, and colonization.",2);
+  if(goals.includes('allergy')){add(9,"Quercetin is a natural antihistamine that stabilizes mast cells. Bromelain increases quercetin absorption by up to 80% and independently reduces inflammatory proteins. Together they're dramatically more effective.",2);add(22,"For chronic allergies, Quercetin + Vitamin C + Zinc provides triple immune modulation: quercetin blocks histamine, vitamin C regenerates quercetin, zinc maintains immune cell function.",1);}
+  if(goals.includes('beauty')) add(3,"Vitamin C is the mandatory cofactor for collagen synthesis enzymes. Taking collagen without it is like building a wall without mortar — the material is there but can't bind properly.",2);
+  if(goals.includes('heart')){add(15,"Magnesium acts as a natural calcium channel blocker; taurine modulates ion channels in cardiac muscle. Together they provide complementary ion channel stabilization for heart rhythm.",1);add(21,"Elevated homocysteine is a major cardiovascular risk factor. B6, B12, and methylfolate are all required at different steps to fully clear it — none alone is sufficient.",1);}
+  if(goals.includes('joints')){add(3,"Collagen peptides provide the raw material; Vitamin C enables the enzymatic cross-linking that gives collagen its structural strength. Research shows pre-exercise timing specifically boosts joint collagen synthesis.",1);add(9,"Bromelain provides potent anti-inflammatory effects beyond its quercetin-boosting role — it's been studied for post-injury recovery and joint inflammation directly.",1);}
+  if(goals.includes('cognition')){add(5,"Magnesium L-Threonate and Lion's Mane target neuroplasticity through two distinct and additive pathways: synaptic density and new nerve growth factor stimulation.",2);add(13,"Methylfolate and methylcobalamin B12 support homocysteine clearance — elevated homocysteine is one of the most established modifiable risk factors for cognitive decline.",1);add(21,null,1);}
+  if(goals.includes('longevity')){add(16,"NAD+ precursors deplete your methylation pool as a side effect. TMG donates methyl groups to prevent this — it's the essential companion that most people taking NMN or NR are missing.",2);add(30,"The GlyNAC protocol from NIH-funded trials showed the most dramatic glutathione restoration results in aging adults of any intervention studied.",1);add(8,null,1);}
+  if(goals.includes('bone')) add(11,"Vitamin D gets calcium absorbed; K2 directs it into bone rather than arteries. Without K2, calcium supplementation can paradoxically increase cardiovascular calcification risk.",2);
+
+  if(flags.includes('zinc')) safety(19,"This is a critical safety pairing, not an optional enhancement. High zinc intake upregulates metallothionein, which binds copper and prevents its absorption. Copper deficiency from unsupplemented zinc can cause anemia and neurological damage. The ratio is 15mg zinc : 1–2mg copper.");
+  if(flags.includes('statins')){add(8,"Statins deplete CoQ10 by blocking its synthesis pathway — the same pathway they use to block cholesterol. This is one of the most well-established nutrient depletions from medication.",3);add(17,"L-Carnitine + CoQ10 is particularly relevant for statin users, who have depleted CoQ10 and often experience associated muscle fatigue and weakness.",1);}
+  if(flags.includes('nad')) safety(16,"If you're already taking NMN or NR, TMG is not optional — it's protective. NAD+ synthesis consumes methyl groups via the SAM pathway. Without TMG replenishing them, chronic NAD+ supplementation can deplete your methylation pool.");
+  if(flags.includes('diabetes')){add(4,"Both berberine and chromium address blood sugar through complementary insulin-sensitizing mechanisms. Berberine's effects on HbA1c have been compared to metformin in some trials.",2);add(14,"Diabetes depletes both magnesium and thiamine, and magnesium is required to activate thiamine into its functional form.",1);}
+  if(flags.includes('palpitations')) add(15,"Magnesium is a natural calcium channel blocker; taurine stabilizes ion channels in cardiac muscle. Palpitations are often a sign of magnesium deficiency. This pair addresses the most common underlying mechanisms.",2);
+  if(flags.includes('neuropathy')) add(14,"Magnesium is required to phosphorylate thiamine into its active form (TPP). Without it, supplemental thiamine can't be activated. Benfotiamine (fat-soluble B1) is better absorbed and studied specifically for neuropathy.",2);
+  if(flags.includes('homocysteine')){add(21,"Elevated homocysteine requires all three B vitamins working in concert for full clearance: B12 and folate for remethylation, B6 for trans-sulfuration. Neither alone is sufficient.",2);add(13,"Methylated forms of B12 and folate bypass the MTHFR enzyme conversion step that many people with elevated homocysteine can't complete efficiently.",1);}
+  if(flags.includes('smoke')){add(25,"Smoking dramatically increases oxidative stress and depletes antioxidant reserves. Vitamin E + selenium provides a regenerating antioxidant system — selenium recycles Vitamin E after it's been oxidized.",2);add(30,"Smoking directly depletes glutathione — your primary cellular antioxidant defense. The GlyNAC protocol is the most evidence-backed approach for restoring it in high-oxidative-stress conditions.",1);}
+
+  return Object.entries(map).filter(([,v])=>v.score>0).sort(([idA,a2],[idB,b2])=>{if(b2.isSafety!==a2.isSafety)return b2.isSafety?1:-1;if(b2.score!==a2.score)return b2.score-a2.score;const pa=PAIRS.find(p=>p.id===+idA),pb=PAIRS.find(p=>p.id===+idB);return(pb?.strength||0)-(pa?.strength||0);}).map(([id,v])=>({pair:PAIRS.find(p=>p.id===+id),score:v.score,reason:v.reason,isSafety:v.isSafety})).filter(r=>r.pair);
+}
+
+/* ─── RENDER ─── */
+function getShell(){return document.getElementById('quizShell');}
+
+function renderIntro(){
+  getShell().innerHTML=`<div class="intro-screen"><div class="intro-card"><div class="intro-eyebrow">Personalized stack builder</div><h1 class="intro-headline">Find your <em>stack</em></h1><p class="intro-sub">Answer a few questions about your age, lifestyle, and health goals. We'll match you to the supplement pairs from our research that are most relevant to you — with a personalized explanation for each.</p><div class="intro-stats"><div class="intro-stat"><span>32</span> pairs analyzed</div><div class="intro-stat"><span>8–9</span> questions</div><div class="intro-stat"><span>~3</span> minutes</div></div><button class="btn-start" onclick="startQuiz()">Start →</button><p class="intro-note">No email required. Results appear instantly.</p></div></div>`;
+}
+
+function renderQuestion(){
+  const q=currentQuestion(),total=totalSteps(),stepNum=state.step+1,pct=Math.round((state.step/total)*100),current=state.answers[q.id],isMulti=q.type==='multi';
+  let optHtml='';
+  q.options.forEach(opt=>{
+    const isSel=isMulti?Array.isArray(current)&&current.includes(opt.value):current===opt.value;
+    const check=isMulti?`<div class="opt-check"></div>`:`<div class="opt-radio"></div>`;
+    const sub=opt.sub?`<span class="opt-sublabel">${opt.sub}</span>`:'';
+    const cls=['option-card',!isMulti?'single-card':'',isSel?'selected':'',opt.exclusive?'opt-exclusive':''].filter(Boolean).join(' ');
+    optHtml+=`<button class="${cls}" onclick="selectOption('${q.id}','${opt.value}',${isMulti},${!!opt.exclusive})">${check}<div class="opt-content"><span class="opt-label">${opt.label}</span>${sub}</div></button>`;
+  });
+  const hasSel=isMulti?Array.isArray(current)&&current.length>0:!!current;
+  getShell().innerHTML=`<div class="quiz-screen"><div class="quiz-top"><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div><div class="progress-label">Question ${stepNum} of ${total}</div></div><div class="quiz-stage"><div class="question-card"><div class="q-step-tag">Step ${stepNum}</div><h2 class="q-text">${q.question}</h2>${q.note?`<p class="q-note">${q.note}</p>`:''}<div class="options-grid">${optHtml}</div></div></div><div class="quiz-nav"><button class="btn-back" onclick="goBack()" ${state.step===0?'disabled':''}>← Back</button><button class="btn-next" onclick="goNext()" ${hasSel?'':'disabled'}>${state.step===total-1?'See my stack →':'Continue →'}</button></div></div>`;
+}
+
+function renderResults(){
+  const recs=score(),display=recs.slice(0,8),count=display.length;
+  function dots(n){let h='';for(let i=1;i<=5;i++)h+=`<div class="rec-dot${i<=n?' on':''}"></div>`;return h;}
+  function str(n){if(n>=5)return'Very strong evidence';if(n>=4)return'Strong evidence';if(n>=3)return'Good evidence';return'Emerging research';}
+  let cards='';
+  display.forEach(r=>{
+    const topCls=r.isSafety?'rec-card-top safety':'rec-card-top';
+    const lblCls=r.isSafety?'rec-why-label safety':'rec-why-label';
+    const lbl=r.isSafety?'⚠ Important safety pairing':'Why this is for you';
+    const pills=r.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
+    cards+=`<div class="rec-card"><div class="${topCls}"><div class="rec-name">${r.pair.name}</div><div class="rec-supps">${pills}</div></div><div class="rec-card-body"><div><div class="${lblCls}">${lbl}</div><div class="rec-why-text">${r.reason||r.pair.why}</div></div><div class="rec-strength"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="rec-strength-label">${str(r.pair.strength)}</div></div></div><div class="rec-card-footer"><a href="all-pairs.html" class="rec-link">See all pairs →</a></div></div>`;
+  });
+  const hasD2=display.some(r=>r.pair.id===2);
+  const baseline=hasD2?'':`<div class="results-baseline"><div class="baseline-icon">◆</div><div><div class="baseline-title">The pair almost everyone needs: Vitamin D + Magnesium</div><div class="baseline-text">Magnesium is required to activate the Vitamin D your body makes or takes — without it, your D3 supplement stays inactive. Up to 50% of people are magnesium deficient. Even if this didn't appear in your top results, it's worth knowing about.</div></div></div>`;
+  const ageStr={u30:'your age','30_44':'your age group','45_59':'your age group','60plus':'your age group'}[state.answers.age]||'your profile';
+  getShell().innerHTML=`<div class="results-screen"><div class="results-inner"><div class="results-header"><div class="results-eyebrow">Your personalized stack</div><h1 class="results-headline">We found ${count} pairs for you</h1><p class="results-sub">Based on ${ageStr}, lifestyle, and health goals. Pairs are ranked by how directly your answers matched each one. Each card explains exactly why it's relevant to you specifically.</p></div>${baseline}<div class="results-grid">${cards}</div><div class="results-actions"><a href="all-pairs.html" class="btn-results-primary">Browse all pairs →</a><button class="btn-results-ghost" onclick="retakeQuiz()">Retake quiz</button></div><div class="results-disclaimer"><strong>Not medical advice.</strong> These recommendations are for educational purposes only, based on published research. Always consult your healthcare provider before starting any supplement regimen, especially if you take medications, have a medical condition, or are pregnant. Pairs marked with ⚠ address important safety interactions — please read them carefully.</div></div></div>`;
+}
+
+/* ─── INTERACTIONS ─── */
+function selectOption(qId,value,isMulti,isExclusive){
+  if(isMulti){
+    let arr=Array.isArray(state.answers[qId])?[...state.answers[qId]]:[];
+    if(isExclusive){arr=arr.includes(value)?[]:[value];}
+    else{const q=QUESTIONS.find(q=>q.id===qId);if(q){const excl=q.options.filter(o=>o.exclusive).map(o=>o.value);arr=arr.filter(v=>!excl.includes(v));}if(arr.includes(value))arr=arr.filter(v=>v!==value);else arr.push(value);}
+    state.answers[qId]=arr;renderQuestion();
+  }else{state.answers[qId]=value;renderQuestion();setTimeout(()=>{if(state.answers[qId]===value)goNext();},320);}
+}
+function goNext(){const q=currentQuestion();if(!q)return;const ans=state.answers[q.id];const ok=q.type==='multi'?Array.isArray(ans)&&ans.length>0:!!ans;if(!ok)return;state.step>=totalSteps()-1?renderResults():(state.step++,renderQuestion());}
+function goBack(){if(state.step<=0)return;state.step--;renderQuestion();}
+function startQuiz(){state.step=0;state.answers={};renderQuestion();}
+function retakeQuiz(){state.step=-1;state.answers={};renderIntro();}
+
+renderIntro();
 </script>
 </body>
 </html>

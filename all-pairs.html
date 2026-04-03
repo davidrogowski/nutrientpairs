@@ -839,48 +839,6 @@ footer {
   margin: 0 auto;
   padding: 3.5rem 2rem 5rem;
 }
-@media (max-width: 600px) {
-  .ref-section { padding: 1.75rem 1.25rem 3rem; }
-  .section-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
-  .section-sub { font-size: 0.88rem; margin-bottom: 1.5rem; }
-  .ref-search-bar { margin-bottom: 1.25rem; }
-  .ref-search { font-size: 0.9rem; }
-
-  /* Convert table to stacked cards */
-  .table-scroll-wrap { border: none; border-radius: 0; background: transparent; }
-  .table-scroll-inner { overflow: visible; max-height: none; }
-  .pairs-table { display: block; min-width: 0; }
-  .pairs-table thead { display: none; }
-  .pairs-table tbody { display: block; }
-  .pairs-table tr {
-    display: block;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-    padding: 1rem 1.25rem;
-    transition: background 0.15s;
-  }
-  .pairs-table tr.hidden { display: none; }
-  .pairs-table tr:hover td { background: transparent; }
-  .pairs-table td {
-    display: block;
-    padding: 0;
-    border: none;
-    overflow: visible;
-    line-height: 1.5;
-  }
-  .t-name {
-    white-space: normal;
-    font-size: 0.98rem;
-    margin-bottom: 0.2rem;
-    overflow: visible;
-    text-overflow: clip;
-  }
-  .t-combo { font-size: 0.72rem; margin-bottom: 0.5rem; }
-  .t-audience { font-size: 0.78rem; color: var(--sage); }
-  .t-why { display: none; }
-}
 .table-scroll-wrap {
   border: 1px solid var(--border);
   border-radius: 4px;
@@ -937,10 +895,45 @@ footer {
   display: none;
 }
 @media (max-width: 600px) {
-  .section-title { font-size: clamp(1.4rem, 5vw, 2rem); }
-  .ref-search { font-size: 0.85rem; padding: 0.65rem 0.9rem; }
-  .ref-filter-btn { font-size: 0.68rem; padding: 0.45rem 0.75rem; }
-  .table-scroll-inner { max-height: 500px; }
+  .ref-section { padding: 1.75rem 1.25rem 3rem; }
+  .section-title { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .section-sub { font-size: 0.88rem; margin-bottom: 1.25rem; }
+  .ref-search-bar { margin-bottom: 1rem; }
+  .ref-search { font-size: 0.9rem; width: 100%; min-width: 0; }
+
+  /* Table → stacked cards */
+  .table-scroll-wrap { border: none; border-radius: 0; overflow: visible; background: transparent; }
+  .table-scroll-inner { overflow: visible; max-height: none; }
+  .pairs-table { display: block; width: 100%; min-width: 0; table-layout: auto; }
+  .pairs-table thead { display: none; }
+  .pairs-table tbody { display: block; }
+  .pairs-table tr {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+  .pairs-table tr.hidden { display: none; }
+  .pairs-table tr:hover td { background: transparent; }
+  .pairs-table td {
+    display: block;
+    padding: 0;
+    border: none;
+    overflow: visible;
+    width: 100%;
+  }
+  .t-name {
+    white-space: normal;
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  .t-combo { white-space: normal; font-size: 0.72rem; margin-bottom: 0.4rem; }
+  .t-audience { font-size: 0.78rem; color: var(--sage); line-height: 1.4; }
+  .t-why { display: none; }
 }
 </style>
 </head>

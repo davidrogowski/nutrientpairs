@@ -293,7 +293,6 @@ section { padding: 6rem 2rem; }
   line-height: 1.7;
   font-weight: 300;
   margin-bottom: 3rem;
-  white-space: nowrap;
 }
 
 /* ── HOW IT WORKS ── */
@@ -841,16 +840,26 @@ footer {
   white-space: nowrap;
   padding: 0.55rem 0;
 }
+.ref-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+@media (max-width: 600px) {
+  .ref-section { padding: 2rem 1.25rem 3rem; }
+}
 .table-scroll-wrap {
   border: 1px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
 }
 .table-scroll-inner {
+  overflow-x: auto;
   overflow-y: auto;
   max-height: 620px;
+  -webkit-overflow-scrolling: touch;
 }
-.pairs-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; table-layout: fixed; }
+.pairs-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; table-layout: fixed; min-width: 600px; }
 .pairs-table thead { position: sticky; top: 0; z-index: 5; }
 .pairs-table th {
   text-align: left;
@@ -895,12 +904,10 @@ footer {
   display: none;
 }
 @media (max-width: 600px) {
-  .ref-section { padding: 2rem 1.25rem 3rem; }
   .section-title { font-size: clamp(1.4rem, 5vw, 2rem); }
   .ref-search { font-size: 0.85rem; padding: 0.65rem 0.9rem; }
-  .pairs-table th { font-size: 0.6rem; padding: 0.5rem 0.75rem; }
-  .pairs-table td { padding: 0.75rem; font-size: 0.82rem; }
-  .t-why { display: none; }
+  .ref-filter-btn { font-size: 0.68rem; padding: 0.45rem 0.75rem; }
+  .table-scroll-inner { max-height: 500px; }
 }
 </style>
 </head>
@@ -909,6 +916,7 @@ footer {
 <nav>
   <a href="index.html" class="nav-logo">Nutrient<span>Pairs</span></a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="all-pairs.html">All Pairs</a></li>
     <li><a href="explorer.html">Explorer</a></li>
     <li><a href="index.html#article">Deep Dives</a></li>
@@ -921,6 +929,7 @@ footer {
 </nav>
 <div class="nav-mobile" id="navMobile">
   <ul>
+    <li><a href="index.html">Home</a></li>
     <li><a href="all-pairs.html">All Pairs</a></li>
     <li><a href="explorer.html">Explorer</a></li>
     <li><a href="deep-dives.html">Deep Dives</a></li>
@@ -928,7 +937,7 @@ footer {
   </ul>
 </div>
 
-<div style="max-width:1200px;margin:0 auto;padding:3.5rem 2rem 5rem;">
+<div class="ref-section">
 
   <div style="margin-bottom:2.5rem;">
     <h1 class="section-title">All pairs at a glance.</h1>

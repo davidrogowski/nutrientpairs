@@ -358,12 +358,66 @@ section { padding: 6rem 2rem; }
 /* ── FEATURED PAIRS ── */
 .pairs-section { background: var(--cream); }
 
-
-
+.pairs-scroll-wrap {
+  position: relative;
+}
+.pairs-scroll-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, var(--cream));
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: 1;
+}
+.pairs-scroll-wrap.scrolled::after {
+  opacity: 0;
+}
 .pairs-grid-scroll {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.pairs-grid-scroll::-webkit-scrollbar { display: none; }
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: opacity 0.4s;
+}
+.scroll-hint-arrows {
+  display: flex;
+  gap: 3px;
+}
+.scroll-hint-arrows span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: rotate(-45deg);
+  animation: hintBounce 1.4s ease infinite;
+}
+.scroll-hint-arrows span:nth-child(2) { animation-delay: 0.15s; opacity: 0.6; }
+.scroll-hint-arrows span:nth-child(3) { animation-delay: 0.3s; opacity: 0.35; }
+@keyframes hintBounce {
+  0%, 100% { transform: rotate(-45deg) translateX(0); }
+  50% { transform: rotate(-45deg) translateX(4px); }
+}
+.scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 .pairs-grid {
   display: flex;
@@ -879,7 +933,8 @@ footer {
     <div class="section-label">The library</div>
     <h2 class="section-title">Researched pairs, organized by who they're for</h2>
     <p class="section-sub">Every pair below is backed by clinical research. Every pair is backed by clinical research. Browse by what's relevant to you.</p>
-    <div class="pairs-grid-scroll">
+    <div class="pairs-scroll-wrap" id="pairsScrollWrap">
+    <div class="pairs-grid-scroll" id="pairsScroll">
     <div class="pairs-grid" id="pairsGrid">
 
       <!-- UNDERSERVED -->
@@ -1195,6 +1250,13 @@ footer {
 
     </div>
     </div>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+      <div class="scroll-hint-arrows">
+        <span></span><span></span><span></span>
+      </div>
+      Scroll to explore
+    </div>
   </div>
 </section>
 <!-- EMAIL CAPTURE -->
@@ -1257,6 +1319,18 @@ footer {
 <script>
 function toggleMenu() {
   document.getElementById('navMobile').classList.toggle('open');
+}
+
+const pairsScroll = document.getElementById('pairsScroll');
+const scrollHint = document.getElementById('scrollHint');
+const scrollWrap = document.getElementById('pairsScrollWrap');
+if (pairsScroll) {
+  pairsScroll.addEventListener('scroll', function() {
+    if (this.scrollLeft > 40) {
+      scrollHint && scrollHint.classList.add('hidden');
+      scrollWrap && scrollWrap.classList.add('scrolled');
+    }
+  }, { passive: true });
 }
 
 // Scroll reveal

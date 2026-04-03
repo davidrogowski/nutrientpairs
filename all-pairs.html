@@ -779,13 +779,7 @@ footer {
   .nav-hamburger { display: flex; }
 }
 @media (max-width: 600px) {
-  .pairs-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-  .email-form { flex-direction: column; }
-  .hero-stat-row { gap: 1.5rem; flex-wrap: wrap; }
-  .hero-left { padding: 2.5rem 1.25rem 3rem; min-height: auto; }
-  section { padding: 3rem 1.25rem; }
-  .section-title { font-size: clamp(1.4rem, 5vw, 2.2rem); }
   footer { padding: 2.5rem 1.25rem; }
 }
 </style>
@@ -846,7 +840,46 @@ footer {
   padding: 3.5rem 2rem 5rem;
 }
 @media (max-width: 600px) {
-  .ref-section { padding: 2rem 1.25rem 3rem; }
+  .ref-section { padding: 1.75rem 1.25rem 3rem; }
+  .section-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .section-sub { font-size: 0.88rem; margin-bottom: 1.5rem; }
+  .ref-search-bar { margin-bottom: 1.25rem; }
+  .ref-search { font-size: 0.9rem; }
+
+  /* Convert table to stacked cards */
+  .table-scroll-wrap { border: none; border-radius: 0; background: transparent; }
+  .table-scroll-inner { overflow: visible; max-height: none; }
+  .pairs-table { display: block; min-width: 0; }
+  .pairs-table thead { display: none; }
+  .pairs-table tbody { display: block; }
+  .pairs-table tr {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    padding: 1rem 1.25rem;
+    transition: background 0.15s;
+  }
+  .pairs-table tr.hidden { display: none; }
+  .pairs-table tr:hover td { background: transparent; }
+  .pairs-table td {
+    display: block;
+    padding: 0;
+    border: none;
+    overflow: visible;
+    line-height: 1.5;
+  }
+  .t-name {
+    white-space: normal;
+    font-size: 0.98rem;
+    margin-bottom: 0.2rem;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  .t-combo { font-size: 0.72rem; margin-bottom: 0.5rem; }
+  .t-audience { font-size: 0.78rem; color: var(--sage); }
+  .t-why { display: none; }
 }
 .table-scroll-wrap {
   border: 1px solid var(--border);
@@ -939,7 +972,7 @@ footer {
 
 <div class="ref-section">
 
-  <div style="margin-bottom:2.5rem;">
+  <div style="margin-bottom:1.75rem;">
     <h1 class="section-title">All pairs at a glance.</h1>
     <p class="section-sub">Every researched synergistic supplement pair. Search by name, ingredient, or condition.</p>
   </div>

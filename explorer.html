@@ -348,7 +348,9 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 .rec-dosage-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
 .rec-dose-line { font-size: 0.78rem; line-height: 1.55; color: var(--muted); }
 .rec-dose-ing { font-weight: 500; color: var(--ink); }
-.rec-card-footer { padding: 0.9rem 1.5rem; border-top: 1px solid var(--border); background: var(--paper); }
+.rec-card-footer { padding: 0.9rem 1.5rem; border-top: 1px solid var(--border); background: var(--paper); display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.rec-buy-btn { font-size: 0.75rem; font-weight: 500; color: var(--white); background: var(--rust); text-decoration: none; padding: 0.3rem 0.8rem; border-radius: 2px; letter-spacing: 0.02em; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.rec-buy-btn:hover { opacity: 0.85; }
 .rec-link { font-size: 0.8rem; font-weight: 500; color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; transition: opacity 0.15s; }
 .rec-link:hover { opacity: 0.7; }
 .results-baseline { background: var(--sage-pale); border: 1px solid rgba(74,103,65,0.25); border-radius: 5px; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; display: flex; gap: 1rem; align-items: flex-start; }
@@ -529,6 +531,7 @@ const PAIRS = [
     id: 1,
     name: "The Distance Runner Combo",
     supps: ["Iron", "Vitamin C"],
+    affiliateUrl: "#",
     audience: "Distance runners, female athletes, vegans",
     why: "Vitamin C converts ferric iron (Fe³⁺) into ferrous iron (Fe²⁺), the only form your intestinal cells can absorb efficiently. It also chelates iron to keep it soluble in the small intestine. The result: non-heme iron absorption increases up to 3× when taken with 100mg Vitamin C.",
     mechanism: "Absorption enhancement: Vitamin C reduces Fe³⁺ to Fe²⁺ and prevents formation of insoluble iron compounds in alkaline gut environments.",
@@ -1450,7 +1453,7 @@ function renderResults(){
     const lbl=r.isSafety?'⚠ Important safety pairing':'Why this is for you';
     const pills=r.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
     const dosage=r.pair.dosage?`<div class="rec-dosage"><div class="rec-dosage-label">Suggested dosage</div>${r.pair.dosage.map(d=>`<div class="rec-dose-line"><span class="rec-dose-ing">${d.ing}:</span> ${d.dose}</div>`).join('')}</div>`:'';
-    cards+=`<div class="rec-card"><div class="${topCls}"><div class="rec-name">${r.pair.name}</div><div class="rec-supps">${pills}</div></div><div class="rec-card-body"><div><div class="${lblCls}">${lbl}</div><div class="rec-why-text">${r.reason||r.pair.why}</div>${dosage}</div><div class="rec-strength"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="rec-strength-label">${str(r.pair.strength)}</div></div></div><div class="rec-card-footer"><a href="all-pairs.html" class="rec-link">See all pairs →</a></div></div>`;
+    cards+=`<div class="rec-card"><div class="${topCls}"><div class="rec-name">${r.pair.name}</div><div class="rec-supps">${pills}</div></div><div class="rec-card-body"><div><div class="${lblCls}">${lbl}</div><div class="rec-why-text">${r.reason||r.pair.why}</div>${dosage}</div><div class="rec-strength"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="rec-strength-label">${str(r.pair.strength)}</div></div></div><div class="rec-card-footer"><a href="all-pairs.html" class="rec-link">See all pairs →</a>${r.pair.affiliateUrl?`<a href="${r.pair.affiliateUrl}" class="rec-buy-btn" target="_blank" rel="noopener sponsored">Shop this pair →</a>`:''}</div></div>`;
   });
   const hasD2=display.some(r=>r.pair.id===2);
   const baseline=hasD2?'':`<div class="results-baseline"><div class="baseline-icon">◆</div><div><div class="baseline-title">The pair almost everyone needs: Vitamin D + Magnesium</div><div class="baseline-text">Magnesium is required to activate the Vitamin D your body makes or takes — without it, your D3 supplement stays inactive. Up to 50% of people are magnesium deficient. Even if this didn't appear in your top results, it's worth knowing about.</div></div></div>`;

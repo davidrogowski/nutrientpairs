@@ -1355,21 +1355,42 @@ document.querySelectorAll('.pair-card, .how-item, .sidebar-card').forEach(el => 
   observer.observe(el);
 });
 
-// Peek-scroll: nudge the pairs carousel right and back when it enters view
+// Auto-scroll pairs carousel; stops permanently on user interaction
 const pairsSection = document.getElementById('pairs');
 if (pairsScroll && pairsSection) {
-  let peeked = false;
+  let autoScrollId = null;
+  let userStopped = false;
+
+  function startAutoScroll() {
+    if (userStopped) return;
+    autoScrollId = requestAnimationFrame(function tick() {
+      if (userStopped) return;
+      pairsScroll.scrollLeft += 0.5;
+      // Stop at end
+      if (pairsScroll.scrollLeft >= pairsScroll.scrollWidth - pairsScroll.clientWidth) {
+        userStopped = true;
+        return;
+      }
+      autoScrollId = requestAnimationFrame(tick);
+    });
+  }
+
+  function stopAutoScroll() {
+    userStopped = true;
+    if (autoScrollId) cancelAnimationFrame(autoScrollId);
+  }
+
+  // Stop on any user interaction with the carousel
+  pairsScroll.addEventListener('pointerdown', stopAutoScroll);
+  pairsScroll.addEventListener('wheel', stopAutoScroll, { passive: true });
+  pairsScroll.addEventListener('touchstart', stopAutoScroll, { passive: true });
+
+  // Start when section comes into view
   const peekObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !peeked) {
-        peeked = true;
+      if (entry.isIntersecting && !userStopped) {
         peekObserver.disconnect();
-        setTimeout(() => {
-          pairsScroll.scrollTo({ left: 140, behavior: 'smooth' });
-          setTimeout(() => {
-            pairsScroll.scrollTo({ left: 0, behavior: 'smooth' });
-          }, 600);
-        }, 1200);
+        setTimeout(startAutoScroll, 1200);
       }
     });
   }, { threshold: 0.15 });

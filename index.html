@@ -1365,7 +1365,9 @@ if (pairsScroll && pairsSection) {
     if (userStopped) return;
     autoScrollId = requestAnimationFrame(function tick() {
       if (userStopped) return;
+      isAutoScrolling = true;
       pairsScroll.scrollLeft += 0.5;
+      setTimeout(() => { isAutoScrolling = false; }, 50);
       // Stop at end
       if (pairsScroll.scrollLeft >= pairsScroll.scrollWidth - pairsScroll.clientWidth) {
         userStopped = true;
@@ -1375,15 +1377,18 @@ if (pairsScroll && pairsSection) {
     });
   }
 
+  let isAutoScrolling = false;
+
   function stopAutoScroll() {
     userStopped = true;
     if (autoScrollId) cancelAnimationFrame(autoScrollId);
   }
 
-  // Stop on any user interaction with the carousel
-  pairsScroll.addEventListener('pointerdown', stopAutoScroll);
+  // Stop when user manually scrolls the carousel (but ignore our own auto-scroll)
+  pairsScroll.addEventListener('scroll', function() {
+    if (!isAutoScrolling) stopAutoScroll();
+  }, { passive: true });
   pairsScroll.addEventListener('wheel', stopAutoScroll, { passive: true });
-  pairsScroll.addEventListener('touchstart', stopAutoScroll, { passive: true });
 
   // Start when section comes into view
   const peekObserver = new IntersectionObserver((entries) => {

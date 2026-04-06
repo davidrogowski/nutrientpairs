@@ -1359,41 +1359,33 @@ document.querySelectorAll('.pair-card, .how-item, .sidebar-card').forEach(el => 
 const pairsSection = document.getElementById('pairs');
 if (pairsScroll && pairsSection) {
   let autoScrollId = null;
-  let userStopped = false;
+  let stopped = false;
+
+  function stopAutoScroll() {
+    stopped = true;
+    if (autoScrollId) cancelAnimationFrame(autoScrollId);
+  }
 
   function startAutoScroll() {
-    if (userStopped) return;
+    if (stopped) return;
+    // Bind stop handlers only once auto-scroll is running
+    pairsScroll.addEventListener('pointerdown', stopAutoScroll, { once: true });
+    pairsScroll.addEventListener('wheel', stopAutoScroll, { once: true, passive: true });
+
     autoScrollId = requestAnimationFrame(function tick() {
-      if (userStopped) return;
-      isAutoScrolling = true;
+      if (stopped) return;
       pairsScroll.scrollLeft += 0.5;
-      setTimeout(() => { isAutoScrolling = false; }, 50);
-      // Stop at end
       if (pairsScroll.scrollLeft >= pairsScroll.scrollWidth - pairsScroll.clientWidth) {
-        userStopped = true;
+        stopped = true;
         return;
       }
       autoScrollId = requestAnimationFrame(tick);
     });
   }
 
-  let isAutoScrolling = false;
-
-  function stopAutoScroll() {
-    userStopped = true;
-    if (autoScrollId) cancelAnimationFrame(autoScrollId);
-  }
-
-  // Stop when user manually scrolls the carousel (but ignore our own auto-scroll)
-  pairsScroll.addEventListener('scroll', function() {
-    if (!isAutoScrolling) stopAutoScroll();
-  }, { passive: true });
-  pairsScroll.addEventListener('wheel', stopAutoScroll, { passive: true });
-
-  // Start when section comes into view
   const peekObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !userStopped) {
+      if (entry.isIntersecting && !stopped) {
         peekObserver.disconnect();
         setTimeout(startAutoScroll, 1200);
       }

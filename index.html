@@ -1368,9 +1368,18 @@ if (pairsScroll && pairsSection) {
 
   function startAutoScroll() {
     if (stopped) return;
-    // Bind stop handlers only once auto-scroll is running
+    // Desktop: stop on click/wheel
     pairsScroll.addEventListener('pointerdown', stopAutoScroll, { once: true });
     pairsScroll.addEventListener('wheel', stopAutoScroll, { once: true, passive: true });
+
+    // Mobile: stop only on horizontal swipe (not vertical page scroll)
+    let touchStartX = 0;
+    pairsScroll.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    pairsScroll.addEventListener('touchmove', function(e) {
+      if (Math.abs(e.touches[0].clientX - touchStartX) > 10) stopAutoScroll();
+    }, { passive: true });
 
     autoScrollId = requestAnimationFrame(function tick() {
       if (stopped) return;

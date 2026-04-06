@@ -1449,7 +1449,7 @@ function score() {
   if(flags.includes('homocysteine')){add(21,"Since you have elevated homocysteine, this trio is the most direct intervention. Full clearance requires all three B vitamins working together: B12 and methylfolate for the remethylation pathway, B6 for the trans-sulfuration pathway. Neither alone can fully clear it.",2);add(13,"Methylated forms of B12 and folate bypass the MTHFR enzyme conversion step — many people with elevated homocysteine carry MTHFR variants that make standard B12 and folic acid less effective.",1);}
   if(flags.includes('smoke')){add(25,"Smoking substantially increases oxidative stress and depletes antioxidant reserves faster than they can be replenished by diet alone. Vitamin E + selenium provides a self-regenerating antioxidant system — selenium recycles oxidized Vitamin E so the protection is sustained rather than one-time.",2);add(30,"Smoking directly depletes glutathione — your primary cellular antioxidant defense — and that depletion compounds with continued exposure. The GlyNAC protocol is the most evidence-backed approach for restoring glutathione in high-oxidative-stress conditions.",1);}
 
-  return Object.entries(map).filter(([,v])=>v.score>0).sort(([idA,a2],[idB,b2])=>{if(b2.isSafety!==a2.isSafety)return b2.isSafety?1:-1;if(b2.score!==a2.score)return b2.score-a2.score;const pa=PAIRS.find(p=>p.id===+idA),pb=PAIRS.find(p=>p.id===+idB);return(pb?.strength||0)-(pa?.strength||0);}).map(([id,v])=>({pair:PAIRS.find(p=>p.id===+id),score:v.score,reason:v.reason,isSafety:v.isSafety})).filter(r=>r.pair);
+  return Object.entries(map).filter(([,v])=>v.score>0).sort(([idA,a2],[idB,b2])=>{if(b2.score!==a2.score)return b2.score-a2.score;const pa=PAIRS.find(p=>p.id===+idA),pb=PAIRS.find(p=>p.id===+idB);return(pb?.strength||0)-(pa?.strength||0);}).map(([id,v])=>({pair:PAIRS.find(p=>p.id===+id),score:v.score,reason:v.reason,isSafety:v.isSafety})).filter(r=>r.pair);
 }
 
 /* ─── RENDER ─── */
@@ -1489,35 +1489,27 @@ function renderResults(){
     return `<div class="rec-card-body"><div><div class="${lblCls}">${lbl}</div><div class="rec-why-text">${r.reason||r.pair.why}</div>${dosage}</div><div class="rec-strength"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="rec-strength-label">${str(r.pair.strength)}</div></div></div><div class="rec-card-footer"><a href="all-pairs.html" class="rec-link">See all pairs →</a>${r.pair.affiliateUrl?`<a href="${r.pair.affiliateUrl}" class="rec-buy-btn" target="_blank" rel="noopener sponsored">Shop this pair →</a>`:''}</div>`;
   }
 
-  // Separate safety pairs from regular pairs
-  const safetyPairs=display.filter(r=>r.isSafety);
-  const regularPairs=display.filter(r=>!r.isSafety);
-
-  // Safety banners at top
-  let safetyHtml='';
-  safetyPairs.forEach(r=>{
-    const pills=r.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
-    safetyHtml+=`<div class="hero-card" style="border-color:#8b4513; margin-bottom:1.5rem;"><div class="rec-card-top safety"><div class="hero-rank-tag" style="color:rgba(255,255,255,0.7);">⚠ Safety pairing</div><div class="rec-name" style="font-size:1.25rem;">${r.pair.name}</div><div class="rec-supps">${pills}</div></div>${cardBody(r)}</div>`;
-  });
-
-  // Hero card for #1 regular pair
+  // Hero card for #1 pair (regardless of safety status)
   let heroHtml='';
-  if(regularPairs.length>0){
-    const top=regularPairs[0];
+  if(display.length>0){
+    const top=display[0];
     const pills=top.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
-    heroHtml=`<div class="hero-card"><div class="rec-card-top"><div class="hero-rank-tag">Your #1 pairing</div><div class="rec-name">${top.pair.name}</div><div class="rec-supps">${pills}</div></div>${cardBody(top)}</div>`;
+    const topCls=top.isSafety?'rec-card-top safety':'rec-card-top';
+    const tagText=top.isSafety?'⚠ Your #1 pairing':'Your #1 pairing';
+    heroHtml=`<div class="hero-card"${top.isSafety?' style="border-color:#8b4513;"':''}><div class="${topCls}"><div class="hero-rank-tag">${tagText}</div><div class="rec-name">${top.pair.name}</div><div class="rec-supps">${pills}</div></div>${cardBody(top)}</div>`;
   }
 
   // Accordion for remaining pairs
   let accordionHtml='';
-  const remaining=regularPairs.slice(1);
+  const remaining=display.slice(1);
   if(remaining.length>0){
     const moreCount=remaining.length;
     let items='';
     remaining.forEach((r,i)=>{
       const rank=i+2;
       const suppsText=r.pair.supps.join(' + ');
-      items+=`<div class="accordion-item" id="accordion-${i}"><button class="accordion-trigger" onclick="toggleExpand(${i})"><div class="accordion-rank">#${rank}</div><div class="accordion-info"><div class="accordion-pair-name">${r.pair.name}</div><div class="accordion-pair-supps">${suppsText}</div></div><div class="accordion-right"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="accordion-chevron">▸</div></div></button><div class="accordion-body">${cardBody(r)}</div></div>`;
+      const safetyCls=r.isSafety?' safety':'';
+      items+=`<div class="accordion-item${safetyCls}" id="accordion-${i}"><button class="accordion-trigger" onclick="toggleExpand(${i})"><div class="accordion-rank">#${rank}</div><div class="accordion-info"><div class="accordion-pair-name">${r.isSafety?'⚠ ':''}${r.pair.name}</div><div class="accordion-pair-supps">${suppsText}</div></div><div class="accordion-right"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="accordion-chevron">▸</div></div></button><div class="accordion-body">${cardBody(r)}</div></div>`;
     });
     accordionHtml=`<div class="more-pairs-header"><div class="more-pairs-title">Plus ${moreCount} more pair${moreCount===1?'':'s'} matched your profile</div><div class="more-pairs-sub">Ranked by relevance to your answers. Expand any pair for details.</div></div><div class="accordion-list">${items}</div>`;
   }
@@ -1525,7 +1517,7 @@ function renderResults(){
   const hasD2=display.some(r=>r.pair.id===2);
   const baseline=hasD2?'':`<div class="results-baseline"><div class="baseline-icon">◆</div><div><div class="baseline-title">The pair almost everyone needs: Vitamin D + Magnesium</div><div class="baseline-text">Magnesium is required to activate the Vitamin D your body makes or takes — without it, your D3 supplement stays inactive. Up to 50% of people are magnesium deficient. Even if this didn't appear in your top results, it's worth knowing about.</div></div></div>`;
   const ageStr={u30:'your age','30_44':'your age group','45_59':'your age group','60plus':'your age group'}[state.answers.age]||'your profile';
-  getShell().innerHTML=`<div class="results-screen"><div class="results-inner"><div class="results-header"><div class="results-eyebrow">Your personalized stack</div><h1 class="results-headline">Your Top Pair${count>1?'s':''}</h1><p class="results-sub">Based on ${ageStr}, lifestyle, and health goals. Ranked by how directly your answers matched each one — your #1 pick is the strongest match.</p></div>${safetyHtml}${baseline}${heroHtml}${accordionHtml}<div class="results-actions"><a href="all-pairs.html" class="btn-results-primary">Browse all pairs →</a><button class="btn-results-ghost" onclick="retakeQuiz()">Retake quiz</button></div><div class="results-disclaimer"><strong>Not medical advice.</strong> These recommendations are for educational purposes only, based on published research. Always consult your healthcare provider before starting any supplement regimen, especially if you take medications, have a medical condition, or are pregnant. Pairs marked with ⚠ address important safety interactions — please read them carefully.</div></div></div>`;
+  getShell().innerHTML=`<div class="results-screen"><div class="results-inner"><div class="results-header"><div class="results-eyebrow">Your personalized stack</div><h1 class="results-headline">Your Top Pair${count>1?'s':''}</h1><p class="results-sub">Based on ${ageStr}, lifestyle, and health goals. Ranked by how directly your answers matched each one — your #1 pick is the strongest match.</p></div>${baseline}${heroHtml}${accordionHtml}<div class="results-actions"><a href="all-pairs.html" class="btn-results-primary">Browse all pairs →</a><button class="btn-results-ghost" onclick="retakeQuiz()">Retake quiz</button></div><div class="results-disclaimer"><strong>Not medical advice.</strong> These recommendations are for educational purposes only, based on published research. Always consult your healthcare provider before starting any supplement regimen, especially if you take medications, have a medical condition, or are pregnant. Pairs marked with ⚠ address important safety interactions — please read them carefully.</div></div></div>`;
 }
 
 /* ─── INTERACTIONS ─── */

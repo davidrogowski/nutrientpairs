@@ -1381,9 +1381,11 @@ if (pairsScroll && pairsSection) {
       if (Math.abs(e.touches[0].clientX - touchStartX) > 10) stopAutoScroll();
     }, { passive: true });
 
+    let pos = pairsScroll.scrollLeft;
     autoScrollId = requestAnimationFrame(function tick() {
       if (stopped) return;
-      pairsScroll.scrollLeft += 0.5;
+      pos += 0.5;
+      pairsScroll.scrollLeft = Math.floor(pos);
       if (pairsScroll.scrollLeft >= pairsScroll.scrollWidth - pairsScroll.clientWidth) {
         stopped = true;
         return;

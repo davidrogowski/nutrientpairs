@@ -1354,6 +1354,26 @@ document.querySelectorAll('.pair-card, .how-item, .sidebar-card').forEach(el => 
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
+
+// Peek-scroll: nudge the pairs carousel right and back when it enters view
+if (pairsScroll) {
+  let peeked = false;
+  const peekObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !peeked) {
+        peeked = true;
+        peekObserver.disconnect();
+        setTimeout(() => {
+          pairsScroll.scrollTo({ left: 140, behavior: 'smooth' });
+          setTimeout(() => {
+            pairsScroll.scrollTo({ left: 0, behavior: 'smooth' });
+          }, 600);
+        }, 800);
+      }
+    });
+  }, { threshold: 0.3 });
+  peekObserver.observe(pairsScroll);
+}
 </script>
 </body>
 </html>

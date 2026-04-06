@@ -328,6 +328,32 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 .results-headline { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; }
 .results-sub { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.65; max-width: 560px; }
 .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
+/* HERO CARD (#1 pairing) */
+.hero-card { background: var(--white); border: 2px solid var(--sage); border-radius: 6px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 4px 24px rgba(74,103,65,0.1); }
+.hero-card .rec-card-top { padding: 2rem 2.25rem; }
+.hero-card .rec-name { font-size: 1.5rem; margin-bottom: 0.6rem; }
+.hero-card .rec-card-body { padding: 1.75rem 2.25rem; }
+.hero-card .rec-card-footer { padding: 1.1rem 2.25rem; }
+.hero-rank-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0.6rem; }
+/* ACCORDION LIST */
+.more-pairs-header { margin-bottom: 1.25rem; }
+.more-pairs-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+.more-pairs-sub { font-size: 0.85rem; color: var(--muted); font-weight: 300; }
+.accordion-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem; }
+.accordion-item { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; transition: box-shadow 0.2s; }
+.accordion-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: none; border: none; cursor: pointer; font-family: var(--sans); text-align: left; transition: background 0.15s; }
+.accordion-trigger:hover { background: var(--sage-pale); }
+.accordion-rank { font-family: var(--mono); font-size: 0.72rem; font-weight: 500; color: var(--sage); min-width: 1.5rem; }
+.accordion-info { flex: 1; min-width: 0; }
+.accordion-pair-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+.accordion-pair-supps { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-top: 0.15rem; }
+.accordion-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.accordion-chevron { font-size: 0.75rem; color: var(--muted); transition: transform 0.25s ease; }
+.accordion-item.open .accordion-chevron { transform: rotate(90deg); }
+.accordion-body { display: none; border-top: 1px solid var(--border); }
+.accordion-item.open .accordion-body { display: block; }
+.accordion-item.safety .accordion-trigger { border-left: 3px solid #8b4513; }
 .rec-card { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
 .rec-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .rec-card-top { background: var(--sage); padding: 1.25rem 1.5rem; }
@@ -383,6 +409,11 @@ footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 3rem 2re
   .results-screen { padding: 2rem 1.25rem 3rem; }
   .intro-screen { padding: 2rem 1.25rem; }
   .results-actions { flex-direction: column; }
+  .hero-card .rec-card-top { padding: 1.5rem; }
+  .hero-card .rec-name { font-size: 1.25rem; }
+  .hero-card .rec-card-body { padding: 1.25rem 1.5rem; }
+  .hero-card .rec-card-footer { padding: 1rem 1.5rem; }
+  .accordion-trigger { padding: 0.85rem 1.25rem; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   footer { padding: 2.5rem 1.25rem; }
 }
@@ -1442,23 +1473,59 @@ function renderQuestion(){
   getShell().innerHTML=`<div class="quiz-screen"><div class="quiz-top"><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div><div class="progress-label">Question ${stepNum} of ${total}</div></div><div class="quiz-stage"><div class="question-card"><div class="q-step-tag">Step ${stepNum}</div><h2 class="q-text">${q.question}</h2>${q.note?`<p class="q-note">${q.note}</p>`:''}<div class="options-grid">${optHtml}</div></div></div><div class="quiz-nav"><button class="btn-back" onclick="goBack()" ${state.step===0?'disabled':''}>← Back</button><button class="btn-next" onclick="goNext()" ${hasSel?'':'disabled'}>${state.step===total-1?'See my stack →':'Continue →'}</button></div></div>`;
 }
 
+function toggleExpand(idx){
+  const el=document.getElementById('accordion-'+idx);
+  if(el)el.classList.toggle('open');
+}
+
 function renderResults(){
   const recs=score(),display=recs.slice(0,8),count=display.length;
   function dots(n){let h='';for(let i=1;i<=5;i++)h+=`<div class="rec-dot${i<=n?' on':''}"></div>`;return h;}
   function str(n){if(n>=5)return'Very strong evidence';if(n>=4)return'Strong evidence';if(n>=3)return'Good evidence';return'Emerging research';}
-  let cards='';
-  display.forEach(r=>{
-    const topCls=r.isSafety?'rec-card-top safety':'rec-card-top';
+  function cardBody(r){
     const lblCls=r.isSafety?'rec-why-label safety':'rec-why-label';
     const lbl=r.isSafety?'⚠ Important safety pairing':'Why this is for you';
-    const pills=r.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
     const dosage=r.pair.dosage?`<div class="rec-dosage"><div class="rec-dosage-label">Suggested dosage</div>${r.pair.dosage.map(d=>`<div class="rec-dose-line"><span class="rec-dose-ing">${d.ing}:</span> ${d.dose}</div>`).join('')}</div>`:'';
-    cards+=`<div class="rec-card"><div class="${topCls}"><div class="rec-name">${r.pair.name}</div><div class="rec-supps">${pills}</div></div><div class="rec-card-body"><div><div class="${lblCls}">${lbl}</div><div class="rec-why-text">${r.reason||r.pair.why}</div>${dosage}</div><div class="rec-strength"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="rec-strength-label">${str(r.pair.strength)}</div></div></div><div class="rec-card-footer"><a href="all-pairs.html" class="rec-link">See all pairs →</a>${r.pair.affiliateUrl?`<a href="${r.pair.affiliateUrl}" class="rec-buy-btn" target="_blank" rel="noopener sponsored">Shop this pair →</a>`:''}</div></div>`;
+    return `<div class="rec-card-body"><div><div class="${lblCls}">${lbl}</div><div class="rec-why-text">${r.reason||r.pair.why}</div>${dosage}</div><div class="rec-strength"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="rec-strength-label">${str(r.pair.strength)}</div></div></div><div class="rec-card-footer"><a href="all-pairs.html" class="rec-link">See all pairs →</a>${r.pair.affiliateUrl?`<a href="${r.pair.affiliateUrl}" class="rec-buy-btn" target="_blank" rel="noopener sponsored">Shop this pair →</a>`:''}</div>`;
+  }
+
+  // Separate safety pairs from regular pairs
+  const safetyPairs=display.filter(r=>r.isSafety);
+  const regularPairs=display.filter(r=>!r.isSafety);
+
+  // Safety banners at top
+  let safetyHtml='';
+  safetyPairs.forEach(r=>{
+    const pills=r.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
+    safetyHtml+=`<div class="hero-card" style="border-color:#8b4513; margin-bottom:1.5rem;"><div class="rec-card-top safety"><div class="hero-rank-tag" style="color:rgba(255,255,255,0.7);">⚠ Safety pairing</div><div class="rec-name" style="font-size:1.25rem;">${r.pair.name}</div><div class="rec-supps">${pills}</div></div>${cardBody(r)}</div>`;
   });
+
+  // Hero card for #1 regular pair
+  let heroHtml='';
+  if(regularPairs.length>0){
+    const top=regularPairs[0];
+    const pills=top.pair.supps.map(s=>`<span class="rec-supp-pill">${s}</span>`).join('');
+    heroHtml=`<div class="hero-card"><div class="rec-card-top"><div class="hero-rank-tag">Your #1 pairing</div><div class="rec-name">${top.pair.name}</div><div class="rec-supps">${pills}</div></div>${cardBody(top)}</div>`;
+  }
+
+  // Accordion for remaining pairs
+  let accordionHtml='';
+  const remaining=regularPairs.slice(1);
+  if(remaining.length>0){
+    const moreCount=remaining.length;
+    let items='';
+    remaining.forEach((r,i)=>{
+      const rank=i+2;
+      const suppsText=r.pair.supps.join(' + ');
+      items+=`<div class="accordion-item" id="accordion-${i}"><button class="accordion-trigger" onclick="toggleExpand(${i})"><div class="accordion-rank">#${rank}</div><div class="accordion-info"><div class="accordion-pair-name">${r.pair.name}</div><div class="accordion-pair-supps">${suppsText}</div></div><div class="accordion-right"><div class="rec-dots">${dots(r.pair.strength)}</div><div class="accordion-chevron">▸</div></div></button><div class="accordion-body">${cardBody(r)}</div></div>`;
+    });
+    accordionHtml=`<div class="more-pairs-header"><div class="more-pairs-title">Plus ${moreCount} more pair${moreCount===1?'':'s'} matched your profile</div><div class="more-pairs-sub">Ranked by relevance to your answers. Expand any pair for details.</div></div><div class="accordion-list">${items}</div>`;
+  }
+
   const hasD2=display.some(r=>r.pair.id===2);
   const baseline=hasD2?'':`<div class="results-baseline"><div class="baseline-icon">◆</div><div><div class="baseline-title">The pair almost everyone needs: Vitamin D + Magnesium</div><div class="baseline-text">Magnesium is required to activate the Vitamin D your body makes or takes — without it, your D3 supplement stays inactive. Up to 50% of people are magnesium deficient. Even if this didn't appear in your top results, it's worth knowing about.</div></div></div>`;
   const ageStr={u30:'your age','30_44':'your age group','45_59':'your age group','60plus':'your age group'}[state.answers.age]||'your profile';
-  getShell().innerHTML=`<div class="results-screen"><div class="results-inner"><div class="results-header"><div class="results-eyebrow">Your personalized stack</div><h1 class="results-headline">We found ${count} pairs for you</h1><p class="results-sub">Based on ${ageStr}, lifestyle, and health goals. Pairs are ranked by how directly your answers matched each one. Each card explains exactly why it's relevant to you specifically.</p></div>${baseline}<div class="results-grid">${cards}</div><div class="results-actions"><a href="all-pairs.html" class="btn-results-primary">Browse all pairs →</a><button class="btn-results-ghost" onclick="retakeQuiz()">Retake quiz</button></div><div class="results-disclaimer"><strong>Not medical advice.</strong> These recommendations are for educational purposes only, based on published research. Always consult your healthcare provider before starting any supplement regimen, especially if you take medications, have a medical condition, or are pregnant. Pairs marked with ⚠ address important safety interactions — please read them carefully.</div></div></div>`;
+  getShell().innerHTML=`<div class="results-screen"><div class="results-inner"><div class="results-header"><div class="results-eyebrow">Your personalized stack</div><h1 class="results-headline">Your Top Pair${count>1?'s':''}</h1><p class="results-sub">Based on ${ageStr}, lifestyle, and health goals. Ranked by how directly your answers matched each one — your #1 pick is the strongest match.</p></div>${safetyHtml}${baseline}${heroHtml}${accordionHtml}<div class="results-actions"><a href="all-pairs.html" class="btn-results-primary">Browse all pairs →</a><button class="btn-results-ghost" onclick="retakeQuiz()">Retake quiz</button></div><div class="results-disclaimer"><strong>Not medical advice.</strong> These recommendations are for educational purposes only, based on published research. Always consult your healthcare provider before starting any supplement regimen, especially if you take medications, have a medical condition, or are pregnant. Pairs marked with ⚠ address important safety interactions — please read them carefully.</div></div></div>`;
 }
 
 /* ─── INTERACTIONS ─── */

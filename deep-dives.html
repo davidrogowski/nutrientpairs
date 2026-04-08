@@ -136,7 +136,14 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
+  max-height: 1400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
+.dives-grid::-webkit-scrollbar { width: 6px; }
+.dives-grid::-webkit-scrollbar-track { background: transparent; }
+.dives-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.dives-grid::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 /* DIVE CARD */
 .dive-card {
@@ -327,7 +334,7 @@ footer {
   .nav-hamburger { display: flex; }
 }
 @media (max-width: 600px) {
-  .dives-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .dives-grid { grid-template-columns: 1fr; gap: 1rem; max-height: 1000px; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   .page-header { padding: 2.5rem 1.25rem 2rem; }
   .page-title { font-size: clamp(1.4rem, 5vw, 2rem); }
@@ -524,6 +531,102 @@ footer {
         <div class="dive-card-body">
           <div class="dive-audience">For: Anyone taking turmeric or curcumin</div>
           <p class="dive-summary">Curcumin bioavailability without piperine is less than 1%. Piperine increases it by 2000%. Most turmeric supplements are sold without it.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Vitamin D Activator Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Foundational Health</div>
+          <div class="dive-name">Vitamin D Activator Duo</div>
+          <div class="dive-ingredients">Vitamin D3 + Magnesium</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Most adults, especially low-sun climates</div>
+          <p class="dive-summary">Vitamin D is biologically inert until magnesium-dependent enzymes convert it to its active form. Without magnesium, supplementing D3 is half the equation.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Bloat & Digestion Stack -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Gut Health</div>
+          <div class="dive-name">Bloat &amp; Digestion Stack</div>
+          <div class="dive-ingredients">Prebiotic + Probiotic (Synbiotic)</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Anyone with bloating, IBS, or irregular digestion</div>
+          <p class="dive-summary">Probiotics colonize better when fed by the right prebiotics. Together they form a synbiotic that reshapes the gut environment rather than just passing through it.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Joint Pain Relief Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Joint Health</div>
+          <div class="dive-name">Joint Pain Relief Duo</div>
+          <div class="dive-ingredients">Omega-3 + Curcumin</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Active adults, joint stiffness, inflammatory pain</div>
+          <p class="dive-summary">Omega-3 and curcumin suppress inflammation through different pathways. The combination outperforms either alone in clinical pain and stiffness scores.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: All-Day Energy Stack -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Energy</div>
+          <div class="dive-name">All-Day Energy Stack</div>
+          <div class="dive-ingredients">CoQ10 + PQQ</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Over 40, chronic fatigue, statin users</div>
+          <p class="dive-summary">CoQ10 fuels existing mitochondria. PQQ triggers the creation of new ones. Together they address cellular energy from both sides of the equation.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: Glutathione Restoration Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Detox &amp; Recovery</div>
+          <div class="dive-name">Glutathione Restoration Duo</div>
+          <div class="dive-ingredients">NAC + Glycine</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Over 40, heavy drinkers, high-toxin exposure</div>
+          <p class="dive-summary">NAC and glycine are the two rate-limiting precursors for glutathione, the body's master antioxidant. Supplementing both restores levels that decline sharply with age.</p>
+        </div>
+        <div class="dive-card-footer">
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER: No-Sun Mood Duo -->
+      <div class="dive-card placeholder">
+        <div class="dive-card-top">
+          <div class="dive-tag">Mood &amp; Brain</div>
+          <div class="dive-name">No-Sun Mood Duo</div>
+          <div class="dive-ingredients">Omega-3 + Vitamin D3</div>
+        </div>
+        <div class="dive-card-body">
+          <div class="dive-audience">For: Seasonal depression, indoor workers, northern climates</div>
+          <p class="dive-summary">Vitamin D regulates serotonin synthesis. Omega-3 keeps neuronal membranes fluid enough to use it. Both are deficient in the same populations for the same reason: not enough sun.</p>
         </div>
         <div class="dive-card-footer">
           <span class="coming-soon-badge">Coming soon</span>

@@ -788,22 +788,21 @@ footer {
   padding: 3rem 2rem;
 }
 .footer-inner {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
-  align-items: start;
 }
 .footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
-.footer-desc { font-size: 0.92rem; line-height: 1.7; font-weight: 300; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
 .footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
 .footer-links { list-style: none; }
-.footer-links li { margin-bottom: 0.65rem; }
-.footer-links a { font-size: 0.92rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
 .footer-links a:hover { color: var(--white); }
 .footer-bottom {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 2rem auto 0;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -820,7 +819,7 @@ footer {
   font-size: 0.72rem;
   color: rgba(255,255,255,0.3);
   margin-top: 1rem;
-  max-width: 600px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
@@ -1323,11 +1322,29 @@ footer {
       <p class="footer-desc">Science-backed supplement pairing research. We explain which nutrients work better together, why the biology works, and how to find the best products for each combination.</p>
     </div>
     <div>
+      <div class="footer-col-title">Explore</div>
       <ul class="footer-links">
-        <li><a href="explorer.html">Explorer</a></li>
         <li><a href="all-pairs.html">All Pairs</a></li>
+        <li><a href="explorer.html">Explorer</a></li>
         <li><a href="deep-dives.html">Deep Dives</a></li>
-        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Audiences</div>
+      <ul class="footer-links">
+        <li><a href="#">Runners</a></li>
+        <li><a href="#">Screen Workers</a></li>
+        <li><a href="#">Women 35+</a></li>
+        <li><a href="#">Over 40</a></li>
+        <li><a href="#">Vegans</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="about.html">Our methodology</a></li>
+        <li><a href="#">Research sources</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>

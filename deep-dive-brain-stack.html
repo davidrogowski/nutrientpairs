@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brain Stack: Magnesium L-Threonate + Lion's Mane Explained | NutrientPairs</title>
+<meta name="description" content="Most magnesium never reaches your brain. Most nootropics adjust neurotransmitter traffic. This pair does something different: it rebuilds the hardware. Here's the science behind why these two compounds work on completely separate mechanisms and why that matters.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nutrientpairs.com/deep-dive-brain-stack.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Brain Stack: Magnesium L-Threonate + Lion's Mane Explained">
+<meta property="og:description" content="Most magnesium never reaches your brain. Most nootropics adjust neurotransmitter traffic. This pair does something different: it rebuilds the hardware.">
+<meta property="og:url" content="https://nutrientpairs.com/deep-dive-brain-stack.html">
+<meta property="og:site_name" content="NutrientPairs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Brain Stack: Magnesium L-Threonate + Lion's Mane Explained">
+<meta name="twitter:description" content="Most magnesium never reaches your brain. Most nootropics adjust neurotransmitter traffic. This pair does something different: it rebuilds the hardware.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a18;
+  --paper: #f5f3ee;
+  --cream: #ede9e0;
+  --sage: #4a6741;
+  --sage-light: #6a8f60;
+  --sage-pale: #e8ede6;
+  --rust: #b85c38;
+  --muted: #7a7870;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--sage);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+
+/* BREADCRUMB */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+.breadcrumb a:hover { color: var(--sage); }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* PAGE HEADER */
+.page-header {
+  background: var(--white);
+  padding: 3rem 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.page-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.article-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  max-width: 800px;
+}
+.article-lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 700px;
+  padding-bottom: 2.5rem;
+}
+
+/* ARTICLE LAYOUT */
+.article-section {
+  background: var(--white);
+  padding: 3rem 2rem 5rem;
+}
+.article-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 5rem;
+  align-items: start;
+}
+.article-body h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2rem 0 0.6rem;
+}
+.article-body p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 0.85rem;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+
+.callout {
+  background: var(--sage-pale);
+  border-left: 3px solid var(--sage);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 2px 2px 0;
+}
+.callout p {
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.product-rec {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.rec-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.5rem;
+}
+.rec-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.rec-dose {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-bottom: 1rem;
+}
+.rec-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+.rec-link:hover { opacity: 0.7; }
+
+/* SIDEBAR */
+.article-sidebar { position: sticky; top: 80px; }
+.sidebar-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.sidebar-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s;
+}
+.sidebar-item:last-child { border-bottom: none; }
+.sidebar-item:hover { opacity: 0.7; }
+.sidebar-item-name {
+  font-size: 0.82rem;
+  color: var(--ink);
+  font-weight: 400;
+}
+.toc { list-style: none; }
+.toc li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.toc li:last-child { border-bottom: none; }
+.toc a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  font-weight: 300;
+}
+.toc a:hover { color: var(--sage); }
+
+/* BACK LINK */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+  margin-bottom: 2rem;
+}
+.back-link:hover { color: var(--sage); }
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+.affiliate-notice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* HAMBURGER / MOBILE NAV */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  transition: all 0.2s;
+}
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 2rem 1rem;
+  z-index: 99;
+}
+.nav-mobile.open { display: block; }
+.nav-mobile ul { list-style: none; }
+.nav-mobile ul li a {
+  display: block;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.nav-mobile ul li:last-child a { border-bottom: none; }
+.nav-mobile ul li a:hover { color: var(--sage); }
+
+@media (max-width: 900px) {
+  .article-layout { grid-template-columns: 1fr; }
+  .article-sidebar { position: static; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .page-header { padding: 2rem 1.25rem 0; }
+  .page-title { font-size: clamp(1.3rem, 5vw, 2rem); }
+  .article-lead { font-size: 0.95rem; padding-bottom: 1.75rem; }
+  .article-section { padding: 2rem 1.25rem 3rem; }
+  .sidebar-card { padding: 1.25rem 1rem; margin-bottom: 1rem; }
+  .article-body h3 { margin: 1.5rem 0 0.5rem; }
+  .product-rec { padding: 1rem 1.25rem; }
+  .back-link { margin-bottom: 1.25rem; }
+  footer { padding: 2.5rem 1.25rem; }
+  .breadcrumb { padding: 1rem 1.25rem 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Nutrient<span>Pairs</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="deep-dives.html" class="active">Deep Dives</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="#" onclick="return false;" class="nav-cta">Free Guide &rarr;</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="deep-dives.html">Deep Dives</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a><span>/</span><a href="deep-dives.html">Deep Dives</a><span>/</span>Brain Stack
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="article-meta">Magnesium L-Threonate + Lion's Mane &middot; Cognitive Health &middot; 10 min read</div>
+    <h1 class="page-title">The Brain Stack: two compounds, two completely different mechanisms, one goal</h1>
+    <p class="article-lead">Most nootropics work by adjusting neurotransmitter traffic. More dopamine here, more acetylcholine there. The Brain Stack takes a different approach entirely: one compound rebuilds the physical architecture of memory, the other tells your neurons to grow. Neither does what the other does, and that is exactly the point.</p>
+  </div>
+</div>
+
+<section class="article-section">
+  <div class="article-layout">
+
+    <div class="article-content">
+      <a class="back-link" href="deep-dives.html">&larr; Back to Deep Dives</a>
+
+      <div class="article-body">
+
+        <h3 id="the-problem-with-most-nootropics">Why most nootropics miss the point</h3>
+        <p>The nootropic supplement market is built almost entirely around neurotransmitter modulation. Alpha-GPC raises acetylcholine. Tyrosine is a dopamine precursor. Bacopa may slow acetylcholinesterase. These approaches have merit, but they operate on top of the brain's existing architecture. They assume the underlying structure is sound and merely needs better fuel or sharper signaling.</p>
+        <p>The problem is that the underlying structure is rarely sound. Cognitive decline, even the subtle kind experienced by healthy adults in their 40s and 50s, is fundamentally a structural problem. Synaptic connections become sparser. Neurons produce less of the growth factors needed to maintain and extend their branching. The physical density of connections between nerve cells, the hardware on which all cognition runs, quietly degrades. Adjusting neurotransmitter levels in a brain with declining synaptic density is like upgrading the software on a deteriorating processor.</p>
+        <p>The Brain Stack addresses the structural problem directly. Magnesium L-Threonate targets synaptic density and the NMDA receptor function that underlies memory formation. Lion's Mane stimulates the production of nerve growth factors that drive neuronal survival, repair, and the extension of new neural connections. These are not overlapping mechanisms. They operate on entirely separate biological pathways, which is what makes the combination worth examining carefully.</p>
+
+        <h3 id="the-magnesium-problem">The magnesium problem nobody talks about</h3>
+        <p>Magnesium is involved in over 300 enzymatic reactions in the human body. It is essential for muscle contraction, blood pressure regulation, energy production, and protein synthesis. It is also one of the most common micronutrient deficiencies in developed countries, with surveys suggesting that more than half of adults in industrialized nations consume less than the recommended daily amount.</p>
+        <p>Within the brain specifically, magnesium ions play a distinctive and critical role at NMDA receptors, the central machinery of learning and memory. During baseline neural activity, magnesium physically blocks the NMDA receptor channel, preventing noise from triggering unnecessary synaptic changes. When a genuinely meaningful signal arrives, sufficient depolarization ejects the magnesium block and allows calcium ions to flow in, triggering the cascade of molecular changes that strengthens a synaptic connection. This gating function is how the brain distinguishes signal from noise. It is the mechanism underlying long-term potentiation, which is the cellular basis of memory formation.</p>
+        <p>Maintaining adequate brain magnesium is therefore not just about preventing deficiency. It directly governs how efficiently the brain encodes new memories and preserves existing ones. And here is where the standard advice to take magnesium supplements falls apart: <strong>most magnesium supplements do not appreciably raise magnesium levels in the brain.</strong></p>
+
+        <div class="callout">
+          <p><strong>The blood-brain barrier problem:</strong> The blood-brain barrier tightly regulates ion transport into neural tissue. Magnesium transport across this barrier is slow and saturable. Standard forms of magnesium, including citrate, glycinate, oxide, and malate, raise serum magnesium effectively but fail to meaningfully elevate cerebrospinal fluid magnesium concentrations. You can have perfectly adequate blood magnesium and still have a brain that is running low.</p>
+        </div>
+
+        <h3 id="how-mgt-is-different">How Magnesium L-Threonate is structurally different</h3>
+        <p>The development of Magnesium L-Threonate (MgT) began at MIT in 2004 when Dr. Guosong Liu initiated research into magnesium's role in synaptic plasticity. After screening more than 2,000 magnesium formulations for brain penetration, his team identified L-threonic acid, a natural metabolite of vitamin C, as the optimal carrier molecule. The findings were published in the journal Neuron in 2010.</p>
+        <p>L-threonate is thought to exploit glucose transporters at the blood-brain barrier, effectively allowing the magnesium ion to cross into neural tissue via a pathway unavailable to other magnesium salts. In animal studies, MgT supplementation increased cerebrospinal fluid magnesium concentrations by 7 to 15% within 24 days. No other oral magnesium formulation had demonstrated this capability. Both young and aged rats showed enhanced learning, improved working memory, and better spatial memory performance. In aged animals, the improvements were particularly notable because the cognitive deficits being reversed were already established, not merely prevented.</p>
+        <p>At the cellular level, the mechanism is well characterized. Elevated brain magnesium increases the density of functional synapses in the hippocampus and prefrontal cortex, the regions most critical for episodic memory formation and executive function. It upregulates NR2B-containing NMDA receptors, which are associated specifically with synaptic plasticity and learning. The downstream signaling through CaMKII and CREB pathways, the molecular machinery through which new memories are consolidated, becomes more responsive.</p>
+
+        <div class="callout">
+          <p><strong>The human trial result:</strong> In the first human randomized controlled trial, published in the Journal of Alzheimer's Disease in 2016, 44 adults aged 50 to 70 with self-reported memory complaints received either MgT or placebo for 12 weeks. The MgT group showed a statistically significant 10% improvement in Trail Making Test Part B speed, a validated measure of executive function and cognitive flexibility, alongside significant improvements across multiple cognitive domains. The overall cognitive composite score improved significantly versus placebo (p = 0.003; Cohen's d = 0.91, indicating a large effect size). Cognitive fluctuation, a marker of inconsistency in performance, was also reduced.</p>
+        </div>
+
+        <h3 id="lions-mane-ngf">Lion's Mane and the nerve growth factor story</h3>
+        <p>Nerve Growth Factor (NGF) is a protein that is essential to the survival, maintenance, and structural development of neurons in both the central and peripheral nervous systems. It was discovered in the 1950s by Rita Levi-Montalcini, work that earned the Nobel Prize in 1986. NGF binds to TrkA receptors on neurons and triggers cascades that promote neuronal survival, stimulate the growth of axons and dendrites, support the formation of new synaptic connections, and protect against apoptosis.</p>
+        <p>NGF levels decline measurably with age. This decline is directly implicated in the neuronal atrophy underlying Alzheimer's disease and other neurodegenerative conditions. Researchers have long sought ways to therapeutically raise NGF in the brain, but the protein itself cannot cross the blood-brain barrier, which has frustrated attempts at direct delivery.</p>
+        <p>Lion's Mane mushroom (Hericium erinaceus) offers a route around this problem. The mushroom contains two classes of small bioactive compounds, hericenones from the fruiting body and erinacines from the mycelium, that are small enough to cross the blood-brain barrier via passive diffusion. Once inside the central nervous system, these compounds stimulate astroglial cells to produce NGF. The brain makes its own NGF in response to the signal. This is why lion's mane is studied for neurological outcomes in a way that other functional mushrooms are not: the active compounds act as NGF inducers inside the tissue where NGF is needed, rather than from the periphery.</p>
+        <p>Beyond NGF, lion's mane also stimulates Brain-Derived Neurotrophic Factor (BDNF), a related neurotrophin involved in the formation of new synaptic connections, learning consolidation, hippocampal neurogenesis, and mood regulation. Hericene A, one of the fruiting body compounds, was shown in 2023 to enhance pro-BDNF signaling in hippocampal neurons, activating the ERK1/2 pathway that promotes axonal growth and neuronal differentiation.</p>
+
+        <h3 id="human-evidence-lions-mane">What the human trials on Lion's Mane actually show</h3>
+        <p>The evidence base for lion's mane is real but deserves honest characterization. The trials are generally small, use varying extract types and dosages, and the results across populations have been mixed. Understanding which studies showed what, and why, matters for setting realistic expectations.</p>
+        <p>The foundational trial was published by Mori et al. in Phytotherapy Research in 2009. Thirty Japanese adults between the ages of 50 and 80, each diagnosed with mild cognitive impairment, were randomized to receive either 3 grams per day of dried Hericium erinaceus fruiting body powder or placebo for 16 weeks. The lion's mane group scored significantly higher on the Revised Hasegawa Dementia Scale at weeks 8, 12, and 16. Scores rose continuously across all three assessments, pointing toward cumulative neurological benefit consistent with progressive NGF support. When supplementation stopped, scores declined significantly within 4 weeks. This same reversibility pattern has been observed in MgT trials, and it carries the same implication for both compounds: the underlying biology responds to ongoing availability of the input, not a one-time correction.</p>
+        <p>More recent research has extended the relevance beyond populations with existing impairment. A 2019 study in Biomedical Research found cognitive improvements in 31 healthy adults over age 50 after 12 weeks of lion's mane supplementation. A 2023 double-blind pilot trial in Nutrients found faster Stroop task performance (a measure of executive function and attention) in healthy young adults within 60 minutes of a single dose, suggesting that some effects operate acutely through mechanisms beyond NGF accumulation. A 2025 double-blind randomized placebo-controlled trial published in Frontiers in Nutrition further confirmed acute cognitive performance improvements in healthy adults aged 18 to 45.</p>
+        <p>It is worth noting that several shorter trials in healthy young adults without cognitive impairment have failed to show statistically significant effects, particularly over periods of four weeks or less. The NGF-mediated mechanism is a slow one. The growth factors must stimulate neuronal processes that take weeks to months to translate into measurable structural change. Expecting lion's mane to work like caffeine in a 28-day trial is asking the wrong question of a compound that operates on a fundamentally different timescale.</p>
+
+        <div class="callout">
+          <p><strong>Why this pair specifically:</strong> MgT and Lion's Mane do not overlap in mechanism. MgT works by raising brain magnesium to optimize the existing signal-to-noise filtering at NMDA receptors and increase synaptic density through mineral-mediated pathways. Lion's Mane works by triggering NGF and BDNF production, which drives neuronal survival and the growth of new synaptic connections. One optimizes the platform. The other stimulates growth of new infrastructure on that platform. They are complementary in the most literal sense: each addresses a dimension of cognitive health that the other cannot.</p>
+        </div>
+
+        <h3 id="extract-quality">The extract quality problem with Lion's Mane</h3>
+        <p>Lion's mane products vary enormously in the composition of their active compounds, and this variation is almost certainly responsible for the inconsistency in published trial results. The key distinction is between products derived from the fruiting body and those derived from the mycelium.</p>
+        <p>Hericenones are concentrated in the fruiting body of the mushroom. Erinacines are concentrated in the mycelium. Of the two compound classes, erinacines appear to be the more potent NGF inducers in astroglial cells. However, many commercially available lion's mane products labeled as "mycelium" are in fact myceliated grain products, meaning the mycelium has been grown on a grain substrate and the finished product contains a substantial proportion of grain starch rather than active mushroom compounds. These products may contain very little of the erinacines they are implicitly marketed for.</p>
+        <p>A full-spectrum dual-extract product, derived from both fruiting body and mycelium and standardized for beta-glucan content, is the most defensible choice for consistent intake of both hericenones and erinacines. Standardization to at least 30% beta-glucans is a widely used marker of extract quality, though it is not a direct measure of hericenone or erinacine content. When in doubt, prioritize products that explicitly state fruiting body sourcing and list the extraction method.</p>
+
+        <h3 id="dosing">Dosing, timing, and what to take together</h3>
+        <p>For Magnesium L-Threonate, the clinically studied dose is 1.5 to 2 grams of MgT per day, providing approximately 144 mg of elemental magnesium. This is delivered as three capsules of 500 mg each, typically split across morning and evening. The elemental magnesium provided is below the RDA, which means it is unlikely to push total magnesium intake to excessive levels even when combined with dietary intake. MgT received self-affirmed GRAS status from the FDA in 2016.</p>
+        <p>For Lion's Mane, the Mori 2009 trial used 3 grams per day of dried fruiting body powder. Concentrated extracts (typically standardized at 8:1 or 10:1 ratios) achieve comparable active compound delivery at 500 to 1,000 mg per day, taken with meals. For erinacine A-enriched mycelium extracts, the effective dose used in the Li 2020 Alzheimer's trial was three 350 mg capsules daily, each standardized to 5 mg/g erinacine A. Digestive discomfort is occasionally reported at higher doses; starting with a smaller amount and increasing over 2 to 3 weeks is a reasonable approach.</p>
+        <p>There is no known interaction between MgT and lion's mane. Both compounds are generally well tolerated. MgT can occasionally cause transient loose stools, typical of magnesium supplementation generally, though this is less common than with magnesium oxide or citrate at equivalent elemental doses. Lion's mane has rarely been associated with skin rash in individuals with mushroom sensitivities; people with known mushroom allergies should exercise caution and consult a physician first.</p>
+
+        <div class="product-rec">
+          <div class="rec-label">Recommended for this stack</div>
+          <div class="rec-title">Magnesium L-Threonate 2g (Magtein)</div>
+          <div class="rec-dose">3 capsules daily &middot; 500mg each &middot; 144mg elemental Mg</div>
+          <p style="font-size:0.8rem;color:#7a7870;margin-bottom:0.75rem;font-weight:300;">Look for products using the Magtein branded form of MgT, which is the compound used in the published clinical trials. Split the dose: two capsules in the morning and one in the evening. This form is sold widely under several brands; the key is confirming the active ingredient is magnesium L-threonate, not magnesium glycinate or another form relabeled for cognitive marketing.</p>
+          <a href="#" class="rec-link">View Magtein on Amazon &rarr;</a>
+        </div>
+
+        <div class="product-rec" style="margin-top:1rem;">
+          <div class="rec-label">Pair with</div>
+          <div class="rec-title">Lion's Mane Dual Extract (Fruiting Body + Mycelium)</div>
+          <div class="rec-dose">500mg to 1,000mg daily &middot; standardized to 30%+ beta-glucans &middot; take with food</div>
+          <p style="font-size:0.8rem;color:#7a7870;margin-bottom:0.75rem;font-weight:300;">A dual-extraction product that draws from both the fruiting body (hericenones) and mycelium (erinacines) provides the broadest compound profile. Avoid products that list "myceliated oats" or "myceliated grain" as the primary ingredient, as these are mostly starch. Hot water extraction alone misses fat-soluble hericenones; a dual extract using both water and alcohol extraction delivers the full active compound range.</p>
+          <a href="#" class="rec-link">View Lion's Mane Extract on Amazon &rarr;</a>
+        </div>
+
+        <h3 id="who-benefits">Who is most likely to benefit from this pair</h3>
+        <p><strong>Knowledge workers and students under sustained cognitive load.</strong> The MgT mechanism is particularly relevant for anyone who needs to maintain high working memory, executive function, and attention under pressure. The NMDA receptor optimization effect that MgT provides is a structural support for the very processes that degrade under chronic cognitive demand. Lion's mane adds a layer of neuroprotective support that is especially relevant given that chronic stress is among the factors associated with reduced BDNF levels and diminished hippocampal neurogenesis.</p>
+        <p><strong>Adults in their 40s and 50s experiencing early cognitive changes.</strong> Subjective cognitive decline, the sense that recall is slower, that focus requires more effort, or that learning new material takes longer than it used to, typically precedes any clinically detectable impairment by years. Both MgT and lion's mane have shown their most consistent human trial results in this demographic range. This is also the window where structural interventions are most likely to be effective, before the underlying changes become pronounced enough to resist reversal.</p>
+        <p><strong>Anyone with a family history of Alzheimer's disease or other neurodegenerative conditions.</strong> The lion's mane mechanism is directly relevant to Alzheimer's pathology: NGF decline is among the earliest molecular events in Alzheimer's disease, and erinacine A has been shown in animal models to reduce amyloid plaque deposition, increase the NGF-to-proNGF ratio, and stimulate neurogenesis in the hippocampal dentate gyrus region. The evidence in humans remains early and limited, but the mechanistic case for protective use is stronger here than for most available supplements.</p>
+        <p><strong>People who have been taking magnesium supplements for cognitive reasons without meaningful effect.</strong> If you have been supplementing magnesium glycinate or citrate hoping for brain benefits and noticed nothing, this is the likely explanation: the magnesium is not reaching the brain. Switching to MgT addresses the delivery problem directly.</p>
+
+        <h3 id="what-to-expect">What to expect, and over what timeframe</h3>
+        <p>MgT's effects on cognitive performance begin to emerge within 4 to 6 weeks of consistent use, with full effects visible at 12 weeks in the published trials. The mechanism, raising brain magnesium to increase synaptic density and optimize NMDA receptor function, requires sustained mineral availability. It is not an acute intervention. Some users report improved sleep quality in the first few weeks, which is consistent with magnesium's broader role in GABA receptor modulation and nervous system regulation, and which may indirectly support cognitive performance through better sleep architecture.</p>
+        <p>Lion's mane effects are even slower to become measurable. The NGF production pathway takes time to translate into meaningful structural changes in neural connectivity. In the Mori 2009 trial, improvements were detectable at 8 weeks and continued rising through 16 weeks. For the full structural benefit of NGF-stimulated neuronal maintenance, a minimum commitment of 12 weeks is appropriate before assessing whether the compound is working. The consistent pattern across lion's mane trials, including the reversal of gains after discontinuation, strongly suggests that the benefit is conditional on ongoing supplementation rather than a one-time treatment that produces durable change.</p>
+        <p>Used together, the most honest framing is long-term structural maintenance for a system that, without intentional support, slowly loses hardware density as it ages. The evidence does not support expecting a dramatic short-term noticeable effect. It does support expecting, over months of consistent use, a meaningfully better-preserved baseline to be working from.</p>
+
+      </div>
+    </div>
+
+    <div class="article-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">Table of contents</div>
+        <ul class="toc">
+          <li><a href="#the-problem-with-most-nootropics">Why most nootropics miss the point</a></li>
+          <li><a href="#the-magnesium-problem">The magnesium problem</a></li>
+          <li><a href="#how-mgt-is-different">How MgT is structurally different</a></li>
+          <li><a href="#lions-mane-ngf">Lion's Mane and nerve growth factor</a></li>
+          <li><a href="#human-evidence-lions-mane">What the human trials show</a></li>
+          <li><a href="#extract-quality">The extract quality problem</a></li>
+          <li><a href="#dosing">Dosing and timing</a></li>
+          <li><a href="#who-benefits">Who benefits most</a></li>
+          <li><a href="#what-to-expect">What to expect</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-title">Related cognitive pairs</div>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">No-Sun Mood Duo<br><small style="color:#7a7870;font-weight:300;">Omega-3 + Vitamin D3</small></span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">All-Day Energy Stack<br><small style="color:#7a7870;font-weight:300;">CoQ10 + PQQ</small></span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">Deep Sleep Duo<br><small style="color:#7a7870;font-weight:300;">Glycine + Magnesium</small></span>
+        </a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-title">Key numbers</div>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">MgT formulations screened: 2,000+</span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">CSF Mg increase with MgT: 7 to 15%</span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">Clinical MgT trial effect size: d = 0.91</span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">Lion's Mane standard trial length: 12 to 16 weeks</span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">Lion's Mane effective dose (powder): 3g/day</span>
+        </a>
+        <a class="sidebar-item" href="#">
+          <span class="sidebar-item-name">MgT elemental Mg at studied dose: 144mg</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research. We explain which nutrients work better together, why the biology works, and how to find the best products for each combination.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="all-pairs.html">All Pairs</a></li>
+        <li><a href="explorer.html">Explorer</a></li>
+        <li><a href="deep-dives.html">Deep Dives</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Audiences</div>
+      <ul class="footer-links">
+        <li><a href="#">Knowledge Workers</a></li>
+        <li><a href="#">Students</a></li>
+        <li><a href="#">Adults 40+</a></li>
+        <li><a href="#">Longevity</a></li>
+        <li><a href="#">Runners</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="about.html">Our methodology</a></li>
+        <li><a href="#">Research sources</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="affiliate-notice">
+    NutrientPairs content is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider before starting any supplement regimen. Individual results may vary.
+  </div>
+  <div class="affiliate-notice">
+    Disclosure: NutrientPairs participates in affiliate programs. If you purchase through links on this site, we may earn a commission at no extra cost to you. We are not paid by brands for placement. Our recommendations are based on research quality, ingredient form, and third-party testing.
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NutrientPairs. All rights reserved.</span>
+    <span>Not medical advice. Always consult your healthcare provider.</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

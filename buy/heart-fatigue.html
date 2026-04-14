@@ -58,13 +58,18 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-b
 .buy-sub { font-size: 1rem; color: var(--muted); font-weight: 300; max-width: 520px; margin: 0 auto; line-height: 1.7; }
 .buy-section { padding: 3.5rem 2rem 4rem; max-width: 720px; margin: 0 auto; }
 .buy-section-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; text-align: center; }
-.buy-pair-note { font-size: 0.82rem; color: var(--muted); text-align: center; margin-bottom: 1.5rem; font-weight: 300; line-height: 1.6; }
 .product-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; margin-bottom: 1rem; transition: border-color 0.2s; }
 .product-card:hover { border-color: var(--sage); }
 .product-card-tag { display: inline-block; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 1rem; }
 .product-card-tag.budget { color: var(--rust); background: #f9ece7; }
 .product-card-tag.our-pick { color: var(--sage); background: var(--sage-pale); }
-.product-card-num { display: inline-block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--cream); padding: 0.2rem 0.6rem; border-radius: 2px; margin-left: 0.5rem; }
+.product-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.25rem; }
+.product-pair-item { padding-bottom: 1.25rem; }
+.product-pair-item:first-child { border-right: 1px solid var(--border); padding-right: 1.5rem; }
+.product-pair-item:last-child { padding-left: 0; }
+.product-pair-item .product-card-name { font-size: 1rem; margin-bottom: 0.3rem; }
+.product-pair-item .product-card-detail { font-size: 0.82rem; margin-bottom: 1rem; }
+@media (max-width: 600px) { .product-pair-grid { grid-template-columns: 1fr; } .product-pair-item:first-child { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; } }
 .product-card-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
 .product-card-detail { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; font-weight: 300; }
 .product-card-detail strong { font-weight: 500; color: var(--ink); }
@@ -124,26 +129,26 @@ footer { background: var(--ink); color: #ccc; padding: 4rem 2rem 2rem; }
 
 <div class="buy-section">
   <div class="buy-section-label">Recommended Products</div>
-  <p class="buy-pair-note">This pair requires two separate supplements. Both are needed for the synergy to work.</p>
-
-  <!-- Budget Choice: L-Carnitine -->
+  <!-- Budget Choice: Both supplements in one card -->
   <div class="product-card">
-    <div class="product-card-tag budget">Budget Choice</div><span class="product-card-num">1 of 2</span>
-    <div class="product-card-name">L-Carnitine L-Tartrate</div>
-    <p class="product-card-detail">
-      <strong>L-Carnitine L-Tartrate (LCLT)</strong> is the form best studied for energy and exercise performance. It shuttles long-chain fatty acids across the inner mitochondrial membrane, delivering fuel to the electron transport chain where CoQ10 does its work.
-    </p>
-    <a class="product-card-cta" href="https://www.amazon.com/dp/B088P9FMVY?tag=nutrientpairs-20" target="_blank" rel="nofollow noopener">View on Amazon &rarr;</a>
-  </div>
-
-  <!-- Budget Choice: CoQ10 -->
-  <div class="product-card">
-    <div class="product-card-tag budget">Budget Choice</div><span class="product-card-num">2 of 2</span>
-    <div class="product-card-name">CoQ10 (Ubiquinol)</div>
-    <p class="product-card-detail">
-      <strong>Ubiquinol</strong> is the reduced, bioavailable form of CoQ10. It accepts electrons from the fuel that carnitine delivers, powering ATP production in the mitochondrial electron transport chain. Fat-soluble, so take with a meal containing fat.
-    </p>
-    <a class="product-card-cta" href="https://www.amazon.com/dp/B015TK6KVI?tag=nutrientpairs-20" target="_blank" rel="nofollow noopener">View on Amazon &rarr;</a>
+    <div class="product-card-tag budget">Budget Choice</div>
+    <p class="product-card-detail" style="margin-bottom:0.25rem;">This pair requires two separate supplements. Both are needed for the synergy to work.</p>
+    <div class="product-pair-grid">
+      <div class="product-pair-item">
+        <div class="product-card-name">L-Carnitine L-Tartrate</div>
+        <p class="product-card-detail">
+          <strong>LCLT</strong> is the form best studied for energy and exercise performance. Shuttles fatty acids into the mitochondria where CoQ10 converts them to ATP.
+        </p>
+        <a class="product-card-cta" href="https://www.amazon.com/dp/B088P9FMVY?tag=nutrientpairs-20" target="_blank" rel="nofollow noopener">View on Amazon &rarr;</a>
+      </div>
+      <div class="product-pair-item">
+        <div class="product-card-name">CoQ10 (Ubiquinol)</div>
+        <p class="product-card-detail">
+          <strong>Ubiquinol</strong> is the reduced, bioavailable form of CoQ10. Accepts electrons from the fuel carnitine delivers, powering ATP production. Fat-soluble.
+        </p>
+        <a class="product-card-cta" href="https://www.amazon.com/dp/B015TK6KVI?tag=nutrientpairs-20" target="_blank" rel="nofollow noopener">View on Amazon &rarr;</a>
+      </div>
+    </div>
   </div>
 
   <!-- Our Choice (coming soon) -->

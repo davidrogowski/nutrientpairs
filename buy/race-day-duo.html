@@ -106,17 +106,17 @@ footer { background: var(--ink); color: #ccc; padding: 4rem 2rem 2rem; }
     <li><a href="../about.html">About</a></li>
   </ul>
   <a class="nav-cta" href="../quiz.html">Find Your Stack</a>
-  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+  <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="nav-mobile">
+<div class="nav-mobile" id="navMobile">
   <ul>
-    <li><a href="../all-pairs.html">All Pairs</a></li>
+    <li><a href="../index.html">Home</a></li>
     <li><a href="../explorer.html">Explorer</a></li>
+    <li><a href="../all-pairs.html">All Pairs</a></li>
     <li><a href="../deep-dives.html">Deep Dives</a></li>
     <li><a href="../about.html">About</a></li>
-    <li><a href="../quiz.html">Find Your Stack</a></li>
   </ul>
 </div>
 
@@ -211,6 +211,12 @@ footer { background: var(--ink); color: #ccc; padding: 4rem 2rem 2rem; }
     Disclosure: NutrientPairs participates in affiliate programs. If you purchase through links on this site, we may earn a commission at no extra cost to you. We are not paid by brands for placement. Our recommendations are based on research quality, ingredient form, and third-party testing.
   </div>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
+</script>
 
 </body>
 </html>

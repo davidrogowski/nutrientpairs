@@ -747,6 +747,20 @@ section { padding: 4rem 2rem; }
   color: rgba(255,255,255,0.35);
   margin-top: 1rem;
 }
+.email-status {
+  min-height: 1.25rem;
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.email-status.is-error { color: #f3a58a; }
+.email-status.is-success { color: #a8c39d; }
+.email-form.is-submitting .email-btn { opacity: 0.6; cursor: wait; }
+.email-form.is-success { display: none; }
 
 /* ── ALL PAIRS TABLE ── */
 .table-section { background: var(--paper); }
@@ -1308,10 +1322,11 @@ footer {
   <div class="email-eyebrow">Free guide</div>
   <h2 class="email-title">The 10 Pairs Most People<br>Are Getting Wrong</h2>
   <p class="email-sub">We'll send you our most important nutrient pairings: the ones with the biggest gap between how widely known they are and how often people actually take them together.</p>
-  <form class="email-form" onsubmit="return false;">
-    <input type="email" class="email-input" placeholder="your@email.com">
-    <button type="submit" class="email-btn">Get the guide</button>
+  <form class="email-form" id="emailForm" novalidate>
+    <input type="email" class="email-input" name="email" id="emailInput" placeholder="your@email.com" autocomplete="email" required>
+    <button type="submit" class="email-btn" id="emailBtn">Get the guide</button>
   </form>
+  <div class="email-status" id="emailStatus" role="status" aria-live="polite"></div>
   <p class="email-note">No spam. Unsubscribe any time.</p>
 </section>
 
@@ -1445,6 +1460,52 @@ if (pairsScroll && pairsSection) {
     });
   }, { threshold: 0.15 });
   peekObserver.observe(pairsSection);
+}
+
+// Email capture
+const emailForm = document.getElementById('emailForm');
+if (emailForm) {
+  const input = document.getElementById('emailInput');
+  const btn = document.getElementById('emailBtn');
+  const status = document.getElementById('emailStatus');
+
+  function setStatus(msg, kind) {
+    status.textContent = msg || '';
+    status.classList.remove('is-error', 'is-success');
+    if (kind) status.classList.add('is-' + kind);
+  }
+
+  emailForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = (input.value || '').trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setStatus('Please enter a valid email address.', 'error');
+      input.focus();
+      return;
+    }
+    emailForm.classList.add('is-submitting');
+    btn.disabled = true;
+    setStatus('Sending your guide…', null);
+    try {
+      const res = await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json().catch(() => ({ ok: false, error: 'Unexpected response.' }));
+      if (res.ok && data.ok) {
+        emailForm.classList.add('is-success');
+        setStatus('Check your inbox — your guide is on the way. If you don\'t see it in a few minutes, check your spam folder.', 'success');
+      } else {
+        setStatus(data.error || 'Something went wrong. Please try again.', 'error');
+      }
+    } catch (err) {
+      setStatus('Network error. Please try again.', 'error');
+    } finally {
+      emailForm.classList.remove('is-submitting');
+      btn.disabled = false;
+    }
+  });
 }
 </script>
 </body>

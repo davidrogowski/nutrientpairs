@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Sources | NutrientPairs</title>
+  <meta name="description" content="The evidence standards behind NutrientPairs: which sources we rely on, how we weight studies, and how we rate the strength of each pair.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nutrientpairs.com/research-sources.html">
+  <meta property="og:type" content="website">
+<meta property="og:image" content="https://nutrientpairs.com/og-image.png">
+  <meta property="og:title" content="Research Sources | NutrientPairs">
+  <meta property="og:description" content="The evidence standards behind NutrientPairs.">
+  <meta property="og:url" content="https://nutrientpairs.com/research-sources.html">
+  <meta property="og:site_name" content="NutrientPairs">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research Sources | NutrientPairs">
+  <meta name="twitter:description" content="The evidence standards behind NutrientPairs.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a18;
+  --paper: #f5f3ee;
+  --cream: #ede9e0;
+  --sage: #4a6741;
+  --sage-light: #6a8f60;
+  --sage-pale: #e8ede6;
+  --rust: #b85c38;
+  --muted: #7a7870;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; font-weight: 500; color: var(--muted);
+  text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sage); }
+.nav-cta {
+  font-size: 0.8rem; font-weight: 500; background: var(--sage); color: var(--white);
+  padding: 0.5rem 1.2rem; border-radius: 2px; text-decoration: none;
+  letter-spacing: 0.03em; transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--sage-light); }
+
+.page-hero {
+  background: var(--white);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.page-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.page-hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.content-section { padding: 4rem 2rem; }
+.content-section.alt { background: var(--white); }
+.content-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.body-text {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.body-text strong { font-weight: 500; color: var(--ink); }
+.body-text a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage-pale); }
+.body-text a:hover { color: var(--sage-light); border-bottom-color: var(--sage-light); }
+
+.source-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+.source-list li {
+  padding: 0.9rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+.source-list li strong {
+  font-weight: 500;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+}
+.content-section.alt .source-list li {
+  background: var(--paper);
+}
+
+.evidence-tier {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+  align-items: start;
+}
+.content-section.alt .evidence-tier { background: var(--paper); }
+.tier-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+  padding-top: 0.15rem;
+}
+.tier-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.tier-body strong { color: var(--ink); font-weight: 500; }
+
+.notice-box {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  background: var(--sage-pale);
+  border-left: 3px solid var(--sage);
+  border-radius: 0 4px 4px 0;
+}
+.notice-box p {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.notice-box strong { font-weight: 500; }
+
+.updated-line {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand { font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
+.footer-desc { font-size: 0.82rem; line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; font-weight: 300; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+.affiliate-notice {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  transition: all 0.2s;
+}
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 2rem 1rem;
+  z-index: 99;
+}
+.nav-mobile.open { display: block; }
+.nav-mobile ul { list-style: none; }
+.nav-mobile ul li a {
+  display: block;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.nav-mobile ul li:last-child a { border-bottom: none; }
+.nav-mobile ul li a:hover { color: var(--sage); }
+
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .page-hero { padding: 3rem 1.25rem 2rem; }
+  .page-hero-title { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+  .page-hero-sub { font-size: 0.9rem; }
+  .content-section { padding: 2.5rem 1.25rem; }
+  .section-title { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+  .body-text { font-size: 0.95rem; }
+  .evidence-tier { grid-template-columns: 1fr; gap: 0.5rem; padding: 1rem; }
+  .notice-box { padding: 1rem 1.25rem; }
+  footer { padding: 2.5rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Nutrient<span>Pairs</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="deep-dives.html">Deep Dives</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="index.html#email" class="nav-cta">Free Guide &rarr;</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="explorer.html">Explorer</a></li>
+    <li><a href="all-pairs.html">All Pairs</a></li>
+    <li><a href="deep-dives.html">Deep Dives</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-label">Methodology</div>
+  <h1 class="page-hero-title">Research sources</h1>
+  <p class="page-hero-sub">Where our evidence comes from, how we weight it, and what we mean when we say a pair is backed by research.</p>
+</div>
+
+<section class="content-section alt">
+  <div class="content-inner">
+    <div class="section-label">The bar we set</div>
+    <h2 class="section-title">Human research, published, peer-reviewed</h2>
+    <p class="body-text">Every pair in our library requires <strong>published human research</strong> demonstrating a meaningful interaction between the two nutrients. Mechanism alone is not enough. Animal data alone is not enough. Anecdote, influencer endorsement, and marketing copy are ignored.</p>
+    <p class="body-text">When a clinical trial exists, we cite it. When a meta-analysis synthesizes multiple trials, we use the meta-analysis. When evidence is thinner (mechanistic work plus observational data) we still include the pair only if the theoretical basis is robust, and we say so explicitly in the evidence rating.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-label">Where we look</div>
+    <h2 class="section-title">Primary databases and journals</h2>
+    <p class="body-text">The bulk of our research is sourced from the following databases and journals. These are the standard tools a working nutrition researcher would use, and they are all publicly accessible (abstracts at minimum, full text in many cases).</p>
+    <ul class="source-list">
+      <li><strong>PubMed / MEDLINE.</strong> The US National Library of Medicine's index of biomedical literature. Our primary entry point for identifying clinical trials, systematic reviews, and meta-analyses on nutrient interactions.</li>
+      <li><strong>Cochrane Library.</strong> Systematic reviews and evidence summaries. Particularly useful for pairs with a mature body of research (iron, vitamin D, omega-3).</li>
+      <li><strong>ClinicalTrials.gov.</strong> Registered human trials, including in-progress studies. Useful for understanding the current evidence frontier on emerging pairs.</li>
+      <li><strong>Examine.com.</strong> Independent synthesis of supplement research, with transparent grading of evidence strength. We treat it as a cross-check, not a primary source.</li>
+      <li><strong>NIH Office of Dietary Supplements.</strong> Government fact sheets for individual nutrients, with dose, safety, and interaction data.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="content-section alt">
+  <div class="content-inner">
+    <div class="section-label">Journals we read</div>
+    <h2 class="section-title">Peer-reviewed publications</h2>
+    <p class="body-text">Studies cited in our deep dives typically appear in these journals. We do not limit ourselves to this list, but it reflects the majority of the evidence base:</p>
+    <ul class="source-list">
+      <li><strong>The American Journal of Clinical Nutrition</strong></li>
+      <li><strong>The Journal of Nutrition</strong></li>
+      <li><strong>Nutrients</strong> (MDPI)</li>
+      <li><strong>The British Journal of Nutrition</strong></li>
+      <li><strong>European Journal of Clinical Nutrition</strong></li>
+      <li><strong>Journal of the International Society of Sports Nutrition</strong></li>
+      <li><strong>Advances in Nutrition</strong></li>
+      <li><strong>Journal of Clinical Endocrinology &amp; Metabolism</strong></li>
+      <li><strong>The Lancet</strong> and <strong>The New England Journal of Medicine</strong> (general medical context)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-label">How we weight evidence</div>
+    <h2 class="section-title">Our evidence tiers</h2>
+    <p class="body-text">Not all evidence is equal. When we rate the strength of a pair, we use a simple tiered framework. The evidence rating appears alongside every pair in the library.</p>
+
+    <div class="evidence-tier">
+      <div class="tier-label">Tier 1</div>
+      <div class="tier-body"><strong>High confidence.</strong> Multiple randomized controlled trials in humans, ideally supported by a meta-analysis or systematic review, demonstrating the synergistic effect. Dose ranges and timing are well characterized.</div>
+    </div>
+    <div class="evidence-tier">
+      <div class="tier-label">Tier 2</div>
+      <div class="tier-body"><strong>Moderate confidence.</strong> At least one well-designed human RCT plus supporting mechanistic or observational data. Dose-response is reasonably well understood but some parameters remain open.</div>
+    </div>
+    <div class="evidence-tier">
+      <div class="tier-label">Tier 3</div>
+      <div class="tier-body"><strong>Emerging evidence.</strong> Strong mechanistic basis with limited but positive human data, typically small trials or pilot studies. Included because the biology is sound, but we flag it clearly.</div>
+    </div>
+    <div class="evidence-tier">
+      <div class="tier-label">Tier 4</div>
+      <div class="tier-body"><strong>Theoretical only.</strong> We do <em>not</em> publish pairs at this tier. If a synergy is compelling in theory but has no published human data, it stays off the site until that changes.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section alt">
+  <div class="content-inner">
+    <div class="section-label">What we exclude</div>
+    <h2 class="section-title">Evidence we do not treat as evidence</h2>
+    <p class="body-text"><strong>Industry-funded studies with undisclosed conflicts.</strong> We flag funding sources and discount studies where the funder has a direct financial stake in the result.</p>
+    <p class="body-text"><strong>Single-arm case reports.</strong> Interesting but not sufficient to ground a recommendation.</p>
+    <p class="body-text"><strong>Animal studies as primary support.</strong> Useful for mechanism, but dose translation and species differences mean they cannot stand alone.</p>
+    <p class="body-text"><strong>Blog posts, influencer claims, and marketing white papers.</strong> If a claim only appears in promotional material, it does not count as evidence.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="notice-box">
+    <p><strong>Evidence evolves. We update.</strong> New trials get published, meta-analyses get revised, and consensus shifts. We review the library periodically and adjust pair entries and evidence tiers as needed. If you spot a study we should be citing, <a href="contact.html" style="color:var(--sage);">tell us</a>.</p>
+  </div>
+</section>
+
+<section class="content-section alt">
+  <div class="content-inner">
+    <p class="body-text" style="text-align:center;">For how we translate evidence into product picks, see our <a href="affiliate-disclosure.html">affiliate disclosure</a>. For the broader mission, see the <a href="about.html">about page</a>.</p>
+    <p class="updated-line">Last updated: April 2026</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">NutrientPairs</div>
+      <p class="footer-desc">Science-backed supplement pairing research. We explain which nutrients work better together, why the biology works, and how to find the best products for each combination.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="all-pairs.html">All Pairs</a></li>
+        <li><a href="explorer.html">Pair Explorer</a></li>
+        <li><a href="deep-dives.html">Deep Dives</a></li>
+        <li><a href="quiz.html">Find Your Stack</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Audiences</div>
+      <ul class="footer-links">
+        <li><a href="deep-dive-distance-runners.html">Runners</a></li>
+        <li><a href="deep-dive-screen-worker-eye-stack.html">Screen Workers</a></li>
+        <li><a href="deep-dive-pcos-fertility.html">Women 35+</a></li>
+        <li><a href="deep-dive-joint-pain-relief.html">Over 40</a></li>
+        <li><a href="deep-dive-vitamin-d-activator.html">Vegans</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="about.html">Our methodology</a></li>
+        <li><a href="research-sources.html">Research sources</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate disclosure</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="affiliate-notice">
+    NutrientPairs content is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider before starting any supplement regimen. Individual results may vary.
+  </div>
+  <div class="affiliate-notice">
+    Disclosure: NutrientPairs participates in affiliate programs. If you purchase through links on this site, we may earn a commission at no extra cost to you. We are not paid by brands for placement. Our recommendations are based on research quality, ingredient form, and third-party testing.
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NutrientPairs. All rights reserved.</span>
+    <span>Not medical advice. Always consult your healthcare provider.</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

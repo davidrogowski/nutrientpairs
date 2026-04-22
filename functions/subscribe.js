@@ -50,7 +50,7 @@ export async function onRequestPost(context) {
       return json({ ok: false, error: 'Could not send the guide right now. Please try again in a moment.' }, 502);
     }
 
-    // Admin notification — fire and forget. Do not block the response on it.
+    // Admin notification, fire and forget. Do not block the response on it.
     context.waitUntil(
       fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -107,7 +107,7 @@ function deliveryHtml() {
             <li style="margin-bottom:6px;">The protective companion almost nobody taking NMN is told about</li>
           </ul>
         </div>
-        <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;color:#7a7870;line-height:1.65;margin:0 0 8px 0;">More pair research and the Explorer tool are at <a href="https://nutrientpairs.com" style="color:#4a6741;text-decoration:underline;">nutrientpairs.com</a>.</p>
+        <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;color:#7a7870;line-height:1.65;margin:0 0 8px 0;">Want the pairs matched to your age, lifestyle, and goals? Try the <a href="https://nutrientpairs.com/explorer.html" style="color:#4a6741;text-decoration:underline;">Explorer</a>. More pair research at <a href="https://nutrientpairs.com" style="color:#4a6741;text-decoration:underline;">nutrientpairs.com</a>.</p>
       </td></tr>
       <tr><td style="padding:20px 32px;border-top:1px solid #d4cfc4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#7a7870;line-height:1.6;">
         NutrientPairs content is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider before starting any supplement regimen.
@@ -131,7 +131,10 @@ A few of the 10:
 - The one nutrient that triples iron absorption
 - The protective companion almost nobody taking NMN is told about
 
-More pair research and the Explorer tool are at nutrientpairs.com
+Want the pairs matched to your age, lifestyle, and goals? Try the Explorer:
+https://nutrientpairs.com/explorer.html
+
+More pair research at nutrientpairs.com
 
 ---
 NutrientPairs content is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider before starting any supplement regimen.

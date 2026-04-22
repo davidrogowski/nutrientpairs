@@ -432,7 +432,7 @@ footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 3rem 2re
     <li><a href="deep-dives.html">Deep Dives</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a href="index.html#email" class="nav-cta">Free Guide →</a>
+  <a href="index.html#email" class="nav-cta">Free Guide</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1189,7 +1189,31 @@ function strengthLabel(n) {
   return 'Emerging: promising research';
 }
 
+const DEEP_DIVE_BY_BUY = {
+  'buy/all-day-energy.html': 'deep-dive-all-day-energy.html',
+  'buy/anti-aging-cell.html': 'deep-dive-anti-aging-cell-stack.html',
+  'buy/bloat-digestion.html': 'deep-dive-bloat-digestion.html',
+  'buy/blood-sugar-duo.html': 'deep-dive-blood-sugar-duo.html',
+  'buy/bone-trinity.html': 'deep-dive-bone-trinity.html',
+  'buy/brain-stack.html': 'deep-dive-brain-stack.html',
+  'buy/cortisol-crash.html': 'deep-dive-cortisol-crash-duo.html',
+  'buy/deep-sleep.html': 'deep-dive-deep-sleep-duo.html',
+  'buy/distance-runner.html': 'deep-dive-distance-runners.html',
+  'buy/glutathione-restoration.html': 'deep-dive-glutathione-restoration.html',
+  'buy/hayfever-duo.html': 'deep-dive-hayfever-duo.html',
+  'buy/heart-fatigue.html': 'deep-dive-heart-fatigue-stack.html',
+  'buy/immune-firewall.html': 'deep-dive-immune-firewall.html',
+  'buy/joint-and-glow.html': 'deep-dive-joint-and-glow.html',
+  'buy/joint-pain-relief.html': 'deep-dive-joint-pain-relief.html',
+  'buy/no-sun-mood.html': 'deep-dive-no-sun-mood-duo.html',
+  'buy/pcos-fertility.html': 'deep-dive-pcos-fertility.html',
+  'buy/screen-worker-eye.html': 'deep-dive-screen-worker-eye-stack.html',
+  'buy/turmeric-that-works.html': 'deep-dive-turmeric-that-works.html',
+  'buy/vitamin-d-activator.html': 'deep-dive-vitamin-d-activator.html',
+};
+
 function renderPairCard(pair) {
+  const deepDiveUrl = DEEP_DIVE_BY_BUY[pair.affiliateUrl];
   return `
     <div class="result-match">
       <div class="result-match-top">
@@ -1242,7 +1266,7 @@ function renderPairCard(pair) {
       </div>
       <div class="result-footer">
         <span class="result-footer-note">Research-backed. Always consult your healthcare provider before starting supplements.</span>
-        <a href="#" class="result-link">Read full deep dive →</a>
+        ${deepDiveUrl ? `<a href="${deepDiveUrl}" class="result-link">Read full deep dive →</a>` : ''}
       </div>
     </div>`;
 }
